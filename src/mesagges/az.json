@@ -1,0 +1,31 @@
+{
+    "HomePage":{
+        "title":"",
+        "":""
+    },
+    "AboutPage":{
+        "":"",
+        "":""
+    },
+    "ContactPage":{
+        "":"",
+        "":""
+    },
+    "LoginPage":{
+        "":"",
+        "":""
+    },
+    "RegisterPage":{
+        "":"",
+        "":""
+    },
+    "NotfoundPage":{
+        "":"",
+        "":""
+    },
+    "LoadingPage":{
+        "":"",
+        "":""
+    }
+
+}
