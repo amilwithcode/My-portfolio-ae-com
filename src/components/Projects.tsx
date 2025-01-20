@@ -22,7 +22,7 @@ const projects: Project[] = [
         fullDescription:
             "Detailed description of Project One. This section contains more information about the project, such as technologies used, the development process, and challenges faced.",
         link: "#",
-        images: [testimage, testimage2, testimage3],
+        images: [testimage.src, testimage2.src, testimage3.src],
     },
     {
         title: "Project Two",
@@ -30,7 +30,7 @@ const projects: Project[] = [
         fullDescription:
             "Detailed description of Project Two. This section contains more information about the project, such as technologies used, the development process, and challenges faced.",
         link: "#",
-        images: [testimage3, testimage2, testimage],
+        images: [testimage3.src, testimage2.src, testimage.src],
     },
 ];
 

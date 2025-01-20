@@ -26,9 +26,9 @@ export default function Home() {
           <h2 className="flex justify-center items-center my-10  text-black dark:bg-black dark:text-white font-permanent text-2xl ">
             Skills
           </h2>
-          <Skils />
 
         </section>
+        <Skils />
 
         <section id="project">
 
@@ -55,7 +55,7 @@ export default function Home() {
           </h2>
 
         </section>
-          <ComentsLikes />
+        <ComentsLikes />
       </main>
 
     </>

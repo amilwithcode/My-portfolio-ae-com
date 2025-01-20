@@ -1,3 +1,4 @@
+'use strict'
 import { ReactNode } from "react"
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
@@ -8,6 +9,7 @@ import FooterSec from "@/src/components/FooterSec";
 import ChangeTheme from "@/src/ui/ChangeTheme";
 import LocaleSwitcher from "@/src/components/LocaleSwitcher";
 import "@/src/style/globals.css";
+import { AuthContextProvider } from "@/src/context/AuthContext";
 
 type Props = {
   children: ReactNode,
@@ -33,24 +35,27 @@ export default async function RootLayout({
 
 
       <body>
-        <ThemeProvider attribute="class">
-          <NextIntlClientProvider messages={messages}>
 
-            <ChangeTheme /> <LocaleSwitcher locale={locale} />
-            <header>
-              <div className=" w-full text-black dark:bg-black dark:text-white">
-                <Navbar />
-              </div>
-            </header>
+        <AuthContextProvider>
+          <ThemeProvider attribute="class">
+            <NextIntlClientProvider messages={messages}>
 
-            {children}
-            <footer className=" flex  flex-wrap text-black dark:bg-black dark:text-white items-center justify-center">
-              <FooterSec />
-            </footer>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+              <ChangeTheme /> <LocaleSwitcher locale={locale} />
+              <header>
+                <div className=" w-full text-black dark:bg-black dark:text-white">
+                  <Navbar />
+                </div>
+              </header>
+
+              {children}
+              <footer className=" flex  flex-wrap text-black dark:bg-black dark:text-white items-center justify-center">
+                <FooterSec />
+              </footer>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </AuthContextProvider>
       </body>
-    </html>
+    </html >
   )
 }
 

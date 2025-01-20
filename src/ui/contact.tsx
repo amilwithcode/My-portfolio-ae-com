@@ -1,28 +1,14 @@
 "use client";
 
-import { FormEvent, useRef, useState } from 'react';
+import {  useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+
 
 const Contact = () => {
 
-    const form = useRef<any>();
+    const form = useRef(null);
 
-    const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        emailjs
-            .sendForm('service_rz85h8q', 'template_79hxz7i', form.current, {
-                publicKey: 'JmviAg3e4W8YkX5cl',
-            })
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                },
-            );
-    };
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -46,10 +32,10 @@ const Contact = () => {
             .sendForm('service_rz85h8q', 'template_79hxz7i', e.target as HTMLFormElement, 'JmviAg3e4W8YkX5cl')
             .then(
                 (result) => {
-                    setStatus('Mesajınız uğurla göndərildi!');
+                    alert('Mesajınız uğurla göndərildi!');
                 },
                 (error) => {
-                    setStatus('Xəta baş verdi, zəhmət olmasa təkrar cəhd edin!');
+                    alert('Xəta baş verdi, zəhmət olmasa təkrar cəhd edin!');
                 }
             );
     };

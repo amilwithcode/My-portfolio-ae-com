@@ -3,13 +3,22 @@
 import Link from 'next/link'
 import { ButtonsCard } from '@/src/ui/ButtonsCard';
 import { useParams } from 'next/navigation';
-
+import { useAuth } from '@/src/context/AuthContext';
 
 
 export default function Nav() {
-    
+    const { user, logOut } = useAuth();
     const locale = useParams().locale;
-    
+
+    const handleSignOut = () => {
+
+        try {
+            logOut();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
 
 
@@ -31,9 +40,16 @@ export default function Nav() {
                 </li>
 
             </ul>
+            ({user})?(
             <ButtonsCard className=' p-5 m-auto hover:outline-2 hover:cursor-pointer border-black dark:border-white rounded-full md:m-0 sm:mb-10'>
                 <Link href={`/${locale}/login`} className="block   md:mr-3 md:hover:border-b-[1px] border-b-black dark:border-b-white uppercase sm:text-sm">login</Link>
             </ButtonsCard>
+            ):(
+            <div>
+                <p>Welcome client {user.displayName}</p>
+                <button className="p-5 m-auto hover:outline-2 hover:cursor-pointer border-black dark:border-white rounded-full md:m-0 sm:mb-10" onClick={handleSignOut}>SignOut </button>
+            </div>
+            )
         </div>
 
 

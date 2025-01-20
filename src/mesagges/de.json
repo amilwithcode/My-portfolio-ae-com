@@ -1,31 +1,31 @@
 {
     "HomePage":{
         "title":"",
-        "":""
+        "description":""
     },
     "AboutPage":{
-        "":"",
-        "":""
+         "title":"",
+        "description":""
     },
     "ContactPage":{
-        "":"",
-        "":""
+         "title":"",
+        "description":""
     },
     "LoginPage":{
-        "":"",
-        "":""
+        "title":"",
+        "description":""
     },
     "RegisterPage":{
-        "":"",
-        "":""
+        "title":"",
+        "description":""
     },
     "NotfoundPage":{
-        "":"",
-        "":""
+        "title":"",
+        "description":""
     },
     "LoadingPage":{
-        "":"",
-        "":""
+        "title":"",
+        "description":""
     }
 
 }

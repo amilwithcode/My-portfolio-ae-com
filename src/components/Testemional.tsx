@@ -2,12 +2,12 @@
 
 import  { useState, useEffect } from "react";
 import Image from "next/image";
-import Testimonials from "@/src/lib/data"; // Sizin məlumatlar buradan gəlir
+import Testimonials from "@/src/lib/data"; 
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Handle next testimonial
+ 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? Testimonials.length - 1 : prevIndex - 1
@@ -36,7 +36,7 @@ const Testimonial = () => {
 
   return (
     <div className="my-5 flex justify-center items-center w-full">
-      <div className="relative border shadow-lg rounded-lg p-10 w-full max-w-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+      <div className="relative border shadow-lg rounded-lg p-10 w-full max-w-full bg-gradient-to-r from-blue-400 via-red-500 to-green-500 text-white ">
         {/* İstifadəçi Məlumatı */}
         <div className="flex flex-col items-center">
           <div className="mb-4">

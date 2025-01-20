@@ -1,31 +1,30 @@
 {
-    "HomePage":{
-        "title":"",
-        "":""
+    "HomePage": {
+        "title": "",
+        "description": ""
     },
-    "AboutPage":{
-        "":"",
-        "":""
+    "AboutPage": {
+        "title": "",
+        "description": ""
     },
-    "ContactPage":{
-        "":"",
-        "":""
+    "ContactPage": {
+        "title": "",
+        "description": ""
     },
-    "LoginPage":{
-        "":"",
-        "":""
+    "LoginPage": {
+        "title": "",
+        "description": ""
     },
-    "RegisterPage":{
-        "":"",
-        "":""
+    "RegisterPage": {
+        "title": "",
+        "description": ""
     },
-    "NotfoundPage":{
-        "":"",
-        "":""
+    "NotfoundPage": {
+        "title": "",
+        "description": ""
     },
-    "LoadingPage":{
-        "":"",
-        "":""
+    "LoadingPage": {
+        "title": "",
+        "description": ""
     }
-
 }

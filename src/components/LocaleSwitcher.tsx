@@ -7,11 +7,13 @@ import Azflag from "@/src/assets/images/flags/az.jpg";
 import Trflag from "@/src/assets/images/flags/tr.jpg";
 import Geflag from "@/src/assets/images/flags/de.jpg";
 
-
+import { useTransition } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "@/src/navigation";
 
 type LocaleSwitcherProps = {
     locale: string;
-    setLocale ? : (locale: string) => void;
+    setLocale?: (locale: string) => void;
 };
 
 const locales = [
@@ -21,27 +23,38 @@ const locales = [
     { code: "de", name: "Deutsch", icon: Geflag.src },
 ];
 
-const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ locale, setLocale }) => {
+const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ locale }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
+    const params = useParams();
+    const searchParams = useSearchParams();
+    const query = Object.fromEntries(searchParams?.entries());
+
+    const [isPending, startTransition] = useTransition();
+
+    function onSelectChange(lang: string) {
+        startTransition(() => {
+            // @ts-expect-error hti
+            router.replace({ pathname, params, query }, { locale: lang });
+        });
+        setIsOpen(false);
+    }
 
     return (
         <div style={{ position: "relative", display: "inline-block" }}>
             {/* Dil dəyişdirici düyməsi */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "10px",
-                    border: "1px solid gray",
-                    borderRadius: "8px",
-                    backgroundColor: "#fff",
-                    cursor: "pointer",
-                }}
+                className="flex items-center gap-3 p-5 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white cursor-pointer"
+                disabled={isPending}
+        
             >
                 <Image
-                    src={locales.find((l) => l.code === locale)?.icon || "@/src/assets/images/flags/az.jpg"}
+                    src={
+                        locales.find((l) => l.code === locale)?.icon ||
+                        "@/src/assets/images/flags/az.jpg"
+                    }
                     alt={locale}
                     width={20}
                     height={20}
@@ -52,43 +65,15 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ locale, setLocale }) =>
             {/* Açılan siyahı */}
             {isOpen && (
                 <div
-                    style={{
-                        position: "absolute",
-                        top: "100%",
-                        left: 0,
-                        border: "1px solid gray",
-                        borderRadius: "8px",
-                        backgroundColor: "#fff",
-                        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                        zIndex: 1000,
-                    }}
-                    className="locale-dropdown"
+                    className="absolute top-full left-0 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white shadow-md z-[1000]"
                 >
                     {locales.map((l) => (
                         <button
                             key={l.code}
-                            onClick={() => {
-                                // setLocale(l.code);
-                                setIsOpen(false); // Siyahını bağlayır
-                            }}
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "8px",
-                                padding: "10px",
-                                border: "none",
-                                width: "100%",
-                                textAlign: "left",
-                                backgroundColor: locale === l.code ? "#e0f7fa" : "#fff",
-                                cursor: "pointer",
-                            }}
+                            onClick={() => onSelectChange(l.code)}
+                            className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer"
                         >
-                            <Image
-                                src={l.icon}
-                                alt={l.name}
-                                width={20}
-                                height={20}
-                            />
+                            <Image src={l.icon} alt={l.name} width={20} height={20} />
                             <span>{l.name}</span>
                         </button>
                     ))}
