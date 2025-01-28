@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -7,7 +7,6 @@ import Testimonials from "@/src/lib/data";
 
 function Testimonial() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -45,6 +44,8 @@ function Testimonial() {
               src={currentTestimonial.avatar}
               alt={currentTestimonial.name}
               className="w-20 h-20 rounded-full object-cover"
+              // width={80}
+              // height={80}
             />
           </div>
           <h3 className="text-lg font-semibold">{currentTestimonial?.name}</h3>
@@ -52,7 +53,9 @@ function Testimonial() {
         </div>
 
         {/* Rəy */}
-        <p className="text-center text-gray-100 my-6">{currentTestimonial?.feedback}</p>
+        <p className="text-center text-gray-100 my-6">
+          {currentTestimonial?.feedback}
+        </p>
 
         {/* Nəzarət düymələri */}
         <div className="absolute top-1/2 -translate-y-1/2 left-4">
@@ -105,14 +108,15 @@ function Testimonial() {
           {Testimonials.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"
-                }`}
+              className={`w-3 h-3 rounded-full ${
+                currentIndex === index ? "bg-white" : "bg-gray-400"
+              }`}
             />
           ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Testimonial;

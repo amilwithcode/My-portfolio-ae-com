@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -13,8 +13,6 @@ interface AboutProps {
 }
 
 function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
-
-
   const locale = useParams().locale;
 
   return (
@@ -28,25 +26,39 @@ function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
           />
         </div>
         <div className="flex-1">
-          <h1 className='text-2xl md:text-3xl font-bold text-gray-800 mb-4  font-permanent'>🌟 About Me</h1>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  ">{name}  about</h1>
-          <p className="text-gray-600 text-base md:text-xs mb-6  ">{description}</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  font-permanent">
+            🌟 About Me
+          </h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  ">
+            {name} about
+          </h1>
+          <p className="text-gray-600 text-base md:text-xs mb-6  ">
+            {description}
+          </p>
           <div className="font-permanent">
-            <h2 className="text-xl font-semibold text-gray-700 mb-2 ">Skills:</h2>
+            <h2 className="text-xl font-semibold text-gray-700 mb-2 ">
+              Skills:
+            </h2>
             <ul className="flex  gap-5 items-center list-disc list-inside space-y-1 text-gray-600">
               {skills.map((skill, index) => (
-                <li className="text-xs list-none" key={index}>{skill}</li>
+                <li className="text-xs list-none" key={index}>
+                  {skill}
+                </li>
               ))}
             </ul>
-
           </div>
           <div className="flex justify-end text-black dark:bg-black dark:text-white my-5 ">
-            <Link className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs" href={`/${locale}/contact`}>Feel free to reach out – I’d be happy to connect!</Link>
+            <Link
+              className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs"
+              href={`/${locale}/contact`}
+            >
+              Feel free to reach out – I’d be happy to connect!
+            </Link>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default AboutComponent;

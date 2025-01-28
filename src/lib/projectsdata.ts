@@ -1,7 +1,7 @@
-import PortfolioImage from '@/src/assets/images/myImage.png';
-import EcomerceImage from '@/src/assets/images/myImage.png';
-import DataImage1 from '@/src/assets/images/myImage.png';
-import DataImage2 from '@/src/assets/images/myImage.png';
+import PortfolioImage from "@/src/assets/images/myImage.png";
+import EcomerceImage from "@/src/assets/images/myImage.png";
+import DataImage1 from "@/src/assets/images/myImage.png";
+import DataImage2 from "@/src/assets/images/myImage.png";
 
 interface Project {
   title: string;
@@ -16,7 +16,8 @@ const projectsData: { category: string; projects: Project[] }[] = [
       {
         title: "Portfolio Website",
         image: PortfolioImage.src,
-        description: "A personal portfolio website with React and Tailwind CSS.",
+        description:
+          "A personal portfolio website with React and Tailwind CSS.",
       },
       {
         title: "E-commerce Platform",
@@ -39,8 +40,7 @@ const projectsData: { category: string; projects: Project[] }[] = [
         description: "Insights into smartphone sales trends.",
       },
     ],
-  }
-
+  },
 ];
 
 export default projectsData;

@@ -13,75 +13,72 @@ import { useRouter, usePathname } from "@/src/navigation";
 // import { useTranslations } from "next-intl";
 
 type LocaleSwitcherProps = {
-    locale: string;
-    setLocale?: (locale: string) => void;
+  locale: string;
+  setLocale?: (locale: string) => void;
 };
 
 export const locales = [
-    { code: "en", name: "English", icon: Enflag.src },
-    { code: "az", name: "Azərbaycan", icon: Azflag.src },
-    { code: "tr", name: "Türkiye", icon: Trflag.src },
-    { code: "de", name: "Germany", icon: Geflag.src },
+  { code: "en", name: "English", icon: Enflag.src },
+  { code: "az", name: "Azərbaycan", icon: Azflag.src },
+  { code: "tr", name: "Türkiye", icon: Trflag.src },
+  { code: "de", name: "Germany", icon: Geflag.src },
 ];
 
-function LocaleSwitcher({ locale }:LocaleSwitcherProps){
-    const [isOpen, setIsOpen] = useState(false);
-    const router = useRouter();
-    const pathname = usePathname();
-    const params = useParams();
-    const searchParams = useSearchParams();
-    const query = Object.fromEntries(searchParams?.entries());
+function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const query = Object.fromEntries(searchParams?.entries());
 
-    const [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
-    function onSelectChange(lang: string) {
-        startTransition(() => {
-            // @ts-expect-error hti
-            router.replace({ pathname, params, query }, { locale: lang });
-        });
-        setIsOpen(false);
-    }
+  function onSelectChange(lang: string) {
+    startTransition(() => {
+      // @ts-expect-error hti
+      router.replace({ pathname, params, query }, { locale: lang });
+    });
+    setIsOpen(false);
+  }
 
-    return (
-        <div style={{ position: "relative", display: "inline-block" }}>
-            {/* Dil dəyişdirici düyməsi */}
+  return (
+    <div style={{ position: "relative", display: "inline-block" }}>
+      {/* Dil dəyişdirici düyməsi */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-3 p-5 border-1 border-white rounded-8  dark:bg-black dark:text-white cursor-pointer"
+        disabled={isPending}
+      >
+        <Image
+          src={
+            locales.find((l) => l.code === locale)?.icon ||
+            "@/src/assets/images/flags/az.jpg"
+          }
+          alt={locale}
+          width={20}
+          height={20}
+        />
+        <span>{locales.find((l) => l.code === locale)?.name}</span>
+      </button>
+
+      {/* Açılan siyahı */}
+      {isOpen && (
+        <div className="absolute top-full left-0 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white shadow-md z-[1000]">
+          {locales.map((l) => (
             <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-3 p-5 border-1 border-white rounded-8  dark:bg-black dark:text-white cursor-pointer"
-                disabled={isPending}
-        
+              key={l.code}
+              onClick={() => onSelectChange(l.code)}
+              className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer"
             >
-                <Image
-                    src={
-                        locales.find((l) => l.code === locale)?.icon ||
-                        "@/src/assets/images/flags/az.jpg"
-                    }
-                    alt={locale}
-                    width={20}
-                    height={20}
-                />
-                <span>{locales.find((l) => l.code === locale)?.name}</span>
+              <Image src={l.icon} alt={l.name} />
+              <span>{l.name}</span>
             </button>
-
-            {/* Açılan siyahı */}
-            {isOpen && (
-                <div
-                    className="absolute top-full left-0 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white shadow-md z-[1000]"
-                >
-                    {locales.map((l) => (
-                        <button
-                            key={l.code}
-                            onClick={() => onSelectChange(l.code)}
-                            className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer"
-                        >
-                            <Image src={l.icon} alt={l.name} width={20} height={20} />
-                            <span>{l.name}</span>
-                        </button>
-                    ))}
-                </div>
-            )}
+          ))}
         </div>
-    );
-};
+      )}
+    </div>
+  );
+}
 
 export default LocaleSwitcher;
