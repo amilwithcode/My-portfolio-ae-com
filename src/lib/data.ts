@@ -1,32 +1,25 @@
-import portfolio from '@/src/assets/images/myİmage.png'
-
+import Image1 from '@/src/assets/images/testimional-image/kamran-image.jpg';
+import Image2 from '@/src/assets/images/testimional-image/kamran-image.jpg';
+import portfolio from '@/src/assets/images/testimional-image/kamran-image.jpg';
 
 const Testimonials = [
     {
         id: 1,
-        name: "Leyla Əhmədova",
+        name: "Kamran Xəlilov",
         feedback:
-            "Bu xidmət həqiqətən çox keyfiyyətlidir. Mən hər zaman istifadə edəcəm!",
-        role: "Müştəri",
-        avatar: portfolio,
-        links: {
-            facebook: "https://facebook.com",
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-        },
+            "Working with Amil has been an inspiring experience. Amil approaches every task with dedication and creativity, consistently striving to improve. His focus, determination, and attention to detail make his work truly stand out.",
+        role: "Developer",
+        avatar: Image1,
+
     },
     {
         id: 2,
-        name: "Rəsul Məmmədov",
+        name: "Nicat Əhmədov",
         feedback:
             "Təcrübəm çox müsbət idi. Çox peşəkar və vaxtında xidmət göstərildi.",
         role: "Müştəri",
-        avatar: portfolio,
-        links: {
-            facebook: "https://facebook.com",
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-        },
+        avatar: Image2,
+
     },
     {
         id: 3,
@@ -34,11 +27,7 @@ const Testimonials = [
         feedback: "Hər şey mükəmməl idi. Çox təşəkkür edirəm!",
         role: "Müştəri",
         avatar: portfolio,
-        links: {
-            facebook: "https://facebook.com",
-            twitter: "https://twitter.com",
-            linkedin: "https://linkedin.com",
-        },
+
     },
 ];
 

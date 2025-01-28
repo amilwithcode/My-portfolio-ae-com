@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { FaGitAlt, FaReact, FaGithub } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiPython } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
-
+// import { useTranslations } from "next-intl";
 
 type Category = "All" | "Languages" | "Frameworks" | "Tools";
 
-const skills = {
+export const skills = {
   All: [
     { name: 'JavaScript', icon: <SiJavascript /> },
     { name: 'TypeScript', icon: <SiTypescript /> },
@@ -32,7 +32,7 @@ const skills = {
   ],
 };
 
-const Skills: React.FC = () => {
+function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
 
   return (

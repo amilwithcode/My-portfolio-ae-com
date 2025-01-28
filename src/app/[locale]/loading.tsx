@@ -1,7 +1,7 @@
 'use client'
 
 
-const Loading = () => {
+function Loading(){
   return (
     <div className="flex flex-col items-center justify-center h-screen text-black dark:bg-black dark:text-white ">
       <div className="relative w-16 h-16 mb-5">

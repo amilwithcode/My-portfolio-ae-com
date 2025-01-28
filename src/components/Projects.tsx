@@ -1,47 +1,20 @@
 "use client";
 
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import testimage from "@/src/assets/images/myİmage.png";
-import testimage2 from "@/src/assets/images/myİmage.png";
-import testimage3 from "@/src/assets/images/myİmage.png";
+import projects from "@/src/lib/projects";
+// import { useTranslations } from "next-intl";
 
-type Project = {
-    title: string;
-    shortDescription: string;
-    fullDescription: string;
-    link: string;
-    images: string[];
-};
 
-const projects: Project[] = [
-    {
-        title: "Project One",
-        shortDescription: "A brief description of Project One.",
-        fullDescription:
-            "Detailed description of Project One. This section contains more information about the project, such as technologies used, the development process, and challenges faced.",
-        link: "#",
-        images: [testimage.src, testimage2.src, testimage3.src],
-    },
-    {
-        title: "Project Two",
-        shortDescription: "A brief description of Project Two.",
-        fullDescription:
-            "Detailed description of Project Two. This section contains more information about the project, such as technologies used, the development process, and challenges faced.",
-        link: "#",
-        images: [testimage3.src, testimage2.src, testimage.src],
-    },
-];
-
-const Projects: React.FC = () => {
+function Projects(){
     const [expandedProject, setExpandedProject] = useState<number | null>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 3); // Cycle through 3 images
-        }, 5000); // Change every 5 seconds
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 3);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
@@ -59,13 +32,11 @@ const Projects: React.FC = () => {
             <h2 className="text-3xl font-bold text-center mb-8 font-permanent">Projects</h2>
             <div className="container mx-auto flex flex-col  gap-8 font-permanent">
                 {projects.map((project, index) => (
-                    <div key={index} className="text-black dark:bg-black dark:text-white p-6 rounded-lg shadow-lg flex flex-col ">
+                    <div key={index} className="text-black dark:bg-black dark:text-white p-6 border rounded-lg shadow-lg flex flex-col ">
                         <Image
                             src={project.images[currentImageIndex]}
                             alt={project.title}
-                            width={400}
-                            height={250}
-                            className="w-full h-48 object-cover rounded-t-lg"
+                            className="w-[400px] h-64 object-cover rounded-t-lg"
                         />
                         <h3 className="text-xl font-semibold mt-4">{project.title}</h3>
                         <p className="text-gray-600 mt-2">{project.shortDescription}</p>
@@ -84,6 +55,33 @@ const Projects: React.FC = () => {
                         <Link href={project.link} className="mt-4 inline-block text-blue-500  dark:bg-black dark:text-white hover:underline">
                             Learn more
                         </Link>
+
+                        {/* Developer Section */}
+                        <div className="mt-6">
+                            <h4 className="text-lg font-medium mb-2">Developers:</h4>
+                            <div className="flex gap-4">
+                                {project.developers.map((developer, devIndex) => (
+                                    <div key={devIndex} className="flex items-center gap-2">
+                                        <Image
+                                            src={developer.image}
+                                            alt={developer.name}
+                                            className="rounded-full w-10 h-10"
+                                        />
+                                        <div>
+                                            <p className="text-sm font-semibold">{developer.name}</p>
+                                            <a
+                                                href={developer.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-500 hover:underline text-sm border-b border-blue-500"
+                                            >
+                                                View GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

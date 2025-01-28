@@ -1,7 +1,9 @@
 'use client'
 
 import Image from "next/image";
-import  Link  from "next/link";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+// import { useTranslations } from "next-intl";
 
 interface AboutProps {
   name: string;
@@ -10,7 +12,11 @@ interface AboutProps {
   skills: string[];
 }
 
-const AboutComponent: React.FC<AboutProps> = ({ name, description, imageUrl, skills }) => {
+function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
+
+
+  const locale = useParams().locale;
+
   return (
     <section className="border py-10 px-3">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
@@ -32,9 +38,10 @@ const AboutComponent: React.FC<AboutProps> = ({ name, description, imageUrl, ski
                 <li className="text-xs list-none" key={index}>{skill}</li>
               ))}
             </ul>
+
           </div>
           <div className="flex justify-end text-black dark:bg-black dark:text-white my-5 ">
-            <Link className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs" href={'/contact'}>Feel free to reach out – I’d be happy to connect!</Link>
+            <Link className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs" href={`/${locale}/contact`}>Feel free to reach out – I’d be happy to connect!</Link>
           </div>
         </div>
       </div>

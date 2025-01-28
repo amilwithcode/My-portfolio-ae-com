@@ -1,30 +1,87 @@
 {
     "HomePage": {
-        "title": "",
-        "description": ""
+        "nav": {
+            "home": "home",
+            "about": "about",
+            "projects": "projects",
+            "contact": "contact",
+            "login": "login"
+        },
+        "header": {
+            "title": "Hello Welcome my portfolio",
+            "autotext": ""
+        },
+        "skills": {
+            "all": "all",
+            "languages": "languages",
+            "frameworks": "frameworks",
+            "tools": "tools"
+        },
+        "projects": {
+            "all:": "",
+            "web development": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "python programing": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "data science": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "button":""
+        },
+        "testimonials": {
+            "header": "",
+            "name": "",
+            "opinion": ""
+        },
+        "coments": {
+            "header": "",
+            "name": ""
+        }
     },
     "AboutPage": {
         "title": "",
-        "description": ""
+        "description": "",
+        "button": ""
     },
     "ContactPage": {
         "title": "",
-        "description": ""
+        "name": "",
+        "email": "",
+        "message": "",
+        "button": ""
     },
     "LoginPage": {
-        "title": "",
-        "description": ""
+        "title": {
+            "login": "",
+            "register": ""
+        },
+        "email": "",
+        "password": "",
+        "button": ""
     },
     "RegisterPage": {
-        "title": "",
-        "description": ""
+        "title": {
+            "login": "",
+            "register": ""
+        },
+        "name": "",
+        "email": "",
+        "password": "",
+        "button": ""
     },
     "NotfoundPage": {
-        "title": "",
-        "description": ""
+        "title": "Sorry, the page you are looking for does not exist",
+        "button": "Back to Home"
     },
     "LoadingPage": {
-        "title": "",
-        "description": ""
+        "title": "Loading, please wait"
     }
 }

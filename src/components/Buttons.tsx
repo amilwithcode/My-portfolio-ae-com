@@ -1,11 +1,12 @@
-'use strict';
+'use client';
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Login from "@/src/components/Login";
 import Register from "@/src/components/Register";
+// import { useTranslations } from "next-intl";
 
-const Buttons = () => {
+function Buttons(){
     const [isLogin, setIsLogin] = useState<boolean>(true);
     const { locale } = useParams();
     const router = useRouter();

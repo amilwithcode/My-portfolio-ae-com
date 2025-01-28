@@ -1,10 +1,11 @@
 "use client";
 
 import  { useEffect, useState } from 'react';
+// import { useTranslations } from "next-intl";
 
-const careers = ["Supply Chain ", "Data Analysis", "Web developer", "Software developer"];
+export const careers = ["Supply Chain Student", "Data Analysis", "Web developer", "Frontend developer"];
 
-const AutoText: React.FC = () => {
+function AutoText(){
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 

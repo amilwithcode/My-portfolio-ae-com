@@ -1,11 +1,13 @@
 'use client';
 
-export default function GlobalError() {
+import  GlobalError  from "@/src/error/GlobalError";
+import  notFound  from "next/error";
+
+
+export default function Error() {
   return (
-    <html>
-      <body>
-        <GlobalError/>
-      </body>
-    </html>
+
+    <GlobalError error={notFound} />
+
   );
 }

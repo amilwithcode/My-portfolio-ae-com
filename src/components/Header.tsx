@@ -6,7 +6,7 @@ import MyImage from '@/src/ui/MyImage';
 
 
 
-export const Header = () => {
+export default function Header(){
 
   return (
 

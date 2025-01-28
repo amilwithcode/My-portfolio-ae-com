@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Logo from '@/src/ui/Logo';
 import Hamburger from 'hamburger-react';
 import Nav from '@/src/ui/Nav';
-
+// import { useTranslations } from "next-intl";
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);

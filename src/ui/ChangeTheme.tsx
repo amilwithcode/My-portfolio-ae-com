@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { FaRegMoon, FaRegSun } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
-const ChangeTheme = () => {
+
+function ChangeTheme() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -21,7 +22,7 @@ const ChangeTheme = () => {
     <button
       type="button"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      className="p-2 rounded-md hover:bg-white dark:hover:bg-black transition-colors"
       aria-label={
         resolvedTheme === "light"
           ? "Switch to dark theme"

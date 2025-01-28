@@ -10,20 +10,21 @@ import Geflag from "@/src/assets/images/flags/de.jpg";
 import { useTransition } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "@/src/navigation";
+// import { useTranslations } from "next-intl";
 
 type LocaleSwitcherProps = {
     locale: string;
     setLocale?: (locale: string) => void;
 };
 
-const locales = [
+export const locales = [
     { code: "en", name: "English", icon: Enflag.src },
     { code: "az", name: "Azərbaycan", icon: Azflag.src },
-    { code: "tr", name: "Türkçe", icon: Trflag.src },
-    { code: "de", name: "Deutsch", icon: Geflag.src },
+    { code: "tr", name: "Türkiye", icon: Trflag.src },
+    { code: "de", name: "Germany", icon: Geflag.src },
 ];
 
-const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ locale }) => {
+function LocaleSwitcher({ locale }:LocaleSwitcherProps){
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
@@ -46,7 +47,7 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({ locale }) => {
             {/* Dil dəyişdirici düyməsi */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-3 p-5 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white cursor-pointer"
+                className="flex items-center gap-3 p-5 border-1 border-white rounded-8  dark:bg-black dark:text-white cursor-pointer"
                 disabled={isPending}
         
             >

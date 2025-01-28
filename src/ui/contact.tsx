@@ -1,14 +1,14 @@
 "use client";
 
-import {  useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+// import { useTranslations } from "next-intl";
 
-
-const Contact = () => {
+function Contact() {
 
     const form = useRef(null);
 
-    
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -43,7 +43,7 @@ const Contact = () => {
     return (
         <main>
 
-            <section className="max-w-lg mx-auto p-8 bg-white shadow-xl rounded-lg space-x-4">
+            <section className="max-w-lg mx-auto p-8 border rounded-lg shadow-lg">
                 <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">Əlaqə</h2>
                 <form ref={form} onSubmit={handleSubmit} className="space-y-6 flex flex-col gap-10">
                     <div className="flex flex-col">
@@ -54,8 +54,8 @@ const Contact = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            required
                             className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                            required
                         />
                     </div>
                     <div className="flex flex-col">
@@ -66,8 +66,8 @@ const Contact = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            required
                             className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                            required
                         />
                     </div>
                     <div className="flex flex-col">
@@ -78,8 +78,8 @@ const Contact = () => {
                             value={formData.message}
                             onChange={handleChange}
                             required
-                            rows={4}
                             className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                            rows={4}
                         />
                     </div>
                     <button type="submit" className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">

@@ -2,7 +2,7 @@
 
 import Projects from '@/src/components/Projects'
 
-const ProjectsPage = () => {
+function ProjectsPage()  {
   return (
 
     <main id='projects' className="flex flex-col text-black dark:bg-black dark:text-white justify-center items-center   sm:px-10 ">
@@ -14,6 +14,6 @@ const ProjectsPage = () => {
 
 
   )
-}
+};
 
-export default ProjectsPage
+export default ProjectsPage;

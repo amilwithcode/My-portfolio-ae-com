@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-const NotFound = () => {
+function NotFound(){
     return (
         <div className="flex flex-col items-center justify-center h-screen text-black dark:bg-black dark:text-white">
             <div className="text-center">

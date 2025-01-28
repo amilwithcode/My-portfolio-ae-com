@@ -1,13 +1,14 @@
 'use client'
 
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import Testimonials from "@/src/lib/data"; 
+import Testimonials from "@/src/lib/data";
+// import { useTranslations } from "next-intl";
 
-const Testimonial = () => {
+function Testimonial() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
- 
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? Testimonials.length - 1 : prevIndex - 1
@@ -41,10 +42,8 @@ const Testimonial = () => {
         <div className="flex flex-col items-center">
           <div className="mb-4">
             <Image
-              src={currentTestimonial?.avatar}
-              alt={currentTestimonial?.name}
-              width={80}
-              height={80}
+              src={currentTestimonial.avatar}
+              alt={currentTestimonial.name}
               className="w-20 h-20 rounded-full object-cover"
             />
           </div>
@@ -106,9 +105,8 @@ const Testimonial = () => {
           {Testimonials.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                currentIndex === index ? "bg-white" : "bg-gray-400"
-              }`}
+              className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"
+                }`}
             />
           ))}
         </div>

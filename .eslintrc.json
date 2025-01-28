@@ -1,3 +1,6 @@
 {
-    
+    "editor.formatOnSave": true,
+    "ditor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    }
 }

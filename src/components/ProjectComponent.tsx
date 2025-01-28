@@ -1,56 +1,14 @@
 'use client'
 
-import  { useState } from "react";
+import { useState } from "react";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import { BiBox } from "react-icons/bi";
-import PortfolioImage from '@/src/assets/images/myİmage.png';
-import EcomerceImage from '@/src/assets/images/myİmage.png';
-import DataImage1 from '@/src/assets/images/myİmage.png';
-import DataImage2 from '@/src/assets/images/myİmage.png';
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import projectsData from "@/src/lib/projectsdata";
+// import { useTranslations } from "next-intl";
 
-interface Project {
-  title: string;
-  image: string;
-  description: string;
-}
-
-const projectsData: { category: string; projects: Project[] }[] = [
-  {
-    category: "Web Development",
-    projects: [
-      {
-        title: "Portfolio Website",
-        image: PortfolioImage,
-        description: "A personal portfolio website with React and Tailwind CSS.",
-      },
-      {
-        title: "E-commerce Platform",
-        image: EcomerceImage,
-        description: "A fully functional e-commerce site.",
-      },
-    ],
-  },
-  {
-    category: "Data Analysis",
-    projects: [
-      {
-        title: "COVID-19 Data Analysis",
-        image: DataImage1,
-        description: "Analyzing COVID-19 trends using Python.",
-      },
-      {
-        title: "Smartphone Sales Insights",
-        image: DataImage2,
-        description: "Insights into smartphone sales trends.",
-      },
-    ],
-  }
-
-];
-
-const ProjectComponent = () => {
+function ProjectComponent() {
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const locale = useParams().locale;
 

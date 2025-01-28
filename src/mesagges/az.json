@@ -1,31 +1,87 @@
 {
-    "HomePage":{
-        "title":"",
-        "description":""
+    "HomePage": {
+        "nav": {
+            "home": "ev",
+            "about": "haqqımda",
+            "projects": "proyektlər",
+            "contact": "əlaqə",
+            "login": "daxil ol"
+        },
+        "header": {
+            "title": "Salam Mənim portfolioma xoş gəldiniz",
+            "autotext": ""
+        },
+        "skills": {
+            "all": "hamısı",
+            "languages": "dillər",
+            "frameworks": "",
+            "tools": "əlavə alətlər"
+        },
+        "projects": {
+            "all:": "hamısı",
+            "web development": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "python programing": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "data science": {
+                "title": "",
+                "header": "",
+                "description": ""
+            },
+            "button":""
+        },
+        "testimonials": {
+            "header": "",
+            "name": "",
+            "opinion": ""
+        },
+        "coments": {
+            "header": "",
+            "name": ""
+        }
     },
-    "AboutPage":{
-        "title":"",
-        "description":""
+    "AboutPage": {
+        "title": "",
+        "description": "",
+        "button": ""
     },
-    "ContactPage":{
-        "title":"",
-        "description":""
+    "ContactPage": {
+        "title": "",
+        "name": "",
+        "email": "",
+        "message": "",
+        "button": ""
     },
-    "LoginPage":{
-        "":"",
-        "":""
+    "LoginPage": {
+        "title": {
+            "login": "",
+            "register": ""
+        },
+        "email": "",
+        "password": "",
+        "button": ""
     },
-    "RegisterPage":{
-        "title":"",
-        "description":""
+    "RegisterPage": {
+        "title": {
+            "login": "",
+            "register": ""
+        },
+        "name": "",
+        "email": "",
+        "password": "",
+        "button": ""
     },
-    "NotfoundPage":{
-        "title":"",
-        "description":""
+    "NotfoundPage": {
+        "title": "",
+        "button": ""
     },
-    "LoadingPage":{
-        "title":"",
-        "description":""
+    "LoadingPage": {
+        "title": "Yüklənir, zəhmət olmasa gözləyin"
     }
-
 }

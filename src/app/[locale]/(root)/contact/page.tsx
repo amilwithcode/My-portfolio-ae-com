@@ -3,7 +3,7 @@
 
 import ContactComponent from '@/src/ui/contact';
 
-const Contact = () => {
+function Contact() {
   return (
 
     <main id='contact' className="flex flex-col text-black dark:bg-black dark:text-white  justify-center items-center   sm:px-10 ">

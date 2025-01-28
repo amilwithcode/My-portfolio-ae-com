@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
+import { useAuth } from '@/src/context/AuthContext'
+// import { useTranslations } from "next-intl";
 
 type Comment = {
   id: number;
@@ -11,7 +13,7 @@ type Comment = {
   text: string;
 };
 
-const CommentLikes = () => {
+function CommentLikes(){
   const [comments, setComments] = useState<Comment[]>([]);
   const [username, setUsername] = useState("");
   const [rating, setRating] = useState(0);
@@ -19,6 +21,26 @@ const CommentLikes = () => {
   const [isFormValid, setIsFormValid] = useState(true);
   const [showAllComments, setShowAllComments] = useState(false);
   const [editingCommentId, setEditingCommentId] = useState<number | null>(null);
+  const { user } = useAuth();
+  // const { loading, setLoading } = useState(true);
+  // console.log(user.displayName )
+  // useEffect(() => {
+  //   const checkUser = async () => {
+  //     await new Promise((resolve) => setTimeout(resolve, 50));
+  //     setLoading()
+  //   };
+  //   checkUser()
+  // }, [user])
+
+  const userCheck = () => {
+    if (user.displayName === username || user.displayName === "Client") {
+      return (
+        <div>
+          <p>Sign in to leave a comment</p>
+        </div>
+      )
+    }
+  }
 
   // localStorage-dən şərhləri yükləyirik
   useEffect(() => {
@@ -88,6 +110,7 @@ const CommentLikes = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className="w-full border p-2 rounded-md shadow-sm text-black dark:bg-black dark:text-white"
+          required
         />
 
         <div className="flex space-x-1">
@@ -109,10 +132,14 @@ const CommentLikes = () => {
           className="w-full border p-2 rounded-md shadow-sm text-black dark:bg-black dark:text-white"
           maxLength={400}
         />
+        {!user ? (
+          <p>Sign in to leave a comment</p>
+        ) : (
+          <button onClick={userCheck} type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
+            {editingCommentId ? "Update Comment" : "Submit Comment"}
+          </button>
 
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
-          {editingCommentId ? "Update Comment" : "Submit Comment"}
-        </button>
+        )}
       </form>
 
       {!isFormValid && <p className="text-red-500 text-sm mt-2">Please fill all fields!</p>}
@@ -133,18 +160,27 @@ const CommentLikes = () => {
               </div>
               <p>{comment.text}</p>
               <div className="flex space-x-2 mt-2">
-                <button
-                  onClick={() => handleEdit(comment.id)}
-                  className="text-blue-500 hover:text-blue-700"
-                >
-                  <FaRegEdit />
-                </button>
-                <button
-                  onClick={() => handleDelete(comment.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <MdOutlineDeleteOutline />
-                </button>
+                {!user ? (
+                  <p className="register">
+                    {user.displayName === comment.username ? "You can edit or delete your comment" : "You can't edit or delete this comment"}
+                  </p>
+                ) : (
+                  <div className="flex space-x-2 mt-2">
+                    <button
+                      onClick={() => handleEdit(comment.id)}
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      <FaRegEdit />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(comment.id)}
+                      className="text-red-500 hover:text-red-700"
+                    >
+                      <MdOutlineDeleteOutline />
+                    </button>
+                  </div>
+                )}
+
               </div>
             </li>
           ))}
@@ -152,48 +188,52 @@ const CommentLikes = () => {
       </div>
 
       {/* Əlavə şərhləri göstərmək üçün düymə */}
-      {comments.length > 3 && !showAllComments && (
-        <button
-          onClick={() => setShowAllComments(true)}
-          className="w-full mt-4 bg-green-500 text-black dark:bg-black dark:text-white p-2 rounded-md hover:bg-green-600"
-        >
-          Show More Comments
-        </button>
-      )}
+      {
+        comments.length > 3 && !showAllComments && (
+          <button
+            onClick={() => setShowAllComments(true)}
+            className="w-full mt-4 bg-green-500 text-black dark:bg-black dark:text-white p-2 rounded-md hover:bg-green-600"
+          >
+            Show More Comments
+          </button>
+        )
+      }
 
       {/* Bütün şərhləri göstərmək üçün */}
-      {showAllComments && (
-        <ul className="mt-4 space-y-2">
-          {comments.slice(3).map((comment) => (
-            <li key={comment.id}>
-              <p className="font-semibold">{comment.username}</p>
-              <div className="flex space-x-1 text-yellow-500">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className={star <= comment.rating ? "text-yellow-500" : "text-gray-300"}>
-                    ★
-                  </span>
-                ))}
-              </div>
-              <p>{comment.text}</p>
-              <div className="flex space-x-2 mt-2">
-                <button
-                  onClick={() => handleEdit(comment.id)}
-                  className="text-blue-500 hover:text-blue-700"
-                >
-                  <FaRegEdit />
-                </button>
-                <button
-                  onClick={() => handleDelete(comment.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <MdOutlineDeleteOutline />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      {
+        showAllComments && (
+          <ul className="mt-4 space-y-2">
+            {comments.slice(3).map((comment) => (
+              <li key={comment.id}>
+                <p className="font-semibold">{comment.username}</p>
+                <div className="flex space-x-1 text-yellow-500">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className={star <= comment.rating ? "text-yellow-500" : "text-gray-300"}>
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p>{comment.text}</p>
+                <div className="flex space-x-2 mt-2">
+                  <button
+                    onClick={() => handleEdit(comment.id)}
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    <FaRegEdit />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(comment.id)}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <MdOutlineDeleteOutline />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div >
   );
 };
 
