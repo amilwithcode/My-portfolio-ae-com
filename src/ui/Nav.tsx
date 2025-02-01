@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
@@ -7,9 +8,9 @@ import { useParams } from "next/navigation";
 import { useAuth } from "@/src/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
 // import { getAuth } from "firebase/auth";
-// import { doc, getDoc } from "firebase/firestore";
-// import { db } from "@/src/firebase/config";
-import { useTranslations } from 'next-intl'
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/src/firebase/config";
+import { useTranslations } from "next-intl";
 
 type NavProps = {
   locale: string;
@@ -17,13 +18,13 @@ type NavProps = {
   logOut: () => Promise<void>;
   loading: boolean;
   setLoading: () => void;
-}
+};
 
 export default function Nav(): ReactElement<NavProps> {
   const { user, logOut, setUser } = useAuth();
   const { loading, setLoading } = useState(true);
-  const  t  = useTranslations("HomePage");
-
+  const [displayName, setDisplayName] = useState("");
+  const t = useTranslations("HomePage");
 
   // const auth = getAuth();
   // const currentuser = auth.currentUser;
@@ -33,16 +34,19 @@ export default function Nav(): ReactElement<NavProps> {
   //   const uid: currentuser.uid;
   // }
 
-
-
-  // const docRef = doc(db, 'users', uid)
-  // const docSnap = await getDoc(docRef)
-  // if (docSnap.exists()) {
-  //   console.log(docSnap.data())
-  // } else {
-  //   console.log('notfound')
-  // }
-
+  const getUserData = async () => {
+    const docRef = doc(db, "users", user?.uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      if (!user.displayName) {
+        setDisplayName(docSnap.data().username);
+      } else {
+        setDisplayName(user.displayName);
+      }
+    } else {
+      console.log("notfound");
+    }
+  };
 
   useEffect(() => {
     const checkUser = async () => {
@@ -50,6 +54,7 @@ export default function Nav(): ReactElement<NavProps> {
       //   setLoading(true);
     };
     checkUser();
+    getUserData();
   }, [user]);
 
   const locale = useParams().locale;
@@ -111,9 +116,8 @@ export default function Nav(): ReactElement<NavProps> {
       ) : (
         <div>
           <div className="user flex flex-col justify-center items-center ">
-
             <FaRegUserCircle className="w-5 h-5" />
-            <p className="text-sm">{user?.displayName}</p>
+            <p className="text-sm">{displayName}</p>
             <button
               className="p-3 m-auto hover:outline-2 hover:cursor-pointer text-sm border-black dark:border-white rounded-full md:m-0 sm:mb-10"
               onClick={handleSignOut}
