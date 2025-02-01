@@ -1,22 +1,22 @@
 import type { MetadataRoute } from "next";
 
-// type Robots = {
-//     rules:
-//     | {
-//         userAgent?: string | string[]
-//         allow?: string | string[]
-//         disallow?: string | string[]
-//         crawlDelay?: number
-//     }
-//     | Array<{
-//         userAgent: string | string[]
-//         allow?: string | string[]
-//         disallow?: string | string[]
-//         crawlDelay?: number
-//     }>
-//     sitemap?: string | string[]
-//     host?: string
-// }
+type Robots = {
+    rules:
+    | {
+        userAgent?: string | string[]
+        allow?: string | string[]
+        disallow?: string | string[]
+        crawlDelay?: number
+    }
+    | Array<{
+        userAgent: string | string[]
+        allow?: string | string[]
+        disallow?: string | string[]
+        crawlDelay?: number
+    }>
+    sitemap?: string | string[]
+    host?: string
+}
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -31,6 +31,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://acme.com/sitemap.xml",
+    sitemap: "my-portfolio.ae.com",
   };
 }

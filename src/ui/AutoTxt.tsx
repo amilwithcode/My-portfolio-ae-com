@@ -1,11 +1,11 @@
 "use client";
 
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { useTranslations } from "next-intl";
 
 export const careers = ["Supply Chain Student", "Data Analysis", "Web developer", "Frontend developer"];
 
-function AutoText(){
+function AutoText() {
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
@@ -29,11 +29,11 @@ function AutoText(){
   const isAn = currentCareer.charAt(0).toLowerCase() === 'i';
 
   return (
-    <div className="flex  justify-center items-center  font-permanent text-black dark:bg-black dark:text-white">
-      <h1 className="text-4xl ">
-        I am {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
-      </h1>
-    </div>
+
+    <h1 className="lg:text-4xl md:text-md sm:text-sm ">
+      I am {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
+    </h1>
+
   );
 };
 

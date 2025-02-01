@@ -36,16 +36,16 @@ function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
 
   return (
-    <div className="w-full p-10 dark:bg-black dark:text-white font-permanent">
-      <div className="flex space-x-4 justify-between mb-6">
+    <div className="w-full dark:bg-black dark:text-white font-permanent">
+      <div className="lg:flex space-x-4 justify-between mb-6  md:grid-cols-4 sm:grid sm:grid-cols-2 sm:text-sm sm:m-4">
         {(["All", "Languages", "Frameworks", "Tools"] as Category[]).map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded  ${selectedCategory === category
               ? "bg-blue-600 text-white"
-              : "bg-slate-200 hover:bg-gray-400"
-              } cursor-pointer`}
+              : "bg-white text-blue-600 hover:bg-gray-200 border"
+              } cursor-pointer text-xl md:text-md sm:text-sm `}
           >
             {category}
           </button>
@@ -55,7 +55,7 @@ function Skills() {
         {skills[selectedCategory].map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col items-center text-blue-400 bg-gray-200 p-5 rounded shadow-md hover:bg-blue-600 hover:text-white cursor-pointer"
+            className="flex flex-col items-center border text-blue-400 bg-white p-5 rounded shadow-md hover:bg-blue-600 hover:text-white cursor-pointer"
           >
             <div className="text-3xl mb-2">{skill.icon}</div>
             <span className="text-sm font-medium">{skill.name}</span>

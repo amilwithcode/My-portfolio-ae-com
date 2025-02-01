@@ -30,22 +30,22 @@ function Testimonial() {
 
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array to run once on mount
+  }, []); 
 
   const currentTestimonial = Testimonials[currentIndex];
 
   return (
-    <div className="my-5 flex justify-center items-center w-full">
-      <div className="relative border shadow-lg rounded-lg p-10 w-full max-w-full bg-gradient-to-r from-blue-400 via-red-500 to-green-500 text-white ">
+    <div className="my-5 flex justify-center items-center w-full p-1">
+      <div className="relative border shadow-lg rounded-lg p-20 gap-10 w-full max-w-full  bg-gradient-to-r from-blue-400 via-red-500 to-green-500 text-white ">
         {/* İstifadəçi Məlumatı */}
         <div className="flex flex-col items-center">
           <div className="mb-4">
             <Image
               src={currentTestimonial.avatar}
               alt={currentTestimonial.name}
-              className="w-20 h-20 rounded-full object-cover"
-              // width={80}
-              // height={80}
+              className="w-56 h-56 rounded-full  object-contain  "
+              // width={100}
+              // height={100}
             />
           </div>
           <h3 className="text-lg font-semibold">{currentTestimonial?.name}</h3>
@@ -53,12 +53,12 @@ function Testimonial() {
         </div>
 
         {/* Rəy */}
-        <p className="text-center text-gray-100 my-6">
+        <p className="text-center text-gray-100 m-6">
           {currentTestimonial?.feedback}
         </p>
 
         {/* Nəzarət düymələri */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-4">
+        <div className="absolute bottom-1/2 -translate-y-1/2 left-4">
           <button
             onClick={handlePrev}
             className="text-white hover:text-gray-300 transition"
@@ -104,7 +104,7 @@ function Testimonial() {
         </div>
 
         {/* İndikatorlar */}
-        <div className="flex justify-center space-x-2 mt-4">
+        <div className="flex justify-center space-x-2 mt-4 items-end bottom-0">
           {Testimonials.map((_, index) => (
             <div
               key={index}

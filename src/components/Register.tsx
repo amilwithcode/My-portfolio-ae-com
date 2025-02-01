@@ -7,8 +7,8 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
-
-import { app } from "@/src/firebase/config";
+import { doc, setDoc } from "firebase/firestore";
+import { app, db } from "@/src/firebase/config";
 import ToggleEye from "@/src/ui/toggleEye";
 // import { useTranslations } from "next-intl";
 
@@ -21,22 +21,46 @@ export default function Register() {
     const [error, setError] = useState<string>("");
     const [isShow, setIsShow] = useState<boolean>(false);
     const { locale } = useParams();
+    const [users, setUserData] = useState({
+        userName: "",
+        email: "",
+        password: 0,
+    });
+
+
 
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
+            const { name, value } = e.target;
             const auth = getAuth(app);
-            await createUserWithEmailAndPassword(auth, email, password);
+            const user = await createUserWithEmailAndPassword(auth, email, password);
+    
+            await addUserToFirestore(user.user.uid)
+            setUserData((prev) => ({ ...prev, [name]: value }));
             router.push(`/${locale}`);
         } catch (error) {
-            console.log(error);
             // @ts-expect-error can be message
-            setError(error.message);
+            setError(alert('Formu yenidən doldurun'), console.log(error.message));
         }
     };
 
+    const addUserToFirestore = async (uid) => {
+        
+        try {
+            await setDoc(doc(db, "users", uid), {
+                username: username,
+                email: email,
+                password: parseInt(password, 10),
+            });
+        } catch (error) {
+            console.error("Sənəd əlavə edilərkən xəta baş verdi:", error);
+        }
+    };
+
+
     return (
-        <div className="max-w-md mx-auto text-black dark:bg-black dark:text-white   rounded-lg">
+        <div className="max-w-7xl mx-auto text-black dark:bg-black dark:text-white   rounded-lg">
 
             {/* <Buttons /> */}
             <form className="space-y-4" onSubmit={handleRegister} >
@@ -115,6 +139,7 @@ export default function Register() {
                     <button
                         type="submit"
                         className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        onClick={handleRegister}
                     >
                         Qeydiyyatdan Keçin
                     </button>

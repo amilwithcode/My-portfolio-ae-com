@@ -8,12 +8,11 @@ import SocialSign from "@/src/components/SocialSign";
 import {
     getAuth,
     signInWithEmailAndPassword,
-
 } from "firebase/auth";
 import { app } from "@/src/firebase/config";
 // import { useTranslations } from "next-intl";
 
-function LoginComponent(){
+function LoginComponent() {
     const [isLogin, setIsLogin] = useState<boolean>(true);
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -21,7 +20,8 @@ function LoginComponent(){
     const [isShow, setIsShow] = useState<boolean>(false)
     const router = useRouter();
     const { locale } = useParams();
-
+    
+   
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -39,7 +39,7 @@ function LoginComponent(){
             if (userCredential.user) router.push(`/${locale}`);
         } catch (error) {
             // @ts-expect-error can be message
-            setError(error.message);
+            setError(alert('Email və şifrəni doğru daxil edin'), console.log(error.message));
         }
     };
 
@@ -81,7 +81,7 @@ function LoginComponent(){
                     required
 
                 />
-                <Toggle onClick={() => setIsShow((prev) =>!prev)} isShow={isShow} />
+                <Toggle onClick={() => setIsShow((prev) => !prev)} isShow={isShow} />
             </div>
 
             <div className="text-sm text-blue-600 text-right cursor-pointer">
@@ -92,6 +92,7 @@ function LoginComponent(){
                 <button
                     type="submit"
                     className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    // onClick={handleInputChange}
                 >
                     DAXİL OLUN
                 </button>

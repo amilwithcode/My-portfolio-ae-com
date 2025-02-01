@@ -1,25 +1,48 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { ButtonsCard } from "@/src/ui/ButtonsCard";
 import { useParams } from "next/navigation";
 import { useAuth } from "@/src/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
-// import { useTranslations } from "next-intl";
+// import { getAuth } from "firebase/auth";
+// import { doc, getDoc } from "firebase/firestore";
+// import { db } from "@/src/firebase/config";
+import { useTranslations } from 'next-intl'
 
-// interface NavProps {
-//   locale: string;
-//   user: string | null;
-//   logOut: () => Promise<void>;
-//   loading: boolean;
-//   setLoading: () => void;
-// }
+type NavProps = {
+  locale: string;
+  user: string | null;
+  logOut: () => Promise<void>;
+  loading: boolean;
+  setLoading: () => void;
+}
 
-export default function Nav() {
-  const { user, logOut } = useAuth();
+export default function Nav(): ReactElement<NavProps> {
+  const { user, logOut, setUser } = useAuth();
   const { loading, setLoading } = useState(true);
-  // const t = useTranslations('HomePage');
+  const  t  = useTranslations("HomePage");
+
+
+  // const auth = getAuth();
+  // const currentuser = auth.currentUser;
+  // if (currentuser ) {
+  //   const displayName: currentuser.displayName;
+  //   const email: currentuser.email;
+  //   const uid: currentuser.uid;
+  // }
+
+
+
+  // const docRef = doc(db, 'users', uid)
+  // const docSnap = await getDoc(docRef)
+  // if (docSnap.exists()) {
+  //   console.log(docSnap.data())
+  // } else {
+  //   console.log('notfound')
+  // }
+
 
   useEffect(() => {
     const checkUser = async () => {
@@ -40,14 +63,14 @@ export default function Nav() {
   };
 
   return (
-    <div className=" flex  items-center gap-5  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex-row sm:flex-col ">
-      <ul className="flex items-center gap-10 font-jost md:font-medium text-[24px] leading-[25px] md:text-[14px] md:leading-[14px] tracking-wider md:text-Black-500 text-black dark:bg-black dark:text-white   uppercase   flex-col md:flex-row ">
+    <div className=" flex  items-center gap-3  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex-row sm:text-[5px] sm:leading-[10px] sm:flex-col ">
+      <ul className="flex items-center gap-5 font-jost text-md md:font-medium text-[24px] leading-[25px] md:text-[14px] md:leading-[14px] tracking-wider  text-black dark:bg-black dark:text-white   uppercase   flex-col md:flex-row ">
         <li>
           <Link
             href={`/${locale}/`}
             className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm"
           >
-            home
+            {t("nav.home")}
           </Link>
         </li>
 
@@ -56,7 +79,7 @@ export default function Nav() {
             href={`/${locale}/about`}
             className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
           >
-            about
+            {t("nav.about")}
           </Link>
         </li>
         <li>
@@ -64,7 +87,7 @@ export default function Nav() {
             href={`/${locale}/projects`}
             className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
           >
-            projects
+            {t("nav.projects")}
           </Link>
         </li>
         <li>
@@ -72,29 +95,32 @@ export default function Nav() {
             href={`/${locale}/contact`}
             className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
           >
-            contact
+            {t("nav.contact")}
           </Link>
         </li>
       </ul>
       {loading ? null : !user ? (
-        <ButtonsCard className=" p-5 m-auto hover:outline-2 hover:cursor-pointer dark:hover:border-black border-black dark:border-white rounded-full md:m-0 sm:mb-10">
+        <ButtonsCard className="flex p-3 m-auto hover:outline-2 hover:cursor-pointer dark:hover:border-gray-500 border-black dark:border-white rounded-full md:m-0 sm:mb-10 ">
           <Link
-            href={`/${locale}/login`}
-            className="block   md:mr-3 md:hover:border-b-[1px] border-b-black dark:border-b-white uppercase sm:text-sm"
+            href={`/${locale}/loginregister`}
+            className="block text-center text-xl   hover:border-b-[1px] border-b-black dark:border-b-white uppercase"
           >
-            login
+            {t("nav.login")}
           </Link>
         </ButtonsCard>
       ) : (
         <div>
-          <FaRegUserCircle />
-          <p>{user?.displayName}</p>
-          <button
-            className="p-5 m-auto hover:outline-2 hover:cursor-pointer border-black dark:border-white rounded-full md:m-0 sm:mb-10"
-            onClick={handleSignOut}
-          >
-            SignOut{" "}
-          </button>
+          <div className="user flex flex-col justify-center items-center ">
+
+            <FaRegUserCircle className="w-5 h-5" />
+            <p className="text-sm">{user?.displayName}</p>
+            <button
+              className="p-3 m-auto hover:outline-2 hover:cursor-pointer text-sm border-black dark:border-white rounded-full md:m-0 sm:mb-10"
+              onClick={handleSignOut}
+            >
+              {t("nav.signout")}{" "}
+            </button>
+          </div>
         </div>
       )}
     </div>

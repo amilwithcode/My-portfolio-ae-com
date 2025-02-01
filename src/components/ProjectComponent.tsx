@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { BiBox } from "react-icons/bi";
 import Link from "next/link";
 import projectsData from "@/src/lib/projectsdata";
 // import { useTranslations } from "next-intl";
@@ -13,21 +12,21 @@ function ProjectComponent() {
   const locale = useParams().locale;
 
   return (
-    <div className="flex space-x-6 p-6 ">
+    <div className="flex w-full space-x-6 p-2 ">
       {/* Sidebar */}
       <div className="w-1/4 border  shadow-md rounded-lg font-permanent ">
         <ul className="space-y-4 p-4">
           {projectsData.map((item, index) => (
             <li
               key={index}
-              className={`flex items-center gap-2 p-2 cursor-pointer rounded-lg ${
+              className={`flex items-center gap-2 p-2 cursor-pointer rounded-lg  md:text-md sm:text-sm ${
                 activeCategory === index
                   ? " font-bold text-blue-600"
                   : "hover: text-black dark:bg-black dark:text-white"
               }`}
               onClick={() => setActiveCategory(index)}
             >
-              <BiBox />
+              {item.icon}
               {item.category}
             </li>
           ))}
@@ -41,22 +40,22 @@ function ProjectComponent() {
             {projectsData[activeCategory].projects.map((project, index) => (
               <div
                 key={index}
-                className="border rounded-lg p-4 shadow-md  text-white hover:shadow-lg transition"
+                className="grid gap-4 cursor-pointer border rounded-lg p-3 shadow-md  text-white hover:shadow-lg transition   "
               >
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 object-cover rounded-md mb-4"
+                  className="w-full h-40 object-fill  rounded-md"
                   width={300}
                   height={200}
                 />
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                <h2 className="text-xl font-semibold text-gray-800  md:text-md sm:text-sm">
                   {project.title}
                 </h2>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 md:text-md sm:text-sm">{project.description}</p>
                 <Link
                   href={`${locale}/projects`}
-                  className="flex justify-center items-center w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+                  className="flex justify-center items-center w-full p-2 bg-blue-500 text-white  rounded-lg hover:bg-blue-700 transition md:text-md sm:text-sm"
                 >
                   Learn More
                 </Link>

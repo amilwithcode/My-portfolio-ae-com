@@ -9,7 +9,7 @@ function Login(){
    const [isLogin, setIsLogin] = useState<boolean>(true);
 
     return (
-        <div className="max-w-md mx-auto text-black dark:bg-black dark:text-white border p-8 rounded-lg shadow-lg">
+        <div className="max-w-7xl mx-auto text-black dark:bg-black dark:text-white border p-8 rounded-lg shadow-lg">
             <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-800">
                     {isLogin ? "DAXİL OLUN" : "QOŞULUN"}

@@ -1,13 +1,13 @@
 import wheatherapp1 from "@/src/assets/images/project-images/app-image.png";
-import wheatherapp2 from "@/src/assets/images/project-images/app-image4.png";
-import wheatherapp3 from "@/src/assets/images/project-images/appimage.png";
+import wheatherapp2 from "@/src/assets/images/project-images/appimage.png";
+import wheatherapp3 from "@/src/assets/images/project-images/app-image4.png";
 import gpwebsite from "@/src/assets/images/project-images/gpwebsite.png";
-import gpwebsite1 from "@/src/assets/images/project-images/gpwebsite1.png";
-import gpwebsite2 from "@/src/assets/images/project-images/gpwebsite2.png";
-import gpwebsite3 from "@/src/assets/images/project-images/gpwebsite3.png";
+import gpwebsite1 from "@/src/assets/images/project-images/gpimage1.png";
+import gpwebsite2 from "@/src/assets/images/project-images/gpimage2.png";
+import gpwebsite3 from "@/src/assets/images/project-images/gpimage3.png";
 import gpwebsite4 from "@/src/assets/images/project-images/gpimage4.png";
 import gpwebsite5 from "@/src/assets/images/project-images/gpimage5.png";
-import gpwebsite6 from "@/src/assets/images/project-images/gpwebsite6.png"
+import gpwebsite6 from "@/src/assets/images/project-images/gpimage6_.png"
 import covidDataAnalisis from "@/src/assets/images/project-images/coviddata-image.png";
 import covidDataAnalisis1 from "@/src/assets/images/project-images/covidimage1.png";
 import covidDataAnalisis2 from "@/src/assets/images/project-images/covidimage4.png";
@@ -15,12 +15,12 @@ import sbDataAnalisis from "@/src/assets/images/project-images/pdimage-1.png";
 import sbDataAnalisis1 from "@/src/assets/images/project-images/pdimage-2.png";
 import sbDataAnalisis2 from "@/src/assets/images/project-images/pdimage-3.png";
 import pipelineAnalisis from "@/src/assets/images/project-images/pipelineimage.png";
-import pipelineAnalisis1 from "@/src/assets/images/project-images/pipelineimage1.png";
+import pipelineAnalisis1 from "@/src/assets/images/project-images/pipeline-image1.png";
 import pipelineAnalisis2 from "@/src/assets/images/project-images/pipelineimage2.png";
 import pipelineAnalisis3 from "@/src/assets/images/project-images/pipeline-image.png";
 import pipelineAnalisis4 from "@/src/assets/images/project-images/pipeline-image1.png";
-import pipelineAnalisis5 from "@/src/assets/images/project-images/pipeline-image2.png";
-import pipelineAnalisis6 from "@/src/assets/images/project-images/pipeline-image3.png";
+import pipelineAnalisis5 from "@/src/assets/images/project-images/pipeline-imag2.png";
+// import pipelineAnalisis6 from "@/src/assets/images/project-images/";
 import devImage from "@/src/assets/images/project-images/ae-image.png";
 import devImage1 from "@/src/assets/images/project-images/fz-image.png";
 
@@ -51,7 +51,7 @@ const projects: Project[] = [
         developers: [
             {
                 name: "Amil",
-                image: devImage1.src,
+                image: devImage.src,
                 github: "https://github.com/amilwithcode",
             },
         ],
@@ -66,7 +66,7 @@ const projects: Project[] = [
         developers: [
             {
                 name: "Amil",
-                image: devImage1.src,
+                image: devImage.src,
                 github: "https://github.com/amilwithcode",
             },
         ],
@@ -77,11 +77,11 @@ const projects: Project[] = [
         fullDescription:
             "This project is a pipeline data calculation program. It calculates the flow rate, pressure, and other parameters of a pipeline. The project is open source and available on GitHub.",
         link: "https://github.com/amilwithcode/Pipeline-data-calculation-program",
-        images: [pipelineAnalisis.src, pipelineAnalisis1.src, pipelineAnalisis2.src,pipelineAnalisis3.src,pipelineAnalisis4.src,pipelineAnalisis5.src,pipelineAnalisis6.src],
+        images: [pipelineAnalisis.src, pipelineAnalisis1.src, pipelineAnalisis2.src,pipelineAnalisis3.src,pipelineAnalisis4.src,pipelineAnalisis5.src],
         developers: [
             {
                 name: "Amil",
-                image: devImage1.src,
+                image: devImage.src,
                 github: "https://github.com/amilwithcode",
             },
         ],

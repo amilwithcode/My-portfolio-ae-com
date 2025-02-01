@@ -5,7 +5,8 @@
             "about": "haqqımda",
             "projects": "proyektlər",
             "contact": "əlaqə",
-            "login": "daxil ol"
+            "login": "daxil ol",
+            "signout":"çıxın"
         },
         "header": {
             "title": "Salam Mənim portfolioma xoş gəldiniz",

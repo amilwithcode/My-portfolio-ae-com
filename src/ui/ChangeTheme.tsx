@@ -22,7 +22,7 @@ function ChangeTheme() {
     <button
       type="button"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      className="p-2 rounded-md hover:bg-white dark:hover:bg-black transition-colors"
+      className="pr-2 rounded-md hover:bg-white dark:hover:bg-black "
       aria-label={
         resolvedTheme === "light"
           ? "Switch to dark theme"

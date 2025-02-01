@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
 
-    <nav className="flex justify-between items-center  font-permanent   mx-10 bg-none border-gray-200  lg:pt-[34px] md:pt-[60px]  md:justify-between ">
+    <nav className="flex justify-between items-center  font-permanent  bg-none border-gray-200    md:justify-between ">
       <div className=' flex justify-start   w-10 h-10 rounded-lg'>
         <Logo />
       </div>

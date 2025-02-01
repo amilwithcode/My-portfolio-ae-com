@@ -5,7 +5,7 @@ import LogoImage from "@/src/assets/logo/Logoİmage.png";
 
 function Logo() {
   return (
-    <div>
+    <div className="dark:bg-white rounded-xl">
       <Image src={LogoImage} alt="my website image" className="rounded-lg" />
     </div>
   );

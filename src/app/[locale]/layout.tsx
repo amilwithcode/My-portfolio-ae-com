@@ -38,8 +38,8 @@ export default async function RootLayout({
           <ThemeProvider attribute="class">
             <NextIntlClientProvider messages={messages}>
               <header>
-                <ChangeTheme /> <LocaleSwitcher locale={locale} />
-                <div className=" w-full text-black dark:bg-black dark:text-white">
+                <div className=" w-full  text-black dark:bg-black px-10 dark:text-white ">
+                  <ChangeTheme /> <LocaleSwitcher locale={locale} />
                   <Navbar />
                 </div>
               </header>

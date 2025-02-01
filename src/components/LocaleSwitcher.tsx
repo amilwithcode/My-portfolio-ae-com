@@ -47,7 +47,7 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
       {/* Dil dəyişdirici düyməsi */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-3 p-5 border-1 border-white rounded-8  dark:bg-black dark:text-white cursor-pointer"
+        className="flex items-center gap-3 p-5  rounded-8  dark:bg-black dark:text-white cursor-pointer"
         disabled={isPending}
       >
         <Image
@@ -64,14 +64,18 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 
       {/* Açılan siyahı */}
       {isOpen && (
-        <div className="absolute top-full left-0 border-1 border-gray-300 rounded-8 dark:bg-black dark:text-white shadow-md z-[1000]">
+        <div className="absolute top-12 left-0 border  bg-slate-50 border-gray-300 rounded-8 dark:bg-black dark:text-white shadow-md z-[1000] p-3">
           {locales.map((l) => (
             <button
               key={l.code}
               onClick={() => onSelectChange(l.code)}
               className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer"
             >
-              <Image src={l.icon} alt={l.name} />
+              <Image
+                src={l.icon} alt={l.name}
+                width={20}
+                height={20}
+              />
               <span>{l.name}</span>
             </button>
           ))}

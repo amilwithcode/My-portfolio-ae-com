@@ -17,7 +17,7 @@ function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
 
   return (
     <section className="border py-10 px-3">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
         <div className="flex justify-start overflow-hidden rounded-full shadow-md">
           <Image
             src={imageUrl}
@@ -30,7 +30,7 @@ function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
             🌟 About Me
           </h1>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  ">
-            {name} about
+            {name}
           </h1>
           <p className="text-gray-600 text-base md:text-xs mb-6  ">
             {description}

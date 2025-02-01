@@ -3,9 +3,9 @@ Allow: /
 Disallow: /private/
 
 User-Agent: Applebot
-Disallow: /
+Disallow: @src/assets
 
 User-Agent: Bingbot
-Disallow: /
+Disallow: @src/assets
 
-Sitemap: 
+Sitemap: my-portfolio.web.app

@@ -5,7 +5,8 @@
             "about": "Über uns",
             "projects": "Projekte",
             "contact": "Kontakt",
-            "login": "Login"
+            "login": "Login",
+            "signup":"signup"
         },
         "header": {
             "title": "Hallo, Willkommen in meinem Portfolio",

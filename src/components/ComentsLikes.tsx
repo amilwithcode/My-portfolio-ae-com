@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { useAuth } from '@/src/context/AuthContext'
+import { setDoc, doc } from "firebase/firestore";
+import { db } from '@/src/firebase/config'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 // import { useTranslations } from "next-intl";
 
 type Comment = {
@@ -13,7 +19,7 @@ type Comment = {
   text: string;
 };
 
-function CommentLikes(){
+function CommentLikes() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [username, setUsername] = useState("");
   const [rating, setRating] = useState(0);
@@ -21,7 +27,14 @@ function CommentLikes(){
   const [isFormValid, setIsFormValid] = useState(true);
   const [showAllComments, setShowAllComments] = useState(false);
   const [editingCommentId, setEditingCommentId] = useState<number | null>(null);
-  const { user } = useAuth();
+  const [error, setError] = useState<string>("");
+  const [user] = useAuth();
+  const { comment, setCommentsData } = {
+    username: "",
+    comment: ""
+  }
+  console.log(comments)
+  // const {t} = useTranslations("HomePages")
   // const { loading, setLoading } = useState(true);
   // console.log(user.displayName )
   // useEffect(() => {
@@ -32,13 +45,23 @@ function CommentLikes(){
   //   checkUser()
   // }, [user])
 
-  const userCheck = () => {
-    if (user.displayName === username || user.displayName === "Client") {
-      return (
-        <div>
-          <p>Sign in to leave a comment</p>
-        </div>
-      )
+  const userCheck = async () => {
+    try {
+      if (user.displayName === username || user.displayName === "Client") {
+        return (
+          <div>
+            <p>Sign in to leave a comment</p>
+          </div>
+        )
+      }
+      const auth = getAuth(app);
+      const comment = await createUserWithEmailAndPassword(auth, username, comment);
+      await AddCommentsToFirestore(comment.comment.uid)
+      setCommentsData((prev) => ({ ...prev, [comments]: value }));
+
+    } catch (error) {
+      // @ts-expect-error can be message
+      setError(alert('Formu yenidən doldurun'), console.log(error.message));
     }
   }
 
@@ -100,6 +123,18 @@ function CommentLikes(){
     setComments(updatedComments);
     updateLocalStorage(updatedComments); // Silinmiş şərhləri localStorage-dən çıxarmaq
   };
+  const AddCommentsToFirestore = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      const [name, value] = e.target
+      await setDoc(doc(db, "comments", uid), {
+        username: username,
+        comment: comment,
+      });
+    } catch (error) {
+      console.error('Düzgün əlavə edilmədi', error)
+    }
+  }
 
   return (
     <div className=" w-full  border p-4 text-black dark:bg-black dark:text-white font-permanent shadow-lg rounded-lg">

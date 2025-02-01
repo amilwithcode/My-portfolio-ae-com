@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <main
       id="home"
-      className="flex flex-col  justify-center items-center  mx-auto sm:px-10 px-5 bg-white text-black dark:bg-black dark:text-white"
+      className="flex flex-col  justify-center items-center   sm:px-10  bg-white text-black dark:bg-black dark:text-white"
     >
-      <section id="header" className="my-10 ">
+      <section id="header" >
         <Header />
       </section>
       <section id="skils">
-        <h2 className="flex justify-center items-center my-10  text-black dark:bg-black dark:text-white font-permanent text-2xl ">
+        <h2 className="flex justify-center items-center my-2  text-black dark:bg-black dark:text-white font-permanent text-2xl ">
           Skills
         </h2>
       </section>
@@ -27,8 +27,8 @@ export default function Home() {
         <h2 className="text-2xl my-10  text-center mb-4 text-black dark:bg-black dark:text-white font-permanent">
           Projects
         </h2>
-        <Projects />
       </section>
+      <Projects />
 
       <section id="testimional">
         <h2 className="text-2xl my-10   text-center font-permanent text-black dark:bg-black dark:text-white mb-8 uppercase">

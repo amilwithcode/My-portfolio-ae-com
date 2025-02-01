@@ -5,8 +5,8 @@ import myImage from '@/src/assets/images/myImage.png'
 
 function MyImage()  {
     return (
-        <div>
-            <Image src={myImage} alt="My Image" className='flex  justify-center items-center border rounded ml-2 '/>
+        <div className='w-full h-full'>
+            <Image src={myImage} alt="My Image" className=' border rounded  '/>
         </div>
     )
 }

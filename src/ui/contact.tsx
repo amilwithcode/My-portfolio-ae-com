@@ -43,7 +43,7 @@ function Contact() {
     return (
         <main>
 
-            <section className="max-w-lg mx-auto p-8 border rounded-lg shadow-lg">
+            <section className="max-w-7xl mx-auto p-8 border rounded-lg shadow-lg">
                 <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">Əlaqə</h2>
                 <form ref={form} onSubmit={handleSubmit} className="space-y-6 flex flex-col gap-10">
                     <div className="flex flex-col">
