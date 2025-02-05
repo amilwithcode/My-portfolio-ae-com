@@ -3,10 +3,11 @@
 
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 function Contact() {
   const form = useRef(null);
+  const t = useTranslations("ContactPage")
 
   const [formData, setFormData] = useState({
     name: "",
@@ -50,7 +51,7 @@ function Contact() {
     <main>
       <section className="max-w-7xl mx-auto p-8 border rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">
-          Əlaqə
+          {t("title")}
         </h2>
         <form
           ref={form}
@@ -59,7 +60,7 @@ function Contact() {
         >
           <div className="flex flex-col">
             <label htmlFor="name" className="text-sm font-medium text-gray-700">
-              Adınız
+              {t("name")}
             </label>
             <input
               type="text"
@@ -76,7 +77,7 @@ function Contact() {
               htmlFor="email"
               className="text-sm font-medium text-gray-700"
             >
-              Email
+              {t("email")}
             </label>
             <input
               type="email"
@@ -93,7 +94,7 @@ function Contact() {
               htmlFor="message"
               className="text-sm font-medium text-gray-700"
             >
-              Mesaj
+              {t("mesagge")}
             </label>
             <textarea
               id="message"
@@ -109,14 +110,13 @@ function Contact() {
             type="submit"
             className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
           >
-            Göndər
+            {t("button")}
           </button>
         </form>
         {status && (
           <p
-            className={`mt-4 text-center font-semibold ${
-              status.includes("uğurla") ? "text-green-500" : "text-red-500"
-            }`}
+            className={`mt-4 text-center font-semibold ${status.includes("uğurla") ? "text-green-500" : "text-red-500"
+              }`}
           >
             {status}
           </p>

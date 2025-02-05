@@ -1,14 +1,14 @@
 /* eslint-disable */
 "use client";
 
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Toggle from "@/src/ui/toggleEye";
 import SocialSign from "@/src/components/SocialSign";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "@/src/firebase/config";
-// import { useTranslations } from "next-intl";
+//  import { useTranslations } from "next-intl";
 
 function LoginComponent() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
@@ -34,7 +34,6 @@ function LoginComponent() {
       setPassword("");
       if (userCredential.user) router.push(`/${locale}`);
     } catch (error) {
-      // @ts-expect-error can be message
       setError(
         alert("Email və şifrəni doğru daxil edin"),
         console.log(error.message)
@@ -94,7 +93,7 @@ function LoginComponent() {
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          // onClick={handleInputChange}
+        // onClick={handleInputChange}
         >
           DAXİL OLUN
         </button>

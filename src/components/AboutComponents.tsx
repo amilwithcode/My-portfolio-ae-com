@@ -3,37 +3,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-// import { useTranslations } from "next-intl";
+import MyImage from '@/src/assets/images/myImage.png'
+import { useTranslations } from "next-intl";
 
 interface AboutProps {
   name: string;
-  description: string;
-  imageUrl: string;
   skills: string[];
 }
 
-function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
+function AboutComponent({ name, skills }: AboutProps) {
   const locale = useParams().locale;
+  const t = useTranslations('AboutPage')
 
   return (
     <section className="border py-10 px-3">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
         <div className="flex justify-start overflow-hidden rounded-full shadow-md">
           <Image
-            src={imageUrl}
+            src={MyImage}
             alt={`${name} profile`}
             className="w-full h-full object-cover bg-white"
           />
         </div>
         <div className="flex-1">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  font-permanent">
-            🌟 About Me
+            🌟{t("title")}
           </h1>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  ">
             {name}
           </h1>
           <p className="text-gray-600 text-base md:text-xs mb-6  ">
-            {description}
+            {t("description")}
           </p>
           <div className="font-permanent">
             <h2 className="text-xl font-semibold text-gray-700 mb-2 ">
@@ -52,7 +52,7 @@ function AboutComponent({ name, description, imageUrl, skills }: AboutProps) {
               className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs"
               href={`/${locale}/contact`}
             >
-              Feel free to reach out – I’d be happy to connect!
+              {t("button")}
             </Link>
           </div>
         </div>

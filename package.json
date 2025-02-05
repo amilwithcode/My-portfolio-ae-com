@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "alertifyjs": "^1.14.0",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "firebase": "^11.1.0",

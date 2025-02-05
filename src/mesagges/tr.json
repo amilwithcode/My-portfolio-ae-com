@@ -1,11 +1,12 @@
 {
     "HomePage": {
         "nav": {
-            "home": "",
+            "home": "Ana sayfa",
             "about": "",
             "projects": "",
             "contact": "",
-            "login": ""
+            "login": "",
+            "signout":""
         },
         "header": {
             "title": "",
@@ -55,7 +56,7 @@
         "title": "",
         "name": "",
         "email": "",
-        "message": "",
+        "mesagge": "",
         "button": ""
     },
     "LoginPage": {
@@ -68,6 +69,7 @@
         "button": ""
     },
     "RegisterPage": {
+        "header": "",
         "title": {
             "login": "",
             "register": ""
@@ -83,5 +85,8 @@
     },
     "LoadingPage": {
         "title": "Yükleniyor, lütfen bekleyin"
+    },
+    "Footer":{
+        "foot":""
     }
 }

@@ -7,7 +7,6 @@ import { ButtonsCard } from "@/src/ui/ButtonsCard";
 import { useParams } from "next/navigation";
 import { useAuth } from "@/src/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
-// import { getAuth } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/src/firebase/config";
 import { useTranslations } from "next-intl";
@@ -21,7 +20,7 @@ type NavProps = {
 };
 
 export default function Nav(): ReactElement<NavProps> {
-  const { user, logOut, setUser } = useAuth();
+  const { user, logOut, setUser } = useAuth()??{};
   const { loading, setLoading } = useState(true);
   const [displayName, setDisplayName] = useState("");
   const t = useTranslations("HomePage");
@@ -38,10 +37,10 @@ export default function Nav(): ReactElement<NavProps> {
     const docRef = doc(db, "users", user?.uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      if (!user.displayName) {
+      if (!user?.displayName) {
         setDisplayName(docSnap.data().username);
       } else {
-        setDisplayName(user.displayName);
+        setDisplayName(user?.displayName);
       }
     } else {
       console.log("notfound");

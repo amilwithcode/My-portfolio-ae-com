@@ -1,14 +1,15 @@
 /* eslint-disable */
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactElement } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { useAuth } from "@/src/context/AuthContext";
-import { setDoc, doc } from "firebase/firestore";
-import { db } from "@/src/firebase/config";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc, getDoc, collection, getDocs } from "firebase/firestore";
+import { db, app } from "@/src/firebase/config";
+// import { getAuth } from "firebase/auth";
 // import { useTranslations } from "next-intl";
+
 
 type Comment = {
   id: number;
@@ -17,7 +18,7 @@ type Comment = {
   text: string;
 };
 
-function CommentLikes() {
+function CommentsLikes() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [username, setUsername] = useState("");
   const [rating, setRating] = useState(0);
@@ -26,45 +27,73 @@ function CommentLikes() {
   const [showAllComments, setShowAllComments] = useState(false);
   const [editingCommentId, setEditingCommentId] = useState<number | null>(null);
   const [error, setError] = useState<string>("");
-  const { user } = useAuth();
-  const { comment, setCommentsData } = {
-    username: "",
+  const { user } = useAuth() ?? {};
+  const [comment, setCommentsData] = useState({
+    userName: "",
     comment: "",
-  };
-  // const {t} = useTranslations("HomePages")
-  // const { loading, setLoading } = useState(true);
-  // console.log(user.displayName )
-  // useEffect(() => {
-  //   const checkUser = async () => {
-  //     await new Promise((resolve) => setTimeout(resolve, 50));
-  //     setLoading()
-  //   };
-  //   checkUser()
-  // }, [user])
+  });
 
-  const userCheck = async () => {
+
+  // const t = useTranslations("HomePages")
+
+
+  const userCheck = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
     try {
-      if (user.displayName === username || user.displayName === "Client") {
+      // const { value } = e.target;
+      // const auth = getAuth(app);
+      await AddCommentsToFirestore(coment.comment.uid);
+      // setCommentsData((prev) => ({ ...prev, [comment]: value }));
+      if (user?.displayName === username || user?.displayName === "Client") {
         return (
           <div>
             <p>Sign in to leave a comment</p>
           </div>
         );
       }
-      const auth = getAuth(app);
-      const comment = await createUserWithEmailAndPassword(
-        auth,
-        username,
-        comment
-      );
-      await AddCommentsToFirestore(comment.comment.uid);
-      setCommentsData((prev) => ({ ...prev, [comments]: value }));
+
     } catch (error) {
       // @ts-expect-error can be message
       setError(alert("Formu yenidən doldurun"), console.log(error.message));
     }
   };
+  const getUserData = async () => {
+    const docRef = doc(db, "users", user?.uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      if (!user?.displayName) {
+        setUsername(docSnap.data().username)
+      } else {
+        setUsername(user?.displayName);
+      }
+    } else {
+      console.log("notfound");
+    }
+  };
 
+  const getCommentsData = async () => {
+    const docRef = await getDocs(collection(db, "coments"));
+    setComments(docRef.map((doc) => {
+      return doc.data()
+    }))
+  };
+  useEffect(() => {
+    getCommentsData();
+    getUserData()
+  }, [user]);
+
+
+  const AddCommentsToFirestore = async (uid: any) => {
+
+    try {
+      await setDoc(doc(db, "coments", uid), {
+        username: username,
+        comment: comment,
+      });
+    } catch (error) {
+      console.error("Düzgün əlavə edilmədi", error);
+    }
+  };
   // localStorage-dən şərhləri yükləyirik
   useEffect(() => {
     const storedComments = localStorage.getItem("comments");
@@ -91,7 +120,7 @@ function CommentLikes() {
             ? { ...comment, username, rating, text }
             : comment
         );
-        setEditingCommentId(null); // Redaktə bitdi
+        setEditingCommentId(null);
       } else {
         // Yeni şərh əlavə etmək
         const newComment = { id: Date.now(), username, rating, text };
@@ -125,20 +154,10 @@ function CommentLikes() {
       (comment) => comment.id !== commentId
     );
     setComments(updatedComments);
-    updateLocalStorage(updatedComments); // Silinmiş şərhləri localStorage-dən çıxarmaq
+    updateLocalStorage(updatedComments);
   };
-  const AddCommentsToFirestore = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const [name, value] = e.target;
-      await setDoc(doc(db, "comments", uid), {
-        username: username,
-        comment: comment,
-      });
-    } catch (error) {
-      console.error("Düzgün əlavə edilmədi", error);
-    }
-  };
+  console.log(comments)
+  console.log(username)
 
   return (
     <div className=" w-full  border p-4 text-black dark:bg-black dark:text-white font-permanent shadow-lg rounded-lg">
@@ -157,9 +176,8 @@ function CommentLikes() {
             <span
               key={star}
               onClick={() => setRating(star)}
-              className={`cursor-pointer ${
-                star <= rating ? "text-yellow-500" : "text-gray-300"
-              }`}
+              className={`cursor-pointer ${star <= rating ? "text-yellow-500" : "text-gray-300"
+                }`}
             >
               ★
             </span>
@@ -177,9 +195,9 @@ function CommentLikes() {
           <p>Sign in to leave a comment</p>
         ) : (
           <button
-            onClick={userCheck}
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+            onClick={userCheck}
           >
             {editingCommentId ? "Update Comment" : "Submit Comment"}
           </button>
@@ -215,31 +233,33 @@ function CommentLikes() {
               <div className="flex space-x-2 mt-2">
                 {!user ? (
                   <p className="register">
-                    {user.displayName === comment.username
-                      ? "You can edit or delete your comment"
-                      : "You can't edit or delete this comment"}
+                    Can not sigin
                   </p>
                 ) : (
-                  <div className="flex space-x-2 mt-2">
-                    <button
-                      onClick={() => handleEdit(comment.id)}
-                      className="text-blue-500 hover:text-blue-700"
-                    >
-                      <FaRegEdit />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(comment.id)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <MdOutlineDeleteOutline />
-                    </button>
-                  </div>
+                  { username === comment.username && (
+
+                    <div className="flex space-x-2 mt-2">
+                      <button
+                        onClick={() => handleEdit(comment.id)}
+                        className="text-blue-500 hover:text-blue-700"
+                      >
+                        <FaRegEdit />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(comment.id)}
+                        className="text-red-500 hover:text-red-700"
+                      >
+                        <MdOutlineDeleteOutline />
+                      </button>
+                    </div>
+                  )}
                 )}
               </div>
             </li>
           ))}
         </ul>
       </div>
+
 
       {/* Əlavə şərhləri göstərmək üçün düymə */}
       {comments.length > 3 && !showAllComments && (
@@ -272,20 +292,25 @@ function CommentLikes() {
                 ))}
               </div>
               <p>{comment.text}</p>
-              <div className="flex space-x-2 mt-2">
-                <button
-                  onClick={() => handleEdit(comment.id)}
-                  className="text-blue-500 hover:text-blue-700"
-                >
-                  <FaRegEdit />
-                </button>
-                <button
-                  onClick={() => handleDelete(comment.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <MdOutlineDeleteOutline />
-                </button>
-              </div>
+              {user ? (
+                <div className="flex space-x-2 mt-2">
+                  <button
+                    onClick={() => handleEdit(comment.id)}
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    <FaRegEdit />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(comment.id)}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <MdOutlineDeleteOutline />
+                  </button>
+                </div>
+
+              ) : (
+                <p>You write to again your name</p>
+              )}
             </li>
           ))}
         </ul>
@@ -294,4 +319,4 @@ function CommentLikes() {
   );
 }
 
-export default CommentLikes;
+export default CommentsLikes;

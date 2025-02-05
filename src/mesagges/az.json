@@ -6,7 +6,7 @@
             "projects": "proyektlər",
             "contact": "əlaqə",
             "login": "daxil ol",
-            "signout":"çıxın"
+            "signout": "çıxın"
         },
         "header": {
             "title": "Salam Mənim portfolioma xoş gəldiniz",
@@ -35,7 +35,7 @@
                 "header": "",
                 "description": ""
             },
-            "button":""
+            "button": ""
         },
         "testimonials": {
             "header": "",
@@ -53,11 +53,11 @@
         "button": ""
     },
     "ContactPage": {
-        "title": "",
-        "name": "",
-        "email": "",
-        "message": "",
-        "button": ""
+        "title": "  Əlaqə",
+        "name": " Adınız",
+        "email": "Email",
+        "mesagge": "Mesaj",
+        "button": "Göndər"
     },
     "LoginPage": {
         "title": {
@@ -69,6 +69,7 @@
         "button": ""
     },
     "RegisterPage": {
+        "header": "",
         "title": {
             "login": "",
             "register": ""
@@ -84,5 +85,8 @@
     },
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"
+    },
+    "Footer":{
+        "foot":""
     }
 }

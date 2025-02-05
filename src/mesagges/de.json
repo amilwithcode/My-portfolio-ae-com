@@ -6,7 +6,7 @@
             "projects": "Projekte",
             "contact": "Kontakt",
             "login": "Login",
-            "signup":"signup"
+            "signout":"signout"
         },
         "header": {
             "title": "Hallo, Willkommen in meinem Portfolio",
@@ -56,7 +56,7 @@
         "title": "",
         "name": "",
         "email": "",
-        "message": "",
+        "mesagge": "",
         "button": ""
     },
     "LoginPage": {
@@ -69,6 +69,7 @@
         "button": ""
     },
     "RegisterPage": {
+        "header": "",
         "title": {
             "login": "",
             "register": ""
@@ -84,5 +85,8 @@
     },
     "LoadingPage": {
         "title": "Wird geladen, bitte warten"
+    },
+    "Footer":{
+        "foot":""
     }
 }

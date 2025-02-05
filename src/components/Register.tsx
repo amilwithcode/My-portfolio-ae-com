@@ -8,6 +8,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { app, db } from "@/src/firebase/config";
 import ToggleEye from "@/src/ui/toggleEye";
+// import {alertify} from 'alertifyjs'
 // import { useTranslations } from "next-intl";
 
 export default function Register() {
@@ -24,7 +25,7 @@ export default function Register() {
     password: 0,
   });
 
-  const handleRegister = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const { name, value } = e.target;
@@ -34,13 +35,14 @@ export default function Register() {
       await addUserToFirestore(user.user.uid);
       setUserData((prev) => ({ ...prev, [name]: value }));
       router.push(`/${locale}`);
+      // alertify.alert('Register mesagge', 'Register is succes!', function(){ alertify.success('Ok'); })
     } catch (error) {
       // @ts-expect-error can be message
       setError(alert("Formu yenidən doldurun"), console.log(error.message));
     }
   };
 
-  const addUserToFirestore = async (uid) => {
+  const addUserToFirestore = async (uid:any) => {
     try {
       await setDoc(doc(db, "users", uid), {
         username: username,
