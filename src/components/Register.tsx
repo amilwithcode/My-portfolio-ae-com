@@ -8,7 +8,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { app, db } from "@/src/firebase/config";
 import ToggleEye from "@/src/ui/toggleEye";
-// import {alertify} from 'alertifyjs'
+import { ToastContainer, toast } from 'react-toastify';
+
 // import { useTranslations } from "next-intl";
 
 export default function Register() {
@@ -25,7 +26,9 @@ export default function Register() {
     password: 0,
   });
 
-  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleRegister = async (e: React.FormEvent) => {
+
     e.preventDefault();
     try {
       const { name, value } = e.target;
@@ -35,14 +38,23 @@ export default function Register() {
       await addUserToFirestore(user.user.uid);
       setUserData((prev) => ({ ...prev, [name]: value }));
       router.push(`/${locale}`);
-      // alertify.alert('Register mesagge', 'Register is succes!', function(){ alertify.success('Ok'); })
+
+
+      toast.success('Register Success!', {
+        position: 'top-center',
+      });
+
     } catch (error) {
-      // @ts-expect-error can be message
-      setError(alert("Formu yenidən doldurun"), console.log(error.message));
+      
+      // setError(alert("Formu yenidən doldurun"), console.log(error.message),);
+      toast.error('You register to again!', {
+        position: 'top-center',
+      });
     }
   };
 
-  const addUserToFirestore = async (uid:any) => {
+  const addUserToFirestore = async (uid: any) => {
+
     try {
       await setDoc(doc(db, "users", uid), {
         username: username,
@@ -142,6 +154,9 @@ export default function Register() {
             onClick={handleRegister}
           >
             Qeydiyyatdan Keçin
+
+            <ToastContainer />
+
           </button>
         </div>
         <SocialSign />

@@ -1,7 +1,8 @@
 /* eslint-disable */
 "use client";
 
-import { useState, useEffect, ReactElement } from "react";
+
+import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { useAuth } from "@/src/context/AuthContext";
@@ -13,9 +14,11 @@ import {
     getDocs,
     DocumentData,
 } from "firebase/firestore";
-import { db, app } from "@/src/firebase/config";
 
-type Comment = {
+import { db } from "@/src/firebase/config";
+
+export type Comment = {
+
     id: number;
     username: string;
     rating: number;
@@ -161,11 +164,12 @@ function CommentsLikes() {
                         <span
                             key={star}
                             onClick={() => setRating(star)}
-                            className={`cursor-pointer ${
-                                star <= rating
+
+                            className={`cursor-pointer ${star <= rating
                                     ? "text-yellow-500"
                                     : "text-gray-300"
-                            }`}
+                                }`}
+
                         >
                             ★
                         </span>
@@ -185,7 +189,7 @@ function CommentsLikes() {
                     <button
                         type="submit"
                         className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-                        // onClick={userCheck}
+
                     >
                         {editingCommentId ? "Update Comment" : "Submit Comment"}
                     </button>

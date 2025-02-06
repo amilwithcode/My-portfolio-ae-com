@@ -16,12 +16,12 @@ type NavProps = {
   user: string | null;
   logOut: () => Promise<void>;
   loading: boolean;
-  setLoading: () => void;
+  // setLoading: () => void;
 };
 
 export default function Nav(): ReactElement<NavProps> {
-  const { user, logOut, setUser } = useAuth()??{};
-  const { loading, setLoading } = useState(true);
+  const { user, logOut } = useAuth() ?? {};
+  const { loading, setLoading } = useState<boolean | any>();
   const [displayName, setDisplayName] = useState("");
   const t = useTranslations("HomePage");
 
@@ -50,7 +50,7 @@ export default function Nav(): ReactElement<NavProps> {
   useEffect(() => {
     const checkUser = async () => {
       await new Promise((resolve) => setTimeout(resolve, 50));
-      //   setLoading(true);
+      // setLoading(true);
     };
     checkUser();
     getUserData();
@@ -116,7 +116,7 @@ export default function Nav(): ReactElement<NavProps> {
         <div>
           <div className="user flex flex-col justify-center items-center ">
             <FaRegUserCircle className="w-5 h-5" />
-            <p className="text-sm">{displayName}</p>
+            <p className="text-sm">{user.displayName || displayName}</p>
             <button
               className="p-3 m-auto hover:outline-2 hover:cursor-pointer text-sm border-black dark:border-white rounded-full md:m-0 sm:mb-10"
               onClick={handleSignOut}

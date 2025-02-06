@@ -13,4 +13,6 @@ Disallow: /src/navigation
 Disallow: /src/public/
 Disallow: /src/robots.txt
 
-Sitemap: my-portfolio.web.app.xml
+
+Sitemap: my-portfolio-ae.web.app.xml
+
