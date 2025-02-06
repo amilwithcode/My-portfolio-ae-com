@@ -34,8 +34,8 @@
                 "title": "",
                 "header": "",
                 "description": ""
-            },
-            "button": ""
+            }
+            
         },
         "testimonials": {
             "header": "",
@@ -60,23 +60,52 @@
         "button": "Send"
     },
     "LoginPage": {
-        "title": {
+        "email": "",
+        "password": "Şifrə",
+        "resertpassword": "",
+        "button": ""
+    },
+    "ProjectsPage": {
+        "title": "Projects",
+        "projects": {
+            "title": {
+                "project1": "COVID-19 Data Analysis",
+                "project2": "Smartphone Brands Data Analysis",
+                "project3": "Pipeline data calculation program",
+                "project4": "Weather Forecast Website",
+                "project5": "Graphic real website"
+            },
+            "description": {
+                "project1": "COVID-19 cases data analysis with python and libraries",
+                "project2": "Data analysis of smartphone brands using python and libraries",
+                "project3": "Pipeline data calculation program using python and libraries",
+                "project4": "Azerbaijan cities weather forecast website",
+                "project5": "Graphic design website with React+Vite and Javascript"
+            },
+            "fulldescription": {
+                "project1": "This project is a data analysis of COVID-19 cases. It analyzes the number of cases, deaths, and recoveries in different countries. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+                "project2": "This project is a data analysis of smartphone brands. It analyzes the popularity of different smartphone brands based on sales and market share. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+                "project3": "This project is a pipeline data calculation program. It calculates the flow rate, pressure, and other parameters of a pipeline. The project is open source and available on GitHub.",
+                "project4": "This project is a weather forecast website for Azerbaijan cities. It shows the current weather and the forecast for the next 5 days. The website is built using React and Tailwind CSS. The weather data is fetched from the OpenWeatherMap API. The website is responsive and works on all devices. The project is open source and available on GitHub.",
+                "project5": "This project is a graphic design website. It showcases the work of a graphic designer. The website is built using React+Vite and Javascript. The website is responsive and works on all devices. The project is open source and available on GitHub."
+            }
+        },
+        "button": "Learn more",
+        "githubButton": "View GitHub"
+    },
+    "RegisterPage": {
+        "header": {
             "login": "",
             "register": ""
         },
-        "email": "",
-        "password": "",
-        "button": ""
-    },
-    "RegisterPage": {
-        "header": "",
         "title": {
             "login": "",
             "register": ""
         },
         "name": "",
         "email": "",
-        "password": "",
+        "password": " ",
+        "resertpassword": "",
         "button": ""
     },
     "NotfoundPage": {
@@ -86,7 +115,7 @@
     "LoadingPage": {
         "title": "Loading, please wait"
     },
-    "Footer":{
-        "foot":"My website"
+    "Footer": {
+        "foot": "My website"
     }
 }

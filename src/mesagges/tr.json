@@ -6,7 +6,7 @@
             "projects": "",
             "contact": "",
             "login": "",
-            "signout":""
+            "signout": ""
         },
         "header": {
             "title": "",
@@ -34,8 +34,7 @@
                 "title": "",
                 "header": "",
                 "description": ""
-            },
-            "button":""
+            }
         },
         "testimonials": {
             "header": "",
@@ -59,17 +58,45 @@
         "mesagge": "",
         "button": ""
     },
-    "LoginPage": {
-        "title": {
-            "login": "",
-            "register": ""
+    "ProjectsPage": {
+        "title": "",
+        "projects": {
+            "title": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            },
+            "description": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            },
+            "fulldescription": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            }
         },
+        "button": "",
+        "githubButton": ""
+    },
+    "LoginPage": {
         "email": "",
         "password": "",
+        "resertpassword": "",
         "button": ""
     },
     "RegisterPage": {
-        "header": "",
+        "header": {
+            "login": "",
+            "register": ""
+        },
         "title": {
             "login": "",
             "register": ""
@@ -77,6 +104,7 @@
         "name": "",
         "email": "",
         "password": "",
+        "resertpassword": "",
         "button": ""
     },
     "NotfoundPage": {
@@ -86,7 +114,7 @@
     "LoadingPage": {
         "title": "Yükleniyor, lütfen bekleyin"
     },
-    "Footer":{
-        "foot":""
+    "Footer": {
+        "foot": ""
     }
 }

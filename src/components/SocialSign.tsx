@@ -3,8 +3,9 @@
 
 import { useAuth } from '@/src/context/AuthContext'
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
-function SocialSign(){
+function SocialSign() {
 
     const { googleSignIn, facebookSignIn } = useAuth();
     // console.log(user)
@@ -14,6 +15,9 @@ function SocialSign(){
             await googleSignIn();
         } catch (error) {
             console.log(error);
+            toast.error('Yenidən daxil olun', {
+                position: 'top-center',
+            });
         }
     }
     const handleFacebookSignIn = async () => {
@@ -21,6 +25,9 @@ function SocialSign(){
             await facebookSignIn();
         } catch (error) {
             console.log(error);
+            toast.error('Yenidən daxil olun', {
+                position: 'top-center',
+            });
         }
     }
 
@@ -40,6 +47,7 @@ function SocialSign(){
                     className="w-full flex items-center justify-center text-center gap-2 bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none"
                 >
                     <FaGoogle /> <h1> Google</h1>
+                    <ToastContainer />
                 </button>
                 <button
                     onClick={handleFacebookSignIn}
@@ -48,6 +56,7 @@ function SocialSign(){
                 >
                     <FaFacebookF />
                     <h1>Facebook</h1>
+                    <ToastContainer />
                 </button>
             </div>
         </div>

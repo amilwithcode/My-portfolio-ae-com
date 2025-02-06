@@ -1,14 +1,15 @@
 /* eslint-disable */
 "use client";
 
-import  { useState } from "react";
+import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Toggle from "@/src/ui/toggleEye";
 import SocialSign from "@/src/components/SocialSign";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "@/src/firebase/config";
-//  import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import { ToastContainer, toast } from 'react-toastify';
 
 function LoginComponent() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
@@ -18,6 +19,7 @@ function LoginComponent() {
   const [isShow, setIsShow] = useState<boolean>(false);
   const router = useRouter();
   const { locale } = useParams();
+  const t = useTranslations("LoginPage")
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,10 +36,10 @@ function LoginComponent() {
       setPassword("");
       if (userCredential.user) router.push(`/${locale}`);
     } catch (error) {
-      setError(
-        alert("Email və şifrəni doğru daxil edin"),
-        console.log(error.message)
-      );
+      
+      toast.error('Email və şifrəni doğru daxil edin', {
+        position: 'top-center',
+      });
     }
   };
 
@@ -48,7 +50,7 @@ function LoginComponent() {
           htmlFor="email"
           className="block text-sm font-medium text-gray-700"
         >
-          E-mail ünvanı
+          {t("email")} 
         </label>
         <input
           type="email"
@@ -66,7 +68,7 @@ function LoginComponent() {
           htmlFor="password"
           className="block text-sm font-medium text-gray-700"
         >
-          Şifrə
+          {t("password")}
         </label>
         <input
           type={isShow ? "text" : "password"}
@@ -85,7 +87,7 @@ function LoginComponent() {
           href={`/${locale}/resertpasword`}
           onClick={() => setIsLogin(false)}
         >
-          Şifrənizi unutmusanız?
+          {t("resertpassword")}
         </Link>
       </div>
 
@@ -95,7 +97,8 @@ function LoginComponent() {
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         // onClick={handleInputChange}
         >
-          DAXİL OLUN
+          {t("button")}
+          <ToastContainer/>
         </button>
       </div>
 

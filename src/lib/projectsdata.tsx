@@ -1,13 +1,13 @@
 
-import React ,{JSX} from "react";
+import React, { JSX } from "react";
 import AppImage from "@/src/assets/images/project-images/app-image.png";
 import GraphicImage from "@/src/assets/images/project-images/gpimage1.png";
 import DataImage1 from "@/src/assets/images/project-images/coviddata-image.png";
 import DataImage2 from "@/src/assets/images/project-images/pdimage-1.png";
 import PipelineImage from "@/src/assets/images/project-images/pipeline-image1.png"
-import {FaBorderAll,FaDatabase,FaPython} from "react-icons/fa";
+import { FaBorderAll, FaDatabase, FaPython } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-
+import { useTranslations } from "next-intl";
 
 
 interface Project {
@@ -15,81 +15,81 @@ interface Project {
   image: string;
   description: string;
 }
-
-const projectsData: { category: string; icon:JSX.Element; projects: Project[] }[] = [
+const t = useTranslations("ProjectsPage")
+function projectsData: { category: string; icon: JSX.Element; projects: Project[] }[] =[
   {
     category: "All projects",
-    icon:<FaBorderAll />,
+    icon: <FaBorderAll />,
     projects: [
       {
-        title: "COVID-19 Data Analysis",
+        title: `${t("projects.title.project1")}`,
         image: DataImage1.src,
-        description: "Analyzing COVID-19 trends using Python.",
+        description: `${t("projects.description.project1")}`,
       },
       {
-        title: "Smartphone Sales Insights",
+        title: `${t("projects.title.project2")}`,
         image: DataImage2.src,
-        description: "Insights into smartphone sales trends.",
+        description: `${t("projects.description.project2")}`,
       },
       {
-        title: "Weather App",
+        title: `${t("projects.title.project3")}`,
         image: AppImage.src,
         description:
-          "Azerbaijan Weather App is a web application that provides weather information for cities in Azerbaijan.",
+          `${t("projects.description.project3")}`,
       },
       {
-        title: "Graphic Design website",
+        title: `${t("projects.title.project4")}`,
         image: GraphicImage.src,
-        description: "A website for a graphic design company.",
+        description: `${t("projects.description.project4")}`,
       },
       {
-        title: "Pipeline data calculation program",
+        title: `${t("projects.title.project5")}`,
         image: PipelineImage.src,
-        description: "Pipeline data calculation program using python and libraries",
+        description: `${t("projects.description.project5")}`,
       },
     ],
   },
   {
     category: "Web Development",
-    icon:<MdWeb />,
+    icon: <MdWeb />,
     projects: [
       {
-        title: "Weather App",
+        title: `${t("projects.title.project3")}`,
         image: AppImage.src,
         description:
-          "Azerbaijan Weather App is a web application that provides weather information for cities in Azerbaijan.",
+          `${t("projects.description.project3")}`,
       },
       {
-        title: "Graphic Design website",
+        title: `${t("projects.title.project4")}`,
         image: GraphicImage.src,
-        description: "A website for a graphic design company.",
+        description: `${t("projects.description.project4")}`,
       },
     ],
   },
   {
     category: "Data Analysis",
-    icon:<FaDatabase/>,
+    icon: <FaDatabase />,
     projects: [
       {
-        title: "COVID-19 Data Analysis",
+        title:`${t("projects.title.project1")}`,
         image: DataImage1.src,
-        description: "Analyzing COVID-19 trends using Python.",
+        description: `${t("projects.description.project1")}`,
       },
       {
-        title: "Smartphone Sales Insights",
+        title: `${t("projects.title.project2")}`,
         image: DataImage2.src,
-        description: "Insights into smartphone sales trends.",
+        description: `${t("projects.description.project2")}`,
       },
     ],
   },
   {
     category: "Python programing",
-    icon:<FaPython/>,
+    icon: <FaPython />,
     projects: [
       {
-        title: "Pipeline data calculation program",
+        title: `${t("projects.title.project5")}`,
         image: PipelineImage.src,
-        description: "Pipeline data calculation program using python and libraries",
+        description: `${t("projects.description.project5")}`,
       },
     ],
   },

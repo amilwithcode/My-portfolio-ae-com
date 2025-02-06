@@ -34,8 +34,8 @@
                 "title": "",
                 "header": "",
                 "description": ""
-            },
-            "button": ""
+            }
+            
         },
         "testimonials": {
             "header": "",
@@ -60,24 +60,53 @@
         "button": "Göndər"
     },
     "LoginPage": {
-        "title": {
-            "login": "",
-            "register": ""
-        },
-        "email": "",
-        "password": "",
-        "button": ""
+        "email": "E-mail",
+        "password": "Şifrə",
+        "resertpassword": "Şifrənizi unutmusanız?",
+        "button": "DAXİL OLUN"
     },
     "RegisterPage": {
-        "header": "",
-        "title": {
-            "login": "",
-            "register": ""
+        "header": {
+            "login": "DAXİL OLUN",
+            "register": "QOŞULUN"
         },
-        "name": "",
-        "email": "",
-        "password": "",
-        "button": ""
+        "title": {
+            "login": "Hesabnıza daxil olun",
+            "register": "Qeydiyatdan keçin"
+        },
+        "name": "İstifadəçi adı",
+        "email": "E-mail",
+        "password": " Şifrə",
+        "resertpassword": "Şifrəni təsdiq edin",
+        "button": "Qeydiyyatdan Keçin"
+    },
+    "ProjectsPage": {
+        "title": "",
+        "projects": {
+            "title": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            },
+            "description": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            },
+            "fulldescription": {
+                "project1": "",
+                "project2": "",
+                "project3": "",
+                "project4": "",
+                "project5": ""
+            }
+        },
+        "button": "",
+        "githubButton": ""
     },
     "NotfoundPage": {
         "title": "",
@@ -86,7 +115,7 @@
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"
     },
-    "Footer":{
-        "foot":""
+    "Footer": {
+        "foot": ""
     }
 }

@@ -9,8 +9,8 @@ import { doc, setDoc } from "firebase/firestore";
 import { app, db } from "@/src/firebase/config";
 import ToggleEye from "@/src/ui/toggleEye";
 import { ToastContainer, toast } from 'react-toastify';
+import { useTranslations } from "next-intl";
 
-// import { useTranslations } from "next-intl";
 
 export default function Register() {
   const [username, setUsername] = useState<string>("");
@@ -25,6 +25,7 @@ export default function Register() {
     email: "",
     password: 0,
   });
+  const t = useTranslations('RegisterPage')
 
 
   const handleRegister = async (e: React.FormEvent) => {
@@ -45,8 +46,7 @@ export default function Register() {
       });
 
     } catch (error) {
-      
-      // setError(alert("Formu yenidən doldurun"), console.log(error.message),);
+
       toast.error('You register to again!', {
         position: 'top-center',
       });
@@ -75,7 +75,7 @@ export default function Register() {
             htmlFor="username"
             className="block text-sm font-medium text-gray-700"
           >
-            İstifadəçi adı
+            {t("name")}
           </label>
           <input
             type="text"
@@ -92,7 +92,7 @@ export default function Register() {
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
           >
-            E-mail ünvanı
+            {t("email")}
           </label>
           <input
             type="email"
@@ -110,7 +110,7 @@ export default function Register() {
             htmlFor="password"
             className="block text-sm font-medium text-gray-700"
           >
-            Şifrə
+            {t(password)}
           </label>
           <input
             type={isShow ? "text" : "password"}
@@ -132,7 +132,7 @@ export default function Register() {
             htmlFor="confirmPassword"
             className="block text-sm font-medium text-gray-700"
           >
-            Şifrəni təsdiq edin
+            {t("resertpassword")}
           </label>
           <input
             type={isShow ? "text" : "password"}
@@ -153,7 +153,8 @@ export default function Register() {
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={handleRegister}
           >
-            Qeydiyyatdan Keçin
+
+            {t('button')}
 
             <ToastContainer />
 

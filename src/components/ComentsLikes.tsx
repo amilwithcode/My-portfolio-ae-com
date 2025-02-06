@@ -16,6 +16,7 @@ import {
 } from "firebase/firestore";
 
 import { db } from "@/src/firebase/config";
+import { toast } from "react-toastify";
 
 export type Comment = {
 
@@ -74,6 +75,9 @@ function CommentsLikes() {
             });
         } catch (error) {
             console.error("Düzgün əlavə edilmədi", error);
+            toast.error("Düzgün əlavə edilmədi", {
+                position: 'top-center',
+            })
         }
     };
     // localStorage-dən şərhləri yükləyirik
@@ -166,8 +170,8 @@ function CommentsLikes() {
                             onClick={() => setRating(star)}
 
                             className={`cursor-pointer ${star <= rating
-                                    ? "text-yellow-500"
-                                    : "text-gray-300"
+                                ? "text-yellow-500"
+                                : "text-gray-300"
                                 }`}
 
                         >

@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import projects from "@/src/lib/projects";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 function Projects() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const t = useTranslations("ProjectsPage")
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,7 +30,7 @@ function Projects() {
   return (
     <section id="projects" >
       <h2 className="text-3xl font-bold text-center mb-8 font-permanent">
-        Projects
+        {t("title")}
       </h2>
       <div className="container mx-auto flex flex-col  gap-8 font-permanent">
         {projects.map((project, index) => (
@@ -62,7 +63,7 @@ function Projects() {
               href={project.link}
               className="mt-4 inline-block text-blue-500  dark:bg-black dark:text-white hover:underline"
             >
-              Learn more
+              {t("button")}
             </Link>
 
             {/* Developer Section */}
@@ -86,7 +87,7 @@ function Projects() {
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:underline text-sm border-b border-blue-500"
                       >
-                        View GitHub
+                        {t("githubButton")}
                       </Link>
                     </div>
                   </div>

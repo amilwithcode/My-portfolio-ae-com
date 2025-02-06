@@ -23,29 +23,29 @@ import pipelineAnalisis5 from "@/src/assets/images/project-images/pipeline-imag2
 // import pipelineAnalisis6 from "@/src/assets/images/project-images/";
 import devImage from "@/src/assets/images/project-images/ae-image.png";
 import devImage1 from "@/src/assets/images/project-images/fz-image.png";
+import { useTranslations } from "next-intl";
 
-
-type Project = {
-    title: string;
-    shortDescription: string;
-    fullDescription: string;
-    link: string;
-    images: string[];
+type Project =[
+    title: string,
+    shortDescription: string,
+    fullDescription: string,
+    link: string,
+    images: string[],
     developers: {
         name: string;
         image: string;
         github: string;
-    }[];
-};
+    }[],
+];
 
+const t = useTranslations("ProjectsPage")
+function projects(): Project[] =[
 
-const projects: Project[] = [
-    
     {
-        title: "COVID-19 Data Analysis",
-        shortDescription: "COVID-19 cases data analysis with python and libraries",
+        title: `${t("projects.title.project1")}`,
+        shortDescription: `${t("projects.description.project1")}`,
         fullDescription:
-            "This project is a data analysis of COVID-19 cases. It analyzes the number of cases, deaths, and recoveries in different countries. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+            `${t("projects.fulldescription.project1")}`,
         link: "https://github.com/amilwithcode/DataAnalysis-COVID-19",
         images: [covidDataAnalisis.src, covidDataAnalisis1.src, covidDataAnalisis2.src],
         developers: [
@@ -57,10 +57,10 @@ const projects: Project[] = [
         ],
     },
     {
-        title: "Smartphone Brands Data Analysis",
-        shortDescription: "Data analysis of smartphone brands using python and libraries",
+        title: `${t("projects.title.project2")}`,
+        shortDescription: `${t("projects.description.project2")}`,
         fullDescription:
-            "This project is a data analysis of smartphone brands. It analyzes the popularity of different smartphone brands based on sales and market share. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+            `${t("projects.fulldescription.project2")}`,
         link: "https://github.com/amilwithcode/DataAnalysis-PhoneDataset",
         images: [sbDataAnalisis.src, sbDataAnalisis1.src, sbDataAnalisis2.src],
         developers: [
@@ -72,12 +72,12 @@ const projects: Project[] = [
         ],
     },
     {
-        title: "Pipeline data calculation program",
-        shortDescription: "Pipeline data calculation program using python and libraries",
+        title: `${t("projects.title.project3")}`,
+        shortDescription: `${t("projects.description.project3")}`,
         fullDescription:
-            "This project is a pipeline data calculation program. It calculates the flow rate, pressure, and other parameters of a pipeline. The project is open source and available on GitHub.",
+            `${t("projects.fulldescription.project3")}`,
         link: "https://github.com/amilwithcode/Pipeline-data-calculation-program",
-        images: [pipelineAnalisis.src, pipelineAnalisis1.src, pipelineAnalisis2.src,pipelineAnalisis3.src,pipelineAnalisis4.src,pipelineAnalisis5.src],
+        images: [pipelineAnalisis.src, pipelineAnalisis1.src, pipelineAnalisis2.src, pipelineAnalisis3.src, pipelineAnalisis4.src, pipelineAnalisis5.src],
         developers: [
             {
                 name: "Amil",
@@ -87,10 +87,10 @@ const projects: Project[] = [
         ],
     },
     {
-        title: "Weather Forecast Website",
-        shortDescription: "Azerbaijan cities weather forecast website",
+        title: `${t("projects.title.project4")}`,
+        shortDescription: `${t("projects.description.project4")}`,
         fullDescription:
-            "This project is a weather forecast website for Azerbaijan cities. It shows the current weather and the forecast for the next 5 days. The website is built using React and Tailwind CSS. The weather data is fetched from the OpenWeatherMap API. The website is responsive and works on all devices. The project is open source and available on GitHub.",
+            `${t("projects.fulldescription.project4")}`,
         link: "https://github.com/feridzeyn/hava-app",
         images: [wheatherapp1.src, wheatherapp2.src, wheatherapp3.src],
         developers: [
@@ -107,12 +107,12 @@ const projects: Project[] = [
         ],
     },
     {
-        title: "Graphic real website",
-        shortDescription: "Graphic design website with React+Vite and Javascript",
+        title: `${t("projects.title.project4")}`,
+        shortDescription: `${t("projects.description.project4")}`,
         fullDescription:
-            "This project is a graphic design website. It showcases the work of a graphic designer. The website is built using React+Vite and Javascript. The website is responsive and works on all devices. The project is open source and available on GitHub.",
+            `${t("projects.fulldescription.project4")}`,
         link: "https://github.com/feridzeyn/Design",
-        images: [gpwebsite.src,gpwebsite1.src, gpwebsite2.src, gpwebsite3.src,gpwebsite4.src,gpwebsite5.src,gpwebsite6.src],
+        images: [gpwebsite.src, gpwebsite1.src, gpwebsite2.src, gpwebsite3.src, gpwebsite4.src, gpwebsite5.src, gpwebsite6.src],
         developers: [
             {
                 name: "Fərid ",
