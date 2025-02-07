@@ -36,7 +36,7 @@ export default async function RootLayout({
       <body>
         <AuthContextProvider>
           <ThemeProvider attribute="class">
-            <NextIntlClientProvider messages={messages}>
+            <NextIntlClientProvider locale={locale} messages={messages}>
               <header>
                 <div className=" w-full  text-black dark:bg-black px-10 dark:text-white ">
                   <ChangeTheme /> <LocaleSwitcher locale={locale} />

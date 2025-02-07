@@ -10,6 +10,7 @@ function Projects() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const t = useTranslations("ProjectsPage")
+  const data = projects()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +34,7 @@ function Projects() {
         {t("title")}
       </h2>
       <div className="container mx-auto flex flex-col  gap-8 font-permanent">
-        {projects.map((project, index) => (
+        {data.map((project, index) => (
           <div
             key={index}
             className="text-black dark:bg-black dark:text-white p-4 border rounded-lg  flex flex-col "

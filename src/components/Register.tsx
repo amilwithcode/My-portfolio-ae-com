@@ -28,11 +28,11 @@ export default function Register() {
   const t = useTranslations('RegisterPage')
 
 
-  const handleRegister = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.ChangeEvent<EventTarget>) => {
 
     e.preventDefault();
     try {
-      const { name, value } = e.target;
+      const { name, value } = e.target as HTMLInputElement;
       const auth = getAuth(app);
       const user = await createUserWithEmailAndPassword(auth, email, password);
 

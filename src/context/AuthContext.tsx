@@ -7,8 +7,8 @@ import { auth } from "@/src/firebase/config";
 
 interface AuthContextProps {
     user: User | null;
-    googleSignIn: () => Promise<void>;
-    facebookSignIn: () => Promise<void>;
+    googleSignIn: () => void;
+    facebookSignIn: () => void;
     logOut: () => Promise<void>;
 };
 
@@ -47,5 +47,18 @@ export default function AuthContextProvider({ children }: AuthContextProviderPro
         <AuthContext.Provider value={{ user, googleSignIn, facebookSignIn, logOut }}>{children}</AuthContext.Provider>
     );
 };
+export const AuthContextProps = {
+    googleSignIn: () => {
+        console.log("Google sign-in method");
+    },
+    facebookSignIn: () => {
+        console.log("Google sign-in method");
+    },
+    logOut: () => {
+        console.log("Google sign-in method")
+    },
+    user: { displayname: "", email: "", uid: null }
+    // Digər default xüsusiyyətlər...
+};
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => useContext(AuthContext) || AuthContextProps;

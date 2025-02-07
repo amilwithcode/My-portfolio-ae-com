@@ -18,9 +18,8 @@ import {
 import { db } from "@/src/firebase/config";
 import { toast } from "react-toastify";
 
-export type Comment = {
-
-    id: number;
+export interface Comment {
+    uid: string;
     username: string;
     rating: number;
     text: string;
@@ -38,19 +37,20 @@ function CommentsLikes() {
     );
     const [error, setError] = useState<string>("");
     const { user } = useAuth() ?? {};
+    const uid = "12345";
     // const [comment, setCommentsData] = useState({
     //     userName: "",
     //     comment: "",
     // });
 
-    const getUserData = async () => {
-        const docRef = doc(db, "users", user?.uid);
+    const getUserData = async (uid) => {
+        const docRef = doc(db, "users", uid as string);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            if (!user?.displayName) {
+            if (!username) {
                 setUsername(docSnap.data().username);
             } else {
-                setUsername(user?.displayName);
+                setUsername(username);
             }
         } else {
             console.log("notfound");
@@ -63,9 +63,11 @@ function CommentsLikes() {
     };
     useEffect(() => {
         getCommentsData();
-        getUserData();
     }, [user]);
+    useEffect(() => {
 
+        getUserData(uid);
+    }, [uid]);
     const AddCommentsToFirestore = async (uid: any) => {
         try {
             await setDoc(doc(db, "coments", uid), {
