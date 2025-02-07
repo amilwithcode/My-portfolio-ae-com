@@ -4,10 +4,12 @@
 import { useAuth } from '@/src/context/AuthContext'
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
+import { useTranslations } from 'next-intl';
 
 function SocialSign() {
 
     const { googleSignIn, facebookSignIn } = useAuth();
+    const t = useTranslations("LoginPage")
     // console.log(user)
 
     const handleGoogleSignIn = async () => {
@@ -37,7 +39,7 @@ function SocialSign() {
 
             <div className="flex items-center gap-10 text-md mt-4 w-full">
                 <span className="bg-gray-200 w-7/12 h-[2px]"></span>
-                <span className="text-gray-600 text-center dark:text-white">VƏYA</span>
+                <span className="text-gray-600 text-center dark:text-white uppercase">{t("andor")}</span>
                 <span className="bg-gray-200 w-7/12 h-[2px]"></span>
             </div>
             <div className="flex justify-between mt-4 ">

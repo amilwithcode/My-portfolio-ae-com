@@ -9,7 +9,7 @@
             "signout": "signout"
         },
         "header": {
-            "title": "Hello Welcome my portfolio",
+            "title": "Hello Welcome my portfolio!",
             "autotext": ""
         },
         "skills": {
@@ -35,7 +35,6 @@
                 "header": "",
                 "description": ""
             }
-            
         },
         "testimonials": {
             "header": "",
@@ -60,10 +59,11 @@
         "button": "Send"
     },
     "LoginPage": {
-        "email": "",
-        "password": "Şifrə",
-        "resertpassword": "",
-        "button": ""
+        "email": "email",
+        "password": "password",
+        "resertpassword": "Fogot password?",
+        "button": "Login",
+        "andor":"and or"
     },
     "ProjectsPage": {
         "title": "Projects",

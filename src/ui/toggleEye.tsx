@@ -16,7 +16,7 @@ function PasswordInput  ({ onClick, isShow }: {
       <button
         type="button"
         onClick={onClick}
-        className="absolute right-2 bottom-2 text-gray-500 z-50"
+        className="absolute right-2 bottom-2 text-gray-500 z-20"
       >
         {isShow ? <FaEyeSlash /> : <FaEye />}
       </button>

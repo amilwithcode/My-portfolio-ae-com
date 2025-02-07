@@ -10,7 +10,7 @@ Disallow: /src/ui/*
 Disallow: /src/i18n
 Disallow: /src/middleware
 Disallow: /src/navigation
-Disallow: /src/public/
+Disallow: /src/public/favicon/*
 Disallow: /src/robots.txt
 
 

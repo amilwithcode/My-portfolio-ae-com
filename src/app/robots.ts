@@ -32,7 +32,7 @@ export default function robots(): Robots {
           "/private/src/i18n",
           "/private/src/middleware",
           "/private/src/navigation",
-          "/private//src/public/*",
+          "/private//src/public/favicon/*",
           "/private/src/robots.txt"
         ],
       },

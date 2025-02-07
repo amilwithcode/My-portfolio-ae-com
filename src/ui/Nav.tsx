@@ -50,7 +50,7 @@ export default function Nav(): ReactElement<NavProps> {
   useEffect(() => {
     const checkUser = async () => {
       await new Promise((resolve) => setTimeout(resolve, 50));
-      setLoading(true);
+      setLoading(false);
     };
     checkUser();
     getUserData();
@@ -67,12 +67,12 @@ export default function Nav(): ReactElement<NavProps> {
   };
 
   return (
-    <div className=" flex  items-center gap-3  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex-row sm:text-[5px] sm:leading-[10px] sm:flex-col ">
-      <ul className="flex items-center gap-5 font-jost text-md md:font-medium text-[24px] leading-[25px] md:text-[14px] md:leading-[14px] tracking-wider  text-black dark:bg-black dark:text-white   uppercase   flex-col md:flex-row ">
+    <div className="lg:flex  items-center gap-3  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex  sm:grid">
+      <ul className="flex items-center gap-6  lg:text-md  lg:text-[24px]  tracking-wider  text-black dark:bg-black dark:text-white   flex-col md:flex-row md:font-medium md:text-[14px] md:item-center  sm:text-[10px]  sn:item-center ">
         <li>
           <Link
             href={`/${locale}/`}
-            className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm"
+            className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px] "
           >
             {t("nav.home")}
           </Link>
@@ -81,7 +81,7 @@ export default function Nav(): ReactElement<NavProps> {
         <li>
           <Link
             href={`/${locale}/about`}
-            className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
+            className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px]  "
           >
             {t("nav.about")}
           </Link>
@@ -89,7 +89,7 @@ export default function Nav(): ReactElement<NavProps> {
         <li>
           <Link
             href={`/${locale}/projects`}
-            className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
+            className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px]  "
           >
             {t("nav.projects")}
           </Link>
@@ -97,17 +97,17 @@ export default function Nav(): ReactElement<NavProps> {
         <li>
           <Link
             href={`/${locale}/contact`}
-            className="block mb-[3px] md:mb-0 md:mr-[42px] md:hover:border-b-[1px] border-b-black dark:border-b-white sm:text-sm "
+            className="block mb-[3px] lg:text-xl border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px] ] sm:text-[10px]  "
           >
             {t("nav.contact")}
           </Link>
         </li>
       </ul>
       {loading ? null : !user ? (
-        <ButtonsCard className="flex p-3 m-auto hover:outline-2 hover:cursor-pointer dark:hover:border-gray-500 border-black dark:border-white rounded-full md:m-0 sm:mb-10 ">
+        <ButtonsCard className=" p-3 m-auto hover:outline-2 hover:cursor-pointer dark:hover:border-gray-500 border-black dark:border-white rounded-full md:m-0   ">
           <Link
             href={`/${locale}/loginregister`}
-            className="block text-center text-xl   hover:border-b-[1px] border-b-black dark:border-b-white uppercase"
+            className="block text-center lg:text-xl   hover:border-b-[1px] border-b-black dark:border-b-white uppercase md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px] "
           >
             {t("nav.login")}
           </Link>
@@ -118,7 +118,7 @@ export default function Nav(): ReactElement<NavProps> {
             <FaRegUserCircle className="w-5 h-5" />
             <p className="text-sm">{displayName}</p>
             <button
-              className="p-3 m-auto hover:outline-2 hover:cursor-pointer text-sm border-black dark:border-white rounded-full md:m-0 sm:mb-10"
+              className="p-3 m-auto hover:outline-2 hover:cursor-pointer lg:text-md border-black dark:border-white rounded-full md:m-0 sm:mb-10 md:text-[14px] md:hover:border-b-[1px]] sm:text-[10px] "
               onClick={handleSignOut}
             >
               {t("nav.signout")}{" "}

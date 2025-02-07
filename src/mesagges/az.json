@@ -9,13 +9,13 @@
             "signout": "çıxın"
         },
         "header": {
-            "title": "Salam Mənim portfolioma xoş gəldiniz",
+            "title": "Salam Mənim portfolioma xoş gəldiniz!",
             "autotext": ""
         },
         "skills": {
             "all": "hamısı",
             "languages": "dillər",
-            "frameworks": "",
+            "frameworks": "frameworks",
             "tools": "əlavə alətlər"
         },
         "projects": {
@@ -63,7 +63,8 @@
         "email": "E-mail",
         "password": "Şifrə",
         "resertpassword": "Şifrənizi unutmusanız?",
-        "button": "DAXİL OLUN"
+        "button": "DAXİL OLUN",
+        "andor":"və ya"
     },
     "RegisterPage": {
         "header": {

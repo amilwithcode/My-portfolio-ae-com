@@ -82,13 +82,13 @@ function CommentsLikes() {
             })
         }
     };
-    // localStorage-dən şərhləri yükləyirik
-    useEffect(() => {
-        const storedComments = localStorage.getItem("comments");
-        if (storedComments) {
-            setComments(JSON.parse(storedComments));
-        }
-    }, []);
+    // // localStorage-dən şərhləri yükləyirik
+    // useEffect(() => {
+    //     const storedComments = localStorage.getItem("comments");
+    //     if (storedComments) {
+    //         setComments(JSON.parse(storedComments));
+    //     }
+    // }, []);
 
     // Şərh əlavə etdikdə localStorage-ə saxlamaq
     // const updateLocalStorage = (updatedComments: Comment[]) => {

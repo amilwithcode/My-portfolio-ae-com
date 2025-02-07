@@ -73,7 +73,7 @@ export default function Register() {
         <div>
           <label
             htmlFor="username"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 lowercase"
           >
             {t("name")}
           </label>
@@ -90,7 +90,7 @@ export default function Register() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 lowercase"
           >
             {t("email")}
           </label>
@@ -99,7 +99,7 @@ export default function Register() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 "
             placeholder="example@example.com"
             required
           />
@@ -108,9 +108,9 @@ export default function Register() {
         <div>
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 lowercase"
           >
-            {t(password)}
+            {t("password")}
           </label>
           <input
             type={isShow ? "text" : "password"}
@@ -130,7 +130,7 @@ export default function Register() {
         <div>
           <label
             htmlFor="confirmPassword"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 lowercase"
           >
             {t("resertpassword")}
           </label>
