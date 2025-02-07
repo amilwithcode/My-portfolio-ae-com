@@ -1,5 +1,5 @@
 
-interface Robots {
+type Robots = {
   rules:
   | {
     userAgent?: string | string[];
@@ -20,7 +20,7 @@ export default function robots(): Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/src/app/[locale]/(root)/*"],
+        allow: ["/src/app/*", "/src/app/[locale]/(root)/*"],
         disallow: [
           "/private/src/assets/*",
           "/private/src/mesagges/*",
@@ -39,6 +39,6 @@ export default function robots(): Robots {
 
     ],
     sitemap: "my-portfolio-ae.web.app.xml",
-    host:"my-portfolio-ae.web.app"
+    host: "my-portfolio-ae.web.app"
   };
 }
