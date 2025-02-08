@@ -67,8 +67,8 @@ export default function Nav(): ReactElement<NavProps> {
   };
 
   return (
-    <div className="lg:flex  items-center gap-3  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex  sm:grid">
-      <ul className="flex items-center gap-6  lg:text-md  lg:text-[24px]  tracking-wider  text-black dark:bg-black dark:text-white   flex-col md:flex-row md:font-medium md:text-[14px] md:item-center  sm:text-[10px]  sn:item-center ">
+    <div className="lg:flex  items-center gap-4  justify-center bg-white text-black  dark:bg-black dark:text-white md:flex  sm:grid">
+      <ul className="flex items-center gap-8 m-auto  lg:text-md  lg:text-[24px]  tracking-wider  text-black dark:bg-black dark:text-white   flex-col md:flex-row md:font-medium md:text-[14px] md:item-center  sm:text-[10px]  sn:item-center ">
         <li>
           <Link
             href={`/${locale}/`}

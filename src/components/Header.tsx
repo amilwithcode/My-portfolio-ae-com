@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
 
-    <div className=' flex max-w-7xl w-full  h-full  p-2  lg:gap-20 justify-center items-center md:gap-5 sm:gap-10  '>
+    <div className=' max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center w-full  h-full  p-2  lg:gap-18  md:gap-12 sm:gap-10  '>
 
 
       <MyImage />

@@ -13,6 +13,7 @@
             "autotext": ""
         },
         "skills": {
+            "title":"",
             "all": "alle",
             "languages": "Sprachen",
             "frameworks": "Rahmenbedingungen",
@@ -97,7 +98,10 @@
     "ResertPassworPage": {
         "title": "Passwort vergessen?",
         "email":"Passwort zurücksetzen",
-        "button": "Zurücksetzen"
+        "button": "Zurücksetzen",
+        "emptyEmailError":"",
+        "successMessage":"",
+        "errorMessage":""
     },
     "LoadingPage": {
         "title": "Wird geladen, bitte warten"

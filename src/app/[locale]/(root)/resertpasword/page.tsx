@@ -1,17 +1,16 @@
-'use client'
 
-import { ResertInput } from "@/src/components/ResertInput"
-
+import { ResetInput } from "@/src/components/ResertInput"
 
 
-function ResertInputPage(){
+
+function ResertInputPage() {
   return (
 
-    <main id='projects' className=" text-black dark:bg-black dark:text-white justify-center items-center ">
+    <main id='projects' >
+      <section className="max-w-5xl w-full text-black dark:bg-black dark:text-white grid justify-center items-center">
 
-      <div className='max-w-7xl w-full mx-auto'>
-        <ResertInput/>
-      </div>
+        <ResetInput />
+      </section>
     </main>
 
 

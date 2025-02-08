@@ -18,14 +18,14 @@ function AboutComponent({ name, skills }: AboutProps) {
   return (
     <section className="border py-10 px-3">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-        <div className="flex justify-start overflow-hidden rounded-full shadow-md">
+        <div className="flex justify-start max-w-screen h-screen overflow-hidden rounded-full shadow-md">
           <Image
             src={MyImage}
             alt={`${name} profile`}
             className="w-full h-full object-cover bg-white"
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4  font-permanent">
             🌟{t("title")}
           </h1>

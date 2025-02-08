@@ -13,6 +13,7 @@
             "autotext": ""
         },
         "skills": {
+            "title":"",
             "all": "Tümü",
             "languages": "diller",
             "frameworks": "frameworks",
@@ -97,7 +98,10 @@
     "ResertPassworPage": {
         "title": "Parolanızı mı unuttunuz?",
         "email": "Şifreyi sıfırla",
-        "button": "Sıfırla"
+        "button": "Sıfırla",
+        "emptyEmailError":"",
+        "successMessage":"",
+        "errorMessage":""
     },
     "LoadingPage": {
         "title": "Yükleniyor, lütfen bekleyin"

@@ -13,17 +13,19 @@
             "autotext": ""
         },
         "skills": {
+            "title":"Skills",
             "all": "all",
             "languages": "languages",
             "frameworks": "frameworks",
             "tools": "tools"
         },
         "testimonials": {
-            "header": "",
+            "header": "opinions",
             "name": "",
             "opinion": ""
         },
         "coments": {
+            "title":"Comments",
             "header": "",
             "name": ""
         }
@@ -97,7 +99,10 @@
     "ResertPassworPage": {
         "title": "Forgot password?",
         "email":"Reset password",
-        "button": "Reset"
+        "button": "Reset",
+        "emptyEmailError":"",
+        "successMessage":"",
+        "errorMessage":""
     },
     "LoadingPage": {
         "title": "Loading, please wait"

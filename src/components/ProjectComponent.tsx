@@ -12,14 +12,14 @@ function ProjectComponent() {
   const locale = useParams().locale;
   const data = projectsData();
   return (
-    <div className="flex w-full space-x-6 p-2 ">
+    <div className=" w-full space-x-6 p-2 m-3 lg:flex md:flex-row ">
       {/* Sidebar */}
-      <div className="w-1/4 border  shadow-md rounded-lg font-permanent ">
-        <ul className="space-y-4 p-4">
+      <div className="lg:block justify-between  lg:w-1/4 border  shadow-md rounded-lg font-permanent md:flex md:max-w-screen sm:flex">
+        <ul className="space-y-4 p-4 items-center justify-between text-center lg:grid   md:flex sm:flex">
           {data.map((item, index) => (
             <li
               key={index}
-              className={`flex items-center gap-2 p-2 cursor-pointer rounded-lg  md:text-md sm:text-sm ${activeCategory === index
+              className={`flex items-center  gap-2 p-2 cursor-pointer rounded-lg  md:text-md  sm:text-sm ${activeCategory === index
                 ? " font-bold text-blue-600"
                 : "hover: text-black dark:bg-black dark:text-white"
                 }`}

@@ -13,6 +13,7 @@
             "autotext": ""
         },
         "skills": {
+            "title":"",
             "all": "hamısı",
             "languages": "dillər",
             "frameworks": "frameworks",
@@ -24,6 +25,7 @@
             "opinion": ""
         },
         "coments": {
+            "title":"Rəylər",
             "header": "",
             "name": ""
         }
@@ -97,7 +99,10 @@
     "ResertPassworPage": {
         "title": "Şifrəni unutmusunuz?",
         "email":"Parolu sıfırlayın",
-        "button": "Sıfırlayın"
+        "button": "Sıfırlayın",
+        "emptyEmailError":"",
+        "successMessage":"",
+        "errorMessage":""
     },
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"
