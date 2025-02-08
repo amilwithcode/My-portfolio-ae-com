@@ -6,7 +6,7 @@
             "projects": "projects",
             "contact": "contact",
             "login": "login",
-            "signout": "signout"
+            "signout": "sign out"
         },
         "header": {
             "title": "Hello Welcome my portfolio!",
@@ -17,24 +17,6 @@
             "languages": "languages",
             "frameworks": "frameworks",
             "tools": "tools"
-        },
-        "projects": {
-            "all:": "",
-            "web development": {
-                "title": "",
-                "header": "",
-                "description": ""
-            },
-            "python programing": {
-                "title": "",
-                "header": "",
-                "description": ""
-            },
-            "data science": {
-                "title": "",
-                "header": "",
-                "description": ""
-            }
         },
         "testimonials": {
             "header": "",
@@ -48,20 +30,20 @@
     },
     "AboutPage": {
         "title": "About Me",
-        "description": "Hello! I am studying Supply Chain Management and have a strong interest in technology and data analysis. I have worked on analyzing data related to COVID-19 and smartphone brands, utilizing Python and its libraries. These experiences have helped me develop a deeper understanding of data and apply it to practical solutions.In the field of technology, I am enhancing my skills by building web applications using React.js, Next.js, and TypeScript. I am currently learning Firebase to create more dynamic projects. Additionally, I am working on robotics projects using C++ and expanding my knowledge in cybersecurity.My goal is to leverage my skills in data analysis and technology to develop more efficient solutions in the field of Supply Chain Management. I am always eager to learn, share, and collaborate on new opportunities.",
+        "description": "Hello! I am studying Supply Chain Management and have a strong interest in technology and data analysis. I have worked on analyzing data related to COVID-19 and smartphone brands, utilizing Python and its libraries. These experiences have helped me develop a deeper understanding of data and apply it to practical solutions.In the field of technology, I am enhancing my skills by building web applications using React.js, Next.js, and TypeScript. I am currently learning Firebase to create more dynamic projects. Additionally, I am working on robotics projects using C# and expanding my knowledge in cybersecurity.My goal is to leverage my skills in data analysis and technology to develop more efficient solutions in the field of Supply Chain Management. I am always eager to learn, share, and collaborate on new opportunities.",
         "button": "Feel free to reach out – I’d be happy to connect!"
     },
     "ContactPage": {
         "title": "Contact",
         "name": "Your name",
         "email": "Email",
-        "mesagge": "Mesagge",
+        "mesagge": "Message",
         "button": "Send"
     },
     "LoginPage": {
         "email": "email",
         "password": "password",
-        "resertpassword": "Fogot password?",
+        "resertpassword": "Forgot password?",
         "button": "Login",
         "andor":"and or"
     },
@@ -95,22 +77,27 @@
     },
     "RegisterPage": {
         "header": {
-            "login": "",
-            "register": ""
+            "login": "SIGN IN",
+            "register": "JOIN"
         },
         "title": {
-            "login": "",
-            "register": ""
+            "login": "Log in to your account",
+            "register": "Register"
         },
-        "name": "",
-        "email": "",
-        "password": " ",
-        "resertpassword": "",
-        "button": ""
+        "name": "Username",
+        "email": "email",
+        "password": "password",
+        "resertpassword": "Confirm password",
+        "button": "Register"
     },
     "NotfoundPage": {
         "title": "Sorry, the page you are looking for does not exist",
         "button": "Back to Home"
+    },
+    "ResertPassworPage": {
+        "title": "Forgot password?",
+        "email":"Reset password",
+        "button": "Reset"
     },
     "LoadingPage": {
         "title": "Loading, please wait"

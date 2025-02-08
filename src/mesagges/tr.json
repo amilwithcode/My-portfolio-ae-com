@@ -2,39 +2,21 @@
     "HomePage": {
         "nav": {
             "home": "Ana sayfa",
-            "about": "",
-            "projects": "",
-            "contact": "",
-            "login": "",
-            "signout": ""
+            "about": "hakkında",
+            "projects": "projeler",
+            "contact": "bağlantı",
+            "login": "giriş yapmak",
+            "signout": "çıkış yap"
         },
         "header": {
-            "title": "",
+            "title": "Merhaba portföyüme hoş geldiniz!",
             "autotext": ""
         },
         "skills": {
-            "all": "",
-            "languages": "",
-            "frameworks": "",
-            "tools": ""
-        },
-        "projects": {
-            "all:": "",
-            "web development": {
-                "title": "",
-                "header": "",
-                "description": ""
-            },
-            "python programing": {
-                "title": "",
-                "header": "",
-                "description": ""
-            },
-            "data science": {
-                "title": "",
-                "header": "",
-                "description": ""
-            }
+            "all": "Tümü",
+            "languages": "diller",
+            "frameworks": "frameworks",
+            "tools": "aletler"
         },
         "testimonials": {
             "header": "",
@@ -47,74 +29,80 @@
         }
     },
     "AboutPage": {
-        "title": "",
-        "description": "",
-        "button": ""
+        "title": "Hakkımda",
+        "description": "Merhaba! Tedarik Zinciri Yönetimi okuyorum ve teknoloji ve veri analizi konusunda güçlü bir ilgim var. Python ve kütüphanelerini kullanarak COVID-19 ve akıllı telefon markalarıyla ilgili verileri analiz etmek için çalıştım. Bu deneyimler, veriler hakkında daha derin bir anlayış geliştirmeme ve bunu pratik çözümlere uygulamama yardımcı oldu. Teknoloji alanında, React.js, Next.js ve TypeScript kullanarak web uygulamaları oluşturarak becerilerimi geliştiriyorum. Şu anda daha dinamik projeler oluşturmak için Firebase öğreniyorum. Ayrıca, C# kullanarak robotik projeler üzerinde çalışıyorum ve siber güvenlik konusundaki bilgimi genişletiyorum. Amacım, Tedarik Zinciri Yönetimi alanında daha verimli çözümler geliştirmek için veri analizi ve teknoloji alanındaki becerilerimi kullanmaktır. Her zaman öğrenmeye, paylaşmaya ve yeni fırsatlar üzerinde iş birliği yapmaya istekliyim.",
+        "button": "Bana ulaşmaktan çekinmeyin - benimle iletişime geçmekten mutluluk duyarım!"
     },
     "ContactPage": {
-        "title": "",
-        "name": "",
-        "email": "",
-        "mesagge": "",
-        "button": ""
-    },
-    "ProjectsPage": {
-        "title": "",
-        "projects": {
-            "title": {
-                "project1": "",
-                "project2": "",
-                "project3": "",
-                "project4": "",
-                "project5": ""
-            },
-            "description": {
-                "project1": "",
-                "project2": "",
-                "project3": "",
-                "project4": "",
-                "project5": ""
-            },
-            "fulldescription": {
-                "project1": "",
-                "project2": "",
-                "project3": "",
-                "project4": "",
-                "project5": ""
-            }
-        },
-        "button": "",
-        "githubButton": ""
+        "title": "İletişim",
+        "name": "Adınız",
+        "email": "E-posta",
+        "mesagge": "Mesaj",
+        "button": "Gönder"
     },
     "LoginPage": {
-        "email": "",
-        "password": "",
-        "resertpassword": "",
-        "button": ""
+        "email": "E-posta",
+        "password": "şifre",
+        "resertpassword": "Parolanızı mı unuttunuz?",
+        "button": "Giriş yapmak",
+        "andor":"ve veya"
+    },
+    "ProjectsPage": {
+        "title": "Projeler",
+        "projects": {
+            "title": {
+                "project1": "COVID-19 Veri Analizi",
+                "project2": "Akıllı Telefon Markaları Veri Analizi",
+                "project3": "Boru hattı veri hesaplama programı",
+                "project4": "Hava Durumu Tahmini Web Sitesi",
+                "project5": "Grafik gerçek web sitesi"
+            },
+            "description": {
+                "project1": "Python ve kütüphanelerle COVID-19 vaka verilerinin analizi",
+                "project2": "Python ve kütüphaneler kullanılarak akıllı telefon markalarının veri analizi",
+                "project3": "Python ve kütüphaneleri kullanan boru hattı veri hesaplama programı",
+                "project4": "Azerbaycan şehirleri hava durumu tahmini web sitesi",
+                "project5": "React+Vite ve Javascript ile grafik tasarım web sitesi"
+            },
+            "fulldescription": {
+                "project1": "Bu proje COVID-19 vakalarının bir veri analizidir. Farklı ülkelerdeki vaka, ölüm ve iyileşme sayılarını analiz eder. Veriler çizelgeler ve grafikler kullanılarak görselleştirilir. Proje açık kaynaklıdır ve GitHub'da mevcuttur.",
+                "project2": "Bu proje akıllı telefon markalarının veri analizidir. Satış ve pazar payına göre farklı akıllı telefon markalarının popülerliğini analiz eder. Veriler çizelgeler ve grafikler kullanılarak görselleştirilir. Proje açık kaynaklıdır ve GitHub'da mevcuttur.",
+                "project3": "Bu proje bir boru hattı veri hesaplama programıdır. Bir boru hattının akış hızını, basıncını ve diğer parametrelerini hesaplar. Proje açık kaynaklıdır ve GitHub'da mevcuttur.",
+                "project4": "Bu proje Azerbaycan şehirleri için bir hava durumu tahmini web sitesidir. Güncel hava durumunu ve önümüzdeki 5 günün tahminini gösterir. Web sitesi React ve Tailwind CSS kullanılarak oluşturulmuştur. Hava durumu verileri OpenWeatherMap API'sinden alınır. Web sitesi duyarlıdır ve tüm cihazlarda çalışır. Proje açık kaynaklıdır ve GitHub'da mevcuttur.",
+                "project5": "Bu proje bir grafik tasarım web sitesidir. Bir grafik tasarımcının çalışmalarını sergiler. Web sitesi React+Vite ve Javascript kullanılarak oluşturulmuştur. Web sitesi duyarlıdır ve tüm cihazlarda çalışır. Proje açık kaynaklıdır ve GitHub'da mevcuttur."
+            }
+        },
+        "button": "Daha fazla bilgi edin",
+        "githubButton": "GitHub'ı görüntüle"
     },
     "RegisterPage": {
         "header": {
-            "login": "",
-            "register": ""
+            "login": "Oturum aç",
+            "register": "KATILMAK"
         },
         "title": {
-            "login": "",
-            "register": ""
+            "login": "Hesabınıza giriş yapın",
+            "register": "Kayıt olmak"
         },
-        "name": "",
-        "email": "",
-        "password": "",
-        "resertpassword": "",
-        "button": ""
+        "name": "Kullanıcı adı",
+        "email": "e-posta",
+        "password": "şifre",
+        "resertpassword": "Şifreyi onayla",
+        "button": "Kayıt olmak"
     },
     "NotfoundPage": {
-        "title": "",
-        "button": ""
+        "title": "Üzgünüz, aradığınız sayfa mevcut değil",
+        "button": "Ana Sayfaya Dön"
+    },
+    "ResertPassworPage": {
+        "title": "Parolanızı mı unuttunuz?",
+        "email": "Şifreyi sıfırla",
+        "button": "Sıfırla"
     },
     "LoadingPage": {
         "title": "Yükleniyor, lütfen bekleyin"
     },
     "Footer": {
-        "foot": ""
+        "foot": "Benim web sitem"
     }
 }
