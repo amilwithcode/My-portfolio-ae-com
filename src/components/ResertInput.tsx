@@ -30,32 +30,33 @@ export function ResetInput() {
     };
 
     return (
-        <div className="grid items-center justify-center w-full  border m-5   gap-10  p-10  dark:bg-black dark:text-white">
-            <h1 className="text-4xl font-bold text-center cursor-pointer">
+        <div className="flex flex-col items-center justify-center w-full border m-5 p-6 md:p-10 dark:bg-black dark:text-white">
+            <h1 className="text-3xl md:text-4xl font-bold text-center cursor-pointer">
                 {t("title")}
             </h1>
-            <form onSubmit={handleResetPasswordEmail} className="max-w-screen border max-h-screen max-w-5xl p-10">
-                <label htmlFor="email" className="text-sm font-bold cursor-pointer">
+            <form onSubmit={handleResetPasswordEmail} className="w-full max-w-lg mt-6 border p-6 rounded-lg shadow-lg dark:border-gray-700">
+                <label htmlFor="email" className="text-sm font-semibold cursor-pointer block">
                     {t("email")}
                 </label>
-                <div className="flex gap-2 mt-2 w-full max-w-5xl">
+                <div className="flex flex-col sm:flex-row gap-3 mt-3">
                     <input
                         id="email"
                         type="email"
-                        className="border border-gray-300 rounded-md w-full p-2"
-                        placeholder={'example@gmail.com'}
+                        className="border border-gray-300 dark:border-gray-600 rounded-md w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="example@gmail.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white px-3 py-2 rounded-md"
+                        className="bg-blue-500 hover:bg-blue-600 transition text-white px-4 py-3 rounded-md w-full sm:w-auto"
                     >
                         {t("button")}
                     </button>
                 </div>
             </form>
         </div>
+
     );
 }

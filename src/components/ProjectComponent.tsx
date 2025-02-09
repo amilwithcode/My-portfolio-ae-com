@@ -5,10 +5,11 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import projectsData from "@/src/lib/projectsdata";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 function ProjectComponent() {
   const [activeCategory, setActiveCategory] = useState<number>(0);
+  const t = useTranslations("ProjectsPage");
   const locale = useParams().locale;
   const data = projectsData();
   return (
@@ -56,7 +57,7 @@ function ProjectComponent() {
                   href={`${locale}/projects`}
                   className="flex justify-center items-center w-full p-2 bg-blue-500 text-white  rounded-lg hover:bg-blue-700 transition md:text-md sm:text-sm"
                 >
-                  Learn More
+                  {t("button")}
                 </Link>
               </div>
             ))}

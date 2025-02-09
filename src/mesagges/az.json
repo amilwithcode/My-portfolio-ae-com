@@ -100,9 +100,9 @@
         "title": "Şifrəni unutmusunuz?",
         "email":"Parolu sıfırlayın",
         "button": "Sıfırlayın",
-        "emptyEmailError":"",
-        "successMessage":"",
-        "errorMessage":""
+        "emptyEmailError":"e",
+        "successMessage":"s",
+        "errorMessage":"e"
     },
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"

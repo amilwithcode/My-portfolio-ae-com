@@ -59,7 +59,7 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
           width={20}
           height={20}
         />
-        <span>{locales.find((l) => l.code === locale)?.name}</span>
+        <span className="font-permanent">{locales.find((l) => l.code === locale)?.name}</span>
       </button>
 
       {/* Açılan siyahı */}
@@ -69,14 +69,14 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
             <button
               key={l.code}
               onClick={() => onSelectChange(l.code)}
-              className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer"
+              className="flex items-center gap-3 p-5 text-left border-none  dark:bg-black dark:text-white cursor-pointer "
             >
               <Image
                 src={l.icon} alt={l.name}
                 width={20}
                 height={20}
               />
-              <span>{l.name}</span>
+              <span className="font-permanent">{l.name}</span>
             </button>
           ))}
         </div>

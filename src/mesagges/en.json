@@ -100,9 +100,9 @@
         "title": "Forgot password?",
         "email":"Reset password",
         "button": "Reset",
-        "emptyEmailError":"",
-        "successMessage":"",
-        "errorMessage":""
+        "emptyEmailError":"e",
+        "successMessage":"s",
+        "errorMessage":"e"
     },
     "LoadingPage": {
         "title": "Loading, please wait"

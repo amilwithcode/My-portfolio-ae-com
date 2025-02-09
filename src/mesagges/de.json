@@ -25,6 +25,7 @@
             "opinion": ""
         },
         "coments": {
+            "title":"",
             "header": "",
             "name": ""
         }
