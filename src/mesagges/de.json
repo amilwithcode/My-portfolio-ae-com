@@ -14,15 +14,17 @@
         },
         "skills": {
             "title":"",
-            "all": "alle",
-            "languages": "Sprachen",
-            "frameworks": "Rahmenbedingungen",
-            "tools": "Werkzeuge"
+            "All": "alle",
+            "Languages": "Sprachen",
+            "Frameworks": "Rahmenbedingungen",
+            "Tools": "Werkzeuge"
         },
         "testimonials": {
             "header": "",
-            "name": "",
-            "opinion": ""
+            "opinion": {
+                "men1":"",
+                "men2":""
+            }
         },
         "coments": {
             "title":"",
@@ -100,9 +102,9 @@
         "title": "Passwort vergessen?",
         "email":"Passwort zurücksetzen",
         "button": "Zurücksetzen",
-        "emptyEmailError":"",
-        "successMessage":"",
-        "errorMessage":""
+        "emptyEmailError":"e",
+        "successMessage":"d",
+        "errorMessage":"s"
     },
     "LoadingPage": {
         "title": "Wird geladen, bitte warten"

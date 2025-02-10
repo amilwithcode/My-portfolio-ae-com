@@ -2,21 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Testimonials from "@/src/lib/data";
-// import { useTranslations } from "next-intl";
+import useTestimonials from "@/src/lib/data";
+
 
 function Testimonial() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? Testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? useTestimonials.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === Testimonials.length - 1 ? 0 : prevIndex + 1
+      prevIndex === useTestimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -24,15 +24,16 @@ function Testimonial() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === Testimonials.length - 1 ? 0 : prevIndex + 1
+        prevIndex === useTestimonials.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000); // 5000ms = 5 seconds
 
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []);
 
-  const currentTestimonial = Testimonials[currentIndex];
+  const currentTestimonials = useTestimonials();
+  const selectedTestimonial = currentTestimonials[currentIndex]
 
   return (
     <div className="my-5 flex justify-center items-center w-full p-1">
@@ -41,20 +42,20 @@ function Testimonial() {
         <div className="flex flex-col items-center">
           <div className="mb-4">
             <Image
-              src={currentTestimonial.avatar}
-              alt={currentTestimonial.name}
+              src={selectedTestimonial?.avatar }
+              alt={selectedTestimonial?.name }
               className="w-56 h-56 rounded-full  object-contain  "
-              // width={100}
-              // height={100}
+              width={100}
+              height={100}
             />
           </div>
-          <h3 className="text-lg font-semibold">{currentTestimonial?.name}</h3>
-          <p className="text-sm text-gray-200">{currentTestimonial?.role}</p>
+          <h3 className="text-lg font-semibold">{selectedTestimonial?.name}</h3>
+          <p className="text-sm text-gray-200">{selectedTestimonial?.role}</p>
         </div>
 
         {/* Rəy */}
         <p className="text-center text-gray-100 m-6">
-          {currentTestimonial?.feedback}
+          {selectedTestimonial?.feedback}
         </p>
 
         {/* Nəzarət düymələri */}
@@ -105,12 +106,11 @@ function Testimonial() {
 
         {/* İndikatorlar */}
         <div className="flex justify-center space-x-2 mt-4 items-end bottom-0">
-          {Testimonials.map((_, index) => (
+          {currentTestimonials.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                currentIndex === index ? "bg-white" : "bg-gray-400"
-              }`}
+              className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"
+                }`}
             />
           ))}
         </div>

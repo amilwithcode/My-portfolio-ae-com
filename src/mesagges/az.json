@@ -13,16 +13,18 @@
             "autotext": ""
         },
         "skills": {
-            "title":"",
-            "all": "hamısı",
-            "languages": "dillər",
-            "frameworks": "frameworks",
-            "tools": "əlavə alətlər"
+            "title":"Bacar;qlar",
+            "All": "hamısı",
+            "Languages": "dillər",
+            "Frameworks": "frameworks",
+            "Tools": "əlavə alətlər"
         },
         "testimonials": {
             "header": "",
-            "name": "",
-            "opinion": ""
+            "opinion": {
+                "men1":"",
+                "men2":""
+            }
         },
         "coments": {
             "title":"Rəylər",

@@ -1,6 +1,6 @@
 'use client'
 
-import { toast } from "react-toastify";
+import {ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { useTranslations } from "next-intl";
@@ -51,8 +51,10 @@ export function ResetInput() {
                     <button
                         type="submit"
                         className="bg-blue-500 hover:bg-blue-600 transition text-white px-4 py-3 rounded-md w-full sm:w-auto"
+                        onClick={handleResetPasswordEmail}
                     >
                         {t("button")}
+                        <ToastContainer/>
                     </button>
                 </div>
             </form>

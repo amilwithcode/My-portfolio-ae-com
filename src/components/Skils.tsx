@@ -40,7 +40,7 @@ function Skills() {
   return (
     <div className="w-full dark:bg-black dark:text-white font-permanent">
       <div className="lg:flex space-x-4 justify-between mb-6  md:grid-cols-4 sm:grid sm:grid-cols-2 sm:text-sm sm:m-4">
-        {([`${t("skills.all")}`, `${t("skills.languages")}`, `${t("skills.frameworks")}`, `${t("skills.tools")}`] as Category[]).map((category) => (
+        {(["All","Languages","Frameworks","Tools"] as Category[]).map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
@@ -49,7 +49,7 @@ function Skills() {
               : "bg-white text-blue-600 hover:bg-gray-200 border"
               } cursor-pointer text-xl md:text-md sm:text-sm `}
           >
-            {category}
+            {t(`skills.${category}`)}
           </button>
         ))}
       </div>

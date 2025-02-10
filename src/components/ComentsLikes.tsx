@@ -229,7 +229,7 @@ function CommentsLikes() {
                                     </span>
                                 ))}
                             </div>
-                            <p>{comment.text}</p>
+                            <p>{comment.comment}</p>
                             <div className="flex space-x-2 mt-2">
                                 {!user ? (
                                     <p className="register">Can not sigin</p>

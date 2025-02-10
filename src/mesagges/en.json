@@ -14,15 +14,17 @@
         },
         "skills": {
             "title":"Skills",
-            "all": "all",
-            "languages": "languages",
-            "frameworks": "frameworks",
-            "tools": "tools"
+            "All": "all",
+            "Languages": "languages",
+            "Frameworks": "frameworks",
+            "Tools": "tools"
         },
         "testimonials": {
             "header": "opinions",
-            "name": "",
-            "opinion": ""
+            "opinion": {
+                "men1":"",
+                "men2":""
+            }
         },
         "coments": {
             "title":"Comments",

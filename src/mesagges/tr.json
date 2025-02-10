@@ -13,16 +13,18 @@
             "autotext": ""
         },
         "skills": {
-            "title":"",
-            "all": "Tümü",
-            "languages": "diller",
-            "frameworks": "frameworks",
-            "tools": "aletler"
+            "title": "",
+            "All": "Tümü",
+            "Languages": "diller",
+            "Frameworks": "frameworks",
+            "Tools": "aletler"
         },
         "testimonials": {
             "header": "",
-            "name": "",
-            "opinion": ""
+            "opinion": {
+                "men1": "",
+                "men2": ""
+            }
         },
         "coments": {
             "header": "",
@@ -46,7 +48,7 @@
         "password": "şifre",
         "resertpassword": "Parolanızı mı unuttunuz?",
         "button": "Giriş yapmak",
-        "andor":"ve veya"
+        "andor": "ve veya"
     },
     "ProjectsPage": {
         "title": "Projeler",
@@ -99,9 +101,9 @@
         "title": "Parolanızı mı unuttunuz?",
         "email": "Şifreyi sıfırla",
         "button": "Sıfırla",
-        "emptyEmailError":"",
-        "successMessage":"",
-        "errorMessage":""
+        "emptyEmailError": "",
+        "successMessage": "",
+        "errorMessage": ""
     },
     "LoadingPage": {
         "title": "Yükleniyor, lütfen bekleyin"
