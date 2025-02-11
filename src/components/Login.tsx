@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 function Login() {
     const [isLogin, setIsLogin] = useState<boolean>(true);
-    const t =useTranslations("RegisterPage")
+    const t = useTranslations("RegisterPage");
 
     return (
         <div className="max-w-7xl mx-auto text-black dark:bg-black dark:text-white border p-8 rounded-lg shadow-lg">
@@ -18,13 +18,13 @@ function Login() {
                 <div className="flex justify-center space-x-4 mt-4">
                     <button
                         onClick={() => setIsLogin(true)}
-                        className={`py-2 px-4 rounded-md ${isLogin ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"}`}
+                        className={`py-2 px-4 rounded-md ${isLogin ? "bg-blue-800 text-white" : " text-black"}`}
                     >
                         {t("title.login")}
                     </button>
                     <button
                         onClick={() => setIsLogin(false)}
-                        className={`py-2 px-4 rounded-md ${!isLogin ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"}`}
+                        className={`py-2 px-4 rounded-md ${!isLogin ? "bg-blue-800 text-white" : " text-black"}`}
                     >
                         {t("title.register")}
                     </button>

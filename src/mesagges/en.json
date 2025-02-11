@@ -13,7 +13,7 @@
             "autotext": ""
         },
         "skills": {
-            "title":"Skills",
+            "title": "Skills",
             "All": "all",
             "Languages": "languages",
             "Frameworks": "frameworks",
@@ -22,14 +22,15 @@
         "testimonials": {
             "header": "opinions",
             "opinion": {
-                "men1":"",
-                "men2":""
+                "men1": "",
+                "men2": ""
             }
         },
         "coments": {
-            "title":"Comments",
+            "title": "Comments",
             "header": "",
-            "name": ""
+            "name": "",
+            "submit_comment": "Submit comment"
         }
     },
     "AboutPage": {
@@ -49,7 +50,7 @@
         "password": "password",
         "resertpassword": "Forgot password?",
         "button": "Login",
-        "andor":"and or"
+        "andor": "and or"
     },
     "ProjectsPage": {
         "title": "Projects",
@@ -100,16 +101,24 @@
     },
     "ResertPassworPage": {
         "title": "Forgot password?",
-        "email":"Reset password",
+        "email": "Reset password",
         "button": "Reset",
-        "emptyEmailError":"e",
-        "successMessage":"s",
-        "errorMessage":"e"
+        "emptyEmailError": "Enter email",
+        "successMessage": "Email successfully sent",
+        "errorMessage": "Invalid email"
     },
     "LoadingPage": {
         "title": "Loading, please wait"
     },
     "Footer": {
         "foot": "My website"
+    },
+    "Languages": {
+        "name": {
+            "az":"Azerbaijan",
+            "de":"German",
+            "en:":"English",
+            "tr":"Turkish"
+        }
     }
 }

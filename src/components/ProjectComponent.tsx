@@ -40,7 +40,7 @@ function ProjectComponent() {
             {data[activeCategory].projects.map((project, index) => (
               <div
                 key={index}
-                className="grid gap-4 cursor-pointer border rounded-lg p-3 shadow-md  text-white hover:shadow-lg transition   "
+                className="grid gap-4 cursor-pointer border rounded-lg p-3 shadow-md  text-white hover:shadow-lg dark:hover:shadow-white transition   "
               >
                 <Image
                   src={project.image}
@@ -49,10 +49,10 @@ function ProjectComponent() {
                   width={300}
                   height={200}
                 />
-                <h2 className="text-xl font-semibold text-gray-800  md:text-md sm:text-sm">
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-white  md:text-md sm:text-sm">
                   {project.title}
                 </h2>
-                <p className="text-gray-600 md:text-md sm:text-sm">{project.description}</p>
+                <p className="text-gray-600 dark:text-white md:text-md sm:text-sm">{project.description}</p>
                 <Link
                   href={`${locale}/projects`}
                   className="flex justify-center items-center w-full p-2 bg-blue-500 text-white  rounded-lg hover:bg-blue-700 transition md:text-md sm:text-sm"

@@ -7,6 +7,7 @@ import { auth } from "@/src/firebase/config";
 
 interface AuthContextProps {
     user: User | null;
+    loading: boolean;
     googleSignIn: () => void;
     facebookSignIn: () => void;
     logOut: () => Promise<void>;
@@ -20,6 +21,7 @@ interface AuthContextProviderProps {
 
 export default function AuthContextProvider({ children }: AuthContextProviderProps) {
     const [user, setUser] = useState<User | null>(null);
+    const [loading, setLoading] = useState(true);
 
 
     const googleSignIn = async () => {
@@ -38,16 +40,18 @@ export default function AuthContextProvider({ children }: AuthContextProviderPro
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false);
         });
 
         return () => unsubscribe();
     }, [user]);
 
     return (
-        <AuthContext.Provider value={{ user, googleSignIn, facebookSignIn, logOut }}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ user, loading, googleSignIn, facebookSignIn, logOut }}>{children}</AuthContext.Provider>
     );
 };
 export const AuthContextProps = {
+    loading: false,
     googleSignIn: () => {
         console.log("Google sign-in method");
     },

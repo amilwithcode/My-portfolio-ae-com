@@ -10,6 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "@/src/firebase/config";
 import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from 'react-toastify';
+import { useAuth } from "@/src/context/AuthContext";
 
 function LoginComponent() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
@@ -20,6 +21,7 @@ function LoginComponent() {
   const router = useRouter();
   const { locale } = useParams();
   const t = useTranslations("LoginPage")
+  const { user, loading } = useAuth();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

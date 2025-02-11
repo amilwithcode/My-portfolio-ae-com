@@ -22,14 +22,15 @@
         "testimonials": {
             "header": "",
             "opinion": {
-                "men1":"",
-                "men2":""
+                "men1":"KA",
+                "men2":"MAD"
             }
         },
         "coments": {
             "title":"Rəylər",
             "header": "",
-            "name": ""
+            "name": "",
+            "submit_comment":"Rəy göndər"
         }
     },
     "AboutPage": {
@@ -102,14 +103,22 @@
         "title": "Şifrəni unutmusunuz?",
         "email":"Parolu sıfırlayın",
         "button": "Sıfırlayın",
-        "emptyEmailError":"e",
-        "successMessage":"s",
-        "errorMessage":"e"
+        "emptyEmailError":"Email daxil edin",
+        "successMessage":"Email uğurla göndərildi",
+        "errorMessage":"Email yalnışdır"
     },
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"
     },
     "Footer": {
         "foot": "Mənim veb saytım"
+    },
+    "Languages": {
+        "name": {
+            "az":"Azərbaycan",
+            "de":"Alman",
+            "en:":"İngilis",
+            "tr":"Türk"
+        }
     }
 }

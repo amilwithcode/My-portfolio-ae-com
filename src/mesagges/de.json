@@ -13,7 +13,7 @@
             "autotext": ""
         },
         "skills": {
-            "title":"",
+            "title": "",
             "All": "alle",
             "Languages": "Sprachen",
             "Frameworks": "Rahmenbedingungen",
@@ -22,14 +22,15 @@
         "testimonials": {
             "header": "",
             "opinion": {
-                "men1":"",
-                "men2":""
+                "men1": "",
+                "men2": ""
             }
         },
         "coments": {
-            "title":"",
+            "title": "",
             "header": "",
-            "name": ""
+            "name": "",
+            "submit_comment": "Kommentar senden"
         }
     },
     "AboutPage": {
@@ -77,7 +78,7 @@
         "password": "Passwort",
         "resertpassword": "Passwort vergessen?",
         "button": "Login",
-        "andor":"und/oder"
+        "andor": "und/oder"
     },
     "RegisterPage": {
         "header": {
@@ -100,16 +101,24 @@
     },
     "ResertPassworPage": {
         "title": "Passwort vergessen?",
-        "email":"Passwort zurücksetzen",
+        "email": "Passwort zurücksetzen",
         "button": "Zurücksetzen",
-        "emptyEmailError":"e",
-        "successMessage":"d",
-        "errorMessage":"s"
+        "emptyEmailError": "Email eingeben",
+        "successMessage": "Email wurde gesendet",
+        "errorMessage": "Email nicht gültig"
     },
     "LoadingPage": {
         "title": "Wird geladen, bitte warten"
     },
     "Footer": {
         "foot": "Meine Website"
+    },
+    "Languages": {
+        "name": {
+            "az":"Aserbaidschanisch",
+            "de":"Deutsch",
+            "en:":"Englisch",
+            "tr":"Türkisch"
+        }
     }
 }
