@@ -43,7 +43,7 @@ function Testimonial() {
           <div className="mb-4">
             <Image
               src={selectedTestimonial?.avatar }
-              alt={selectedTestimonial?.name }
+              alt={selectedTestimonial?.name}
               className="w-56 h-56 rounded-full  object-contain  "
               width={100}
               height={100}
@@ -109,8 +109,7 @@ function Testimonial() {
           {currentTestimonials.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"
-                }`}
+              className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"}`}
             />
           ))}
         </div>

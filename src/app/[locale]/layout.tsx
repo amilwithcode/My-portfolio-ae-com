@@ -27,12 +27,12 @@ export default async function RootLayout({
   params: { locale },
   children,
 }: Props) {
-  // const t = useTranslations("HomePage");
+
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={`${locale}`} suppressHydrationWarning>
       <body>
         <AuthContextProvider>
           <ThemeProvider attribute="class">

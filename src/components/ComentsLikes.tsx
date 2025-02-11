@@ -21,15 +21,18 @@ import {
 
 import { db } from "@/src/firebase/config";
 import { toast } from "react-toastify";
-import CommentItem from "./CommentItem";
 import { useTranslations } from "next-intl";
 
 export interface Comment {
+    id: string;
     uid: string;
     username: string;
     rating: number;
     content: string;
-};
+    createdAt: Timestamp;
+    updatedAt?: Timestamp;
+    edited?: boolean;
+}
 
 // Tailwind CSS üçün ortaq stil konstanta çıxarılması
 const inputClasses = "w-full border p-2 rounded-md shadow-sm text-black dark:bg-black dark:text-white";
@@ -41,9 +44,7 @@ function CommentsLikes() {
     const [text, setText] = useState("");
     const [isFormValid, setIsFormValid] = useState(true);
     const [showAllComments, setShowAllComments] = useState(false);
-    const [editingCommentId, setEditingCommentId] = useState<number | null>(
-        null
-    );
+    const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
     const [error, setError] = useState<string>("");
     const { user } = useAuth();
     const uid = user?.uid || "";
@@ -118,7 +119,7 @@ function CommentsLikes() {
             if (editingCommentId !== null) {
                 // Redaktə etmək
                 newComments = newComments.map((comment) =>
-                    newComments.id === editingCommentId
+                    comment.id === editingCommentId
                         ? { ...comment, username, rating, content: text }
                         : comment
                 );
@@ -159,11 +160,11 @@ function CommentsLikes() {
                 edited: true,
                 updatedAt: new Date()
             });
-            alert("Şərh uğurla redaktə edildi!");
+            toast.success("Şərh uğurla redaktə edildi!", { position: "top-center" });
             // Şərhlər siyahısını yenilə
         } catch (error) {
             console.error("Redaktə xətası:", error);
-            alert("Xəta: Şərh redaktə edilmədi.");
+            toast.error("Xəta: Şərh redaktə edilmədi.", { position: "top-center" });
         }
     };
 
@@ -172,11 +173,11 @@ function CommentsLikes() {
             const db = getFirestore();
             const commentRef = doc(db, "coments", commentId);
             await deleteDoc(commentRef);
-            alert("Şərh uğurla silindi!");
+            toast.success("Şərh uğurla silindi!", { position: "top-center" });
             // Şərhlər siyahısını yenilə
         } catch (error) {
             console.error("Şərh silinmədi:", error);
-            alert("Xəta: Şərh silinmədi.");
+            toast.error("Xəta: Şərh silinmədi.", { position: "top-center" });
         }
     };
 
@@ -184,22 +185,6 @@ function CommentsLikes() {
     const formatUsername = (username: string) => {
         if (username.length <= 2) return username;
         return username.slice(0, 2) + '*'.repeat(username.length - 2);
-    };
-
-    // Hər iki comment listi üçün ortaq render funksiyası
-    const renderComments = (comments: Comment[]) => comments.map((comment) => (
-        <CommentItem 
-            key={comment.id}
-            comment={comment}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-        />
-    ));
-
-    // Bütün async funksiyalarda ümumi error handler
-    const handleFirebaseError = (error: unknown) => {
-        console.error(error);
-        // toast.error(t("common.firebase_error"));
     };
 
     return (
@@ -261,7 +246,69 @@ function CommentsLikes() {
             <div className="mt-4 space-y-4">
                 <h3 className="text-xl font-semibold">Recent Comments</h3>
                 <ul className="space-y-2">
-                    {renderComments(comments.slice(0, 3))}
+                    {comments.map((comment) => (
+                        <li key={comment.id} className="border p-4 rounded-lg mb-4">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <p className="font-semibold">{formatUsername(comment.username)}</p>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                        {comment.createdAt?.toDate().toLocaleDateString()}
+                                    </p>
+                                    {editingId === comment.id ? (
+                                        <textarea
+                                            value={editContent}
+                                            onChange={(e) => setEditContent(e.target.value)}
+                                            className="w-full p-2 border rounded mt-2"
+                                        />
+                                    ) : (
+                                        <p className="mt-2">{comment.content}</p>
+                                    )}
+                                    {comment.edited && (
+                                        <p className="text-xs text-gray-500 mt-1">(Edited)</p>
+                                    )}
+                                </div>
+
+                                {user?.uid === comment.uid && (
+                                    <div className="flex space-x-2">
+                                        {editingId === comment.id ? (
+                                            <>
+                                                <button
+                                                    onClick={() => handleEdit(comment.id, editContent)}
+                                                    className="text-green-500 hover:text-green-700"
+                                                >
+                                                    Save
+                                                </button>
+                                                <button
+                                                    onClick={() => setEditingId(null)}
+                                                    className="text-gray-500 hover:text-gray-700"
+                                                >
+                                                    Cancel
+                                                </button>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        setEditingId(comment.id);
+                                                        setEditContent(comment.content);
+                                                    }}
+                                                    className="text-blue-500 hover:text-blue-700"
+                                                >
+                                                    <FaRegEdit />
+                                                </button>
+                                                <button
+                                                    onClick={() => handleDelete(comment.id)}
+                                                    className="text-red-500 hover:text-red-700"
+                                                >
+                                                    <MdOutlineDeleteOutline />
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
@@ -278,7 +325,69 @@ function CommentsLikes() {
             {/* Bütün şərhləri göstərmək üçün */}
             {showAllComments && (
                 <ul className="mt-4 space-y-2">
-                    {renderComments(comments.slice(3))}
+                    {comments.slice(3).map((comment) => (
+                        <li key={comment.id} className="border p-4 rounded-lg mb-4">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <p className="font-semibold">{formatUsername(comment.username)}</p>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                        {comment.createdAt?.toDate().toLocaleDateString()}
+                                    </p>
+                                    {editingId === comment.id ? (
+                                        <textarea
+                                            value={editContent}
+                                            onChange={(e) => setEditContent(e.target.value)}
+                                            className="w-full p-2 border rounded mt-2"
+                                        />
+                                    ) : (
+                                        <p className="mt-2">{comment.content}</p>
+                                    )}
+                                    {comment.edited && (
+                                        <p className="text-xs text-gray-500 mt-1">(Edited)</p>
+                                    )}
+                                </div>
+
+                                {user?.uid === comment.uid && (
+                                    <div className="flex space-x-2">
+                                        {editingId === comment.id ? (
+                                            <>
+                                                <button
+                                                    onClick={() => handleEdit(comment.id, editContent)}
+                                                    className="text-green-500 hover:text-green-700"
+                                                >
+                                                    Save
+                                                </button>
+                                                <button
+                                                    onClick={() => setEditingId(null)}
+                                                    className="text-gray-500 hover:text-gray-700"
+                                                >
+                                                    Cancel
+                                                </button>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        setEditingId(comment.id);
+                                                        setEditContent(comment.content);
+                                                    }}
+                                                    className="text-blue-500 hover:text-blue-700"
+                                                >
+                                                    <FaRegEdit />
+                                                </button>
+                                                <button
+                                                    onClick={() => handleDelete(comment.id)}
+                                                    className="text-red-500 hover:text-red-700"
+                                                >
+                                                    <MdOutlineDeleteOutline />
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             )}
         </div>
