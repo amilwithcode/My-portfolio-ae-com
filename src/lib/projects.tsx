@@ -111,10 +111,10 @@ const useProjectsData =(): Project[] =>{
             ],
         },
         {
-            title: t("projects.title.project4"),
+            title: t("projects.title.project5"),
             shortDescription: t("projects.description.project4"),
             fullDescription:
-                t("projects.fulldescription.project4"),
+                t("projects.fulldescription.project5"),
             link: "https://github.com/feridzeyn/Design",
             images: [gpwebsite.src, gpwebsite1.src, gpwebsite2.src, gpwebsite3.src, gpwebsite4.src, gpwebsite5.src, gpwebsite6.src],
             developers: [

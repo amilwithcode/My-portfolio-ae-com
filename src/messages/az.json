@@ -3,7 +3,7 @@
         "nav": {
             "home": "ev",
             "about": "haqqımda",
-            "projects": "proyektlər",
+            "projects": "layihələr",
             "contact": "əlaqə",
             "login": "daxil ol",
             "signout": "çıxın"
@@ -13,31 +13,31 @@
             "autotext": ""
         },
         "skills": {
-            "title": "Bacar;qlar",
+            "title": "Bacarıqlar",
             "All": "hamısı",
             "Languages": "dillər",
             "Frameworks": "frameworks",
             "Tools": "əlavə alətlər"
         },
         "testimonials": {
-            "header": "",
+            "header": "Rəylər",
             "opinion": {
-                "men1": "KA",
+                "men1": "Amillə işləmək ruhlandırıcı təcrübə oldu. Amil hər bir işə fədakarlıq və yaradıcılıqla yanaşır, ardıcıl olaraq təkmilləşməyə çalışır. Onun diqqəti, qətiyyəti və təfərrüatlara diqqəti onun işini həqiqətən də fərqləndirir.",
                 "men2": "MAD"
             }
         },
         "coments": {
             "title": "Rəylər",
-            "header": "",
-            "username": "",
-            "comment": "",
+            "header": "Son rəylər",
+            "username": "İstifadəçi adı",
+            "comment": "Sizin rəyiniz",
             "submit_comment": "Rəy göndər",
-            "mesaj_commet": "",
-            "form_mesaj": "",
-            "save": "",
-            "cancel": "",
-            "more_commet": "",
-            "edited": ""
+            "mesaj_commet": "Şərh bildirmək üçün daxil olun",
+            "form_mesaj": "Zəhmət olmasa bütün sahələri doldurun!",
+            "save": "Saxla",
+            "cancel": "Ləğv et",
+            "more_commet": "Daha çox Şərh göstər",
+            "edited": "Redaktə edilib"
         }
     },
     "AboutPage": {

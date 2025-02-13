@@ -1,13 +1,13 @@
 import { getRequestConfig } from "next-intl/server";
 import { notFound } from "next/navigation";
 // import { locales } from './config';
-
-
 import { Pathnames } from "next-intl/routing"
+
+
 
 export const locales = ["az", "en", "tr", "de"];
 
-export type Locales = typeof locales
+export type Locales = typeof locales;
 
 export const pathnames: Pathnames<Locales> = {
     "/": "/",
@@ -27,7 +27,7 @@ export default getRequestConfig(async ({ locale }) => {
 
 
     return {
-        messages: (await import(`./mesagges/${locale}.json`)).default,
+        messages: (await import(`./messages/${locale}.json`)).default,
     };
 })
 

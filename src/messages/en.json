@@ -22,15 +22,15 @@
         "testimonials": {
             "header": "opinions",
             "opinion": {
-                "men1": "",
+                "men1": "Working with Amil has been an inspiring experience. Amil approaches every task with dedication and creativity, consistently striving to improve. His focus, determination, and attention to detail make his work truly stand out.",
                 "men2": ""
             }
         },
         "coments": {
             "title": "Comments",
+            "header": "Recent Comments",
             "username": "Username",
             "comment": "Your comment",
-            "header": "Recent Comments",
             "submit_comment": "Submit comment",
             "mesaj_commet": "Sign in to leave a comment",
             "form_mesaj": "Please fill all fields!",
@@ -124,7 +124,7 @@
         "name": {
             "az": "Azerbaijan",
             "de": "German",
-            "en:": "English",
+            "English:": "English",
             "tr": "Turkish"
         }
     }
