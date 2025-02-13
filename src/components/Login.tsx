@@ -20,13 +20,13 @@ function Login() {
 
                         <button
                             onClick={() => setIsLogin(true)}
-                            className={`py-2 px-5 rounded ${isLogin ? "bg-blue-800 text-white" : " text-black"} transition-opacity`}
+                            className={`py-2 px-5 rounded ${isLogin ? "bg-blue-800 text-white" : " text-black dark:text-white"} transition-opacity`}
                         >
                             {t("title.login")}
                         </button>
                         <button
                             onClick={() => setIsLogin(false)}
-                            className={`py-2 px-5 rounded ${!isLogin ? "bg-blue-800 text-white" : " text-black"} transition-opacity`}
+                            className={`py-2 px-5 rounded ${!isLogin ? "bg-blue-800 text-white" : " text-black dark:text-white"} transition-opacity`}
                         >
                             {t("title.register")}
                         </button>
