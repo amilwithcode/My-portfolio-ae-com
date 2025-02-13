@@ -20,24 +20,24 @@
             "Tools": "aletler"
         },
         "testimonials": {
-            "header": "",
+            "header": "Görüşler",
             "opinion": {
-                "men1": "",
+                "men1": "Amil'le çalışmak ilham verici bir deneyimdi. Amil her göreve özveri ve yaratıcılıkla yaklaşıyor ve sürekli olarak gelişmeye çabalıyor. Odaklanması, kararlılığı ve detaylara gösterdiği özen, çalışmasının gerçekten öne çıkmasını sağlıyor.",
                 "men2": ""
             }
         },
         "coments": {
             "title": "Yorumlar",
-            "header":"",
-            "username":"",
-            "comment":"",
+            "header":"Son Yorumlar",
+            "username":"Kullanıcı adı",
+            "comment":"Yorumunuz",
             "submit_comment": "Yorum gönder",
-            "mesaj_commet": "",
-            "form_mesaj": "",
-            "save": "",
-            "cancel": "",
-            "more_commet": "",
-            "edited":""
+            "mesaj_commet": "Yorum bırakmak için oturum açın",
+            "form_mesaj": "Lütfen tüm alanları doldurunuz!",
+            "save": "Kaydetmek",
+            "cancel": "İptal etmek",
+            "more_commet": "Daha Fazla Yorum Göster",
+            "edited":"Düzenlendi"
         }
     },
     "AboutPage": {

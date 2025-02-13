@@ -13,31 +13,31 @@
             "autotext": ""
         },
         "skills": {
-            "title": "",
+            "title": "Fähigkeiten",
             "All": "alle",
             "Languages": "Sprachen",
             "Frameworks": "Rahmenbedingungen",
             "Tools": "Werkzeuge"
         },
         "testimonials": {
-            "header": "",
+            "header": "Meinungen",
             "opinion": {
-                "men1": "",
+                "men1": "Die Zusammenarbeit mit Amil war eine inspirierende Erfahrung. Amil geht jede Aufgabe mit Hingabe und Kreativität an und strebt stets nach Verbesserung. Sein Fokus, seine Entschlossenheit und seine Liebe zum Detail machen seine Arbeit wirklich zu etwas Besonderem.",
                 "men2": ""
             }
         },
         "coments": {
-            "title": "",
-            "header": "",
-            "username": "",
-            "comment": "",
+            "title": "Kommentare",
+            "header": "Aktuelle Kommentare",
+            "username": "Benutzername",
+            "comment": "Ihr Kommentar",
             "submit_comment": "Kommentar senden",
-            "mesaj_commet": "",
-            "form_mesaj": "",
-            "save": "",
-            "cancel": "",
-            "more_commet": "",
-            "edited": ""
+            "mesaj_commet": "Melden Sie sich an, um einen Kommentar zu hinterlassen",
+            "form_mesaj": "Bitte füllen Sie alle Felder aus!",
+            "save": "Speichern",
+            "cancel": "Stornieren",
+            "more_commet": "Weitere Kommentare anzeigen",
+            "edited": "Bearbeitet"
         }
     },
     "AboutPage": {
