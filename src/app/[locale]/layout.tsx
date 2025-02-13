@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getLocale } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import "@/src/style/globals.css";
 import AuthContextProvider from "@/src/context/AuthContext";
@@ -12,6 +12,7 @@ import LocaleSwitcher from "@/src/components/LocaleSwitcher";
 
 type Props = {
     children: ReactNode;
+    params: { locale: string };
 };
 export const metadata: Metadata = {
     title: "Amil's portfolio",
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
     ],
 };
 
-export default async function RootLayout({ children }: Props) {
+export default async function RootLayout({ children, params: { locale } }: Props) {
     const messages = await getMessages();
-    const locale = await getLocale();
+    // const locale = await getLocale();
 
     return (
         <html lang={locale} suppressHydrationWarning>

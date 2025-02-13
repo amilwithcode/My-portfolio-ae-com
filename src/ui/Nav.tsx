@@ -2,7 +2,6 @@
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
-import Link from "next/link";
 import { ButtonsCard } from "@/src/ui/ButtonsCard";
 import { useParams } from "next/navigation";
 import { useAuth } from "@/src/context/AuthContext";
@@ -10,6 +9,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/src/firebase/config";
 import { useTranslations } from "next-intl";
+import { Link } from "../navigation";
 
 type NavProps = {
   locale: string;

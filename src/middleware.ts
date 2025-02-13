@@ -3,7 +3,7 @@ import { locales } from "./i18n";
 
 export default createMiddleware({
     locales,
-    defaultLocale: "az",
+    defaultLocale: "en",
     localePrefix: 'always'
 })
 

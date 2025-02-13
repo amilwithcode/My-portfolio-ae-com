@@ -10,7 +10,7 @@ import Geflag from "@/src/assets/images/flags/de.jpg";
 import { useTransition } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter, usePathname } from "@/src/navigation";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 
 type LocaleSwitcherProps = {
@@ -32,7 +32,7 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
   const params = useParams();
   const searchParams = useSearchParams();
   const query = Object.fromEntries(searchParams?.entries());
-  const t = useTranslations("Languages")
+  // const t = useTranslations("Languages")
   const [isPending, startTransition] = useTransition();
 
   function onSelectChange(lang: string) {

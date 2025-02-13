@@ -1,4 +1,27 @@
 {
+    "extends": "next/core-web-vitals",
+    "rules": {
+        "no-restricted-imports": [
+            "error",
+            {
+                "name": "next/link",
+                "message": "Plesea import from @/navigation instead ",
+                "importNames": [
+                    "default"
+                ]
+            },
+            {
+                "name": "next/navigation",
+                "message": "Plesea import from @/navigation instead ",
+                "importNames": [
+                    "redirect",
+                    "permanentRedirect",
+                    "useRouter",
+                    "usePathname"
+                ]
+            }
+        ]
+    },
     "editor.formatOnSave": true,
     "ditor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
