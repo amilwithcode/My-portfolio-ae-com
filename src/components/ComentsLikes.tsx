@@ -192,7 +192,7 @@ function CommentsLikes() {
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     type="text"
-                    placeholder="Username"
+                    placeholder={t("coments.username")}
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     className={inputClasses}
@@ -217,14 +217,14 @@ function CommentsLikes() {
                 </div>
 
                 <textarea
-                    placeholder="Your comment"
+                    placeholder={t("coments.comment")}
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     className={inputClasses}
                     maxLength={400}
                 />
                 {!user ? (
-                    <p>Sign in to leave a comment</p>
+                    <p> {t("coments.mesaj_commet")}</p>
                 ) : (
                     <button
                         type="submit"
@@ -238,13 +238,13 @@ function CommentsLikes() {
 
             {!isFormValid && (
                 <p className="text-red-500 text-sm mt-2">
-                    Please fill all fields!
+                    {t("coments.form_mesaj")}
                 </p>
             )}
 
             {/* Şərhlərin görünüşü */}
             <div className="mt-4 space-y-4">
-                <h3 className="text-xl font-semibold">Recent Comments</h3>
+                <h3 className="text-xl font-semibold">{t("coments.header")}</h3>
                 <ul className="space-y-2">
                     {comments.map((comment) => (
                         <li key={comment.id} className="border p-4 rounded-lg mb-4">
@@ -264,7 +264,7 @@ function CommentsLikes() {
                                         <p className="mt-2">{comment.content}</p>
                                     )}
                                     {comment.edited && (
-                                        <p className="text-xs text-gray-500 mt-1">(Edited)</p>
+                                        <p className="text-xs text-gray-500 mt-1">{t("coments.edited")}</p>
                                     )}
                                 </div>
 
@@ -276,13 +276,13 @@ function CommentsLikes() {
                                                     onClick={() => handleEdit(comment.id, editContent)}
                                                     className="text-green-500 hover:text-green-700"
                                                 >
-                                                    Save
+                                                    {t("coments.save")}
                                                 </button>
                                                 <button
                                                     onClick={() => setEditingId(null)}
                                                     className="text-gray-500 hover:text-gray-700"
                                                 >
-                                                    Cancel
+                                                    {t("coments.cancel")}
                                                 </button>
                                             </>
                                         ) : (
@@ -318,7 +318,7 @@ function CommentsLikes() {
                     onClick={() => setShowAllComments(true)}
                     className="w-full mt-4 bg-green-500 text-black dark:bg-black dark:text-white p-2 rounded-md hover:bg-green-600"
                 >
-                    Show More Comments
+                    {t("coments.more_commet")}
                 </button>
             )}
 
@@ -343,7 +343,7 @@ function CommentsLikes() {
                                         <p className="mt-2">{comment.content}</p>
                                     )}
                                     {comment.edited && (
-                                        <p className="text-xs text-gray-500 mt-1">(Edited)</p>
+                                        <p className="text-xs text-gray-500 mt-1">{t("coments.edited")}</p>
                                     )}
                                 </div>
 
@@ -355,13 +355,13 @@ function CommentsLikes() {
                                                     onClick={() => handleEdit(comment.id, editContent)}
                                                     className="text-green-500 hover:text-green-700"
                                                 >
-                                                    Save
+                                                    {t("coments.save")}
                                                 </button>
                                                 <button
                                                     onClick={() => setEditingId(null)}
                                                     className="text-gray-500 hover:text-gray-700"
                                                 >
-                                                    Cancel
+                                                    {t("coments.cancel")}
                                                 </button>
                                             </>
                                         ) : (

@@ -28,9 +28,16 @@
         },
         "coments": {
             "title": "Yorumlar",
-            "header": "",
-            "name": "",
-            "submit_comment": "Yorum gönder"
+            "header":"",
+            "username":"",
+            "comment":"",
+            "submit_comment": "Yorum gönder",
+            "mesaj_commet": "",
+            "form_mesaj": "",
+            "save": "",
+            "cancel": "",
+            "more_commet": "",
+            "edited":""
         }
     },
     "AboutPage": {
@@ -115,10 +122,10 @@
     },
     "Languages": {
         "name": {
-            "az":"Azerbaycan",
-            "de":"Almanca",
-            "en:":"İngilizce",
-            "tr":"Türkçe"
+            "az": "Azerbaycan",
+            "de": "Almanca",
+            "en:": "İngilizce",
+            "tr": "Türkçe"
         }
     }
 }

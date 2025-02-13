@@ -28,9 +28,16 @@
         },
         "coments": {
             "title": "Comments",
-            "header": "",
-            "name": "",
-            "submit_comment": "Submit comment"
+            "username": "Username",
+            "comment": "Your comment",
+            "header": "Recent Comments",
+            "submit_comment": "Submit comment",
+            "mesaj_commet": "Sign in to leave a comment",
+            "form_mesaj": "Please fill all fields!",
+            "save": "Save",
+            "cancel": "Cancel",
+            "more_commet": "Show More Comments",
+            "edited": "Edited"
         }
     },
     "AboutPage": {
@@ -115,10 +122,10 @@
     },
     "Languages": {
         "name": {
-            "az":"Azerbaijan",
-            "de":"German",
-            "en:":"English",
-            "tr":"Turkish"
+            "az": "Azerbaijan",
+            "de": "German",
+            "en:": "English",
+            "tr": "Turkish"
         }
     }
 }

@@ -18,13 +18,13 @@ function Login() {
                 <div className="flex justify-center space-x-4 mt-4">
                     <button
                         onClick={() => setIsLogin(true)}
-                        className={`py-2 px-4 rounded-md ${isLogin ? "bg-blue-800 text-white" : " text-black"}`}
+                        className={`py-2 px-4 rounded ${isLogin ? "bg-blue-800 text-white" : " text-black"}`}
                     >
                         {t("title.login")}
                     </button>
                     <button
                         onClick={() => setIsLogin(false)}
-                        className={`py-2 px-4 rounded-md ${!isLogin ? "bg-blue-800 text-white" : " text-black"}`}
+                        className={`py-2 px-4 rounded ${!isLogin ? "bg-blue-800 text-white" : " text-black"}`}
                     >
                         {t("title.register")}
                     </button>

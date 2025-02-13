@@ -13,7 +13,7 @@
             "autotext": ""
         },
         "skills": {
-            "title":"Bacar;qlar",
+            "title": "Bacar;qlar",
             "All": "hamısı",
             "Languages": "dillər",
             "Frameworks": "frameworks",
@@ -22,15 +22,22 @@
         "testimonials": {
             "header": "",
             "opinion": {
-                "men1":"KA",
-                "men2":"MAD"
+                "men1": "KA",
+                "men2": "MAD"
             }
         },
         "coments": {
-            "title":"Rəylər",
+            "title": "Rəylər",
             "header": "",
-            "name": "",
-            "submit_comment":"Rəy göndər"
+            "username": "",
+            "comment": "",
+            "submit_comment": "Rəy göndər",
+            "mesaj_commet": "",
+            "form_mesaj": "",
+            "save": "",
+            "cancel": "",
+            "more_commet": "",
+            "edited": ""
         }
     },
     "AboutPage": {
@@ -50,7 +57,7 @@
         "password": "Şifrə",
         "resertpassword": "Şifrənizi unutmusanız?",
         "button": "DAXİL OLUN",
-        "andor":"və ya"
+        "andor": "və ya"
     },
     "RegisterPage": {
         "header": {
@@ -101,11 +108,11 @@
     },
     "ResertPassworPage": {
         "title": "Şifrəni unutmusunuz?",
-        "email":"Parolu sıfırlayın",
+        "email": "Parolu sıfırlayın",
         "button": "Sıfırlayın",
-        "emptyEmailError":"Email daxil edin",
-        "successMessage":"Email uğurla göndərildi",
-        "errorMessage":"Email yalnışdır"
+        "emptyEmailError": "Email daxil edin",
+        "successMessage": "Email uğurla göndərildi",
+        "errorMessage": "Email yalnışdır"
     },
     "LoadingPage": {
         "title": "Yüklənir, zəhmət olmasa gözləyin"
@@ -115,10 +122,10 @@
     },
     "Languages": {
         "name": {
-            "az":"Azərbaycan",
-            "de":"Alman",
-            "en:":"İngilis",
-            "tr":"Türk"
+            "az": "Azərbaycan",
+            "de": "Alman",
+            "en:": "İngilis",
+            "tr": "Türk"
         }
     }
 }

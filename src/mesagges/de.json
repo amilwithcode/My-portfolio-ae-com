@@ -29,8 +29,15 @@
         "coments": {
             "title": "",
             "header": "",
-            "name": "",
-            "submit_comment": "Kommentar senden"
+            "username": "",
+            "comment": "",
+            "submit_comment": "Kommentar senden",
+            "mesaj_commet": "",
+            "form_mesaj": "",
+            "save": "",
+            "cancel": "",
+            "more_commet": "",
+            "edited": ""
         }
     },
     "AboutPage": {
@@ -115,10 +122,10 @@
     },
     "Languages": {
         "name": {
-            "az":"Aserbaidschanisch",
-            "de":"Deutsch",
-            "en:":"Englisch",
-            "tr":"Türkisch"
+            "az": "Aserbaidschanisch",
+            "de": "Deutsch",
+            "en:": "Englisch",
+            "tr": "Türkisch"
         }
     }
 }
