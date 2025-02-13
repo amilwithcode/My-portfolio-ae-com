@@ -28,16 +28,16 @@
         },
         "coments": {
             "title": "Rəylər",
-            "header": "",
-            "username": "",
-            "comment": "",
+            "header": "Son rəylər",
+            "username": "İstifadəçi adı",
+            "comment": "Sizin yorumunuz",
             "submit_comment": "Rəy göndər",
-            "mesaj_commet": "",
-            "form_mesaj": "",
-            "save": "",
-            "cancel": "",
-            "more_commet": "",
-            "edited": ""
+            "mesaj_commet": "Şərh bildirmək üçün daxil olun",
+            "form_mesaj": "Zəhmət olmasa bütün sahələri doldurun!",
+            "save": "Saxla",
+            "cancel": "Ləğv et",
+            "more_commet": "Daha çox Şərh göstər",
+            "edited": "Redaktə edilib"
         }
     },
     "AboutPage": {
