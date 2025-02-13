@@ -1,7 +1,6 @@
 /* eslint-disable */
 "use client";
 
-
 import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
@@ -16,7 +15,7 @@ import {
     getFirestore,
     deleteDoc,
     updateDoc,
-    Timestamp
+    Timestamp,
 } from "firebase/firestore";
 
 import { db } from "@/src/firebase/config";
@@ -35,7 +34,8 @@ export interface Comment {
 }
 
 // Tailwind CSS üçün ortaq stil konstanta çıxarılması
-const inputClasses = "w-full border p-2 rounded-md shadow-sm text-black dark:bg-black dark:text-white";
+const inputClasses =
+    "w-full border p-2 rounded-md shadow-sm text-black dark:bg-black dark:text-white";
 
 function CommentsLikes() {
     const [comments, setComments] = useState<Comment[]>([]);
@@ -44,7 +44,9 @@ function CommentsLikes() {
     const [text, setText] = useState("");
     const [isFormValid, setIsFormValid] = useState(true);
     const [showAllComments, setShowAllComments] = useState(false);
-    const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
+    const [editingCommentId, setEditingCommentId] = useState<string | null>(
+        null
+    );
     const [error, setError] = useState<string>("");
     const { user } = useAuth();
     const uid = user?.uid || "";
@@ -52,17 +54,24 @@ function CommentsLikes() {
     const [editingId, setEditingId] = useState<string | null>(null);
     const t = useTranslations("HomePage");
 
-    const getUserData = async (uid) => {
-        const docRef = doc(db, "users", uid as string);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            if (!username) {
-                setUsername(docSnap.data().username);
+    const getUserData = async (uid: string) => {
+        try {
+            const docRef = doc(db, "users", uid);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                if (!username) {
+                    setUsername(docSnap.data().username);
+                } else {
+                    setUsername(username);
+                }
             } else {
-                setUsername(username);
+                console.log("notfound");
             }
-        } else {
-            console.log("notfound");
+        } catch (error) {
+            console.error("Xəta: İstifadəçi məlumatları yüklənmədi", error);
+            toast.error("Xəta: İstifadəçi məlumatları yüklənmədi", {
+                position: "top-center",
+            });
         }
     };
 
@@ -70,13 +79,15 @@ function CommentsLikes() {
         const docRef = await getDocs(collection(db, "comments"));
         setComments(docRef.docs.map((doc) => doc.data() as Comment));
     };
+
     useEffect(() => {
         getCommentsData();
     }, [user]);
-    useEffect(() => {
 
-        getUserData(uid);
+    useEffect(() => {
+        if (uid) getUserData(uid);
     }, [uid]);
+
     const AddCommentsToFirestore = async (uid: any) => {
         try {
             const newCommentRef = doc(collection(db, "comments"));
@@ -87,14 +98,14 @@ function CommentsLikes() {
                 rating,
                 content: text,
                 createdAt: Timestamp.now(),
-                edited: false
+                edited: false,
             };
             await setDoc(newCommentRef, newComment);
         } catch (error) {
             console.error("Düzgün əlavə edilmədi", error);
             toast.error("Düzgün əlavə edilmədi", {
-                position: 'top-center',
-            })
+                position: "top-center",
+            });
         }
     };
     // // localStorage-dən şərhləri yükləyirik
@@ -133,7 +144,7 @@ function CommentsLikes() {
                     rating,
                     content: text,
                     createdAt: Timestamp.now(),
-                    edited: false
+                    edited: false,
                 };
                 newComments.push(newComment);
             }
@@ -158,13 +169,17 @@ function CommentsLikes() {
             await updateDoc(commentRef, {
                 content: newContent,
                 edited: true,
-                updatedAt: new Date()
+                updatedAt: new Date(),
             });
-            toast.success("Şərh uğurla redaktə edildi!", { position: "top-center" });
+            toast.success("Şərh uğurla redaktə edildi!", {
+                position: "top-center",
+            });
             // Şərhlər siyahısını yenilə
         } catch (error) {
             console.error("Redaktə xətası:", error);
-            toast.error("Xəta: Şərh redaktə edilmədi.", { position: "top-center" });
+            toast.error("Xəta: Şərh redaktə edilmədi.", {
+                position: "top-center",
+            });
         }
     };
 
@@ -184,7 +199,7 @@ function CommentsLikes() {
     // Yeni köməkçi funksiya əlavə edək (komponentin yuxarı hissəsində)
     const formatUsername = (username: string) => {
         if (username.length <= 2) return username;
-        return username.slice(0, 2) + '*'.repeat(username.length - 2);
+        return username.slice(0, 2) + "*".repeat(username.length - 2);
     };
 
     return (
@@ -204,12 +219,11 @@ function CommentsLikes() {
                         <span
                             key={star}
                             onClick={() => setRating(star)}
-
-                            className={`cursor-pointer ${star <= rating
-                                ? "text-yellow-500"
-                                : "text-gray-300"
-                                }`}
-
+                            className={`cursor-pointer ${
+                                star <= rating
+                                    ? "text-yellow-500"
+                                    : "text-gray-300"
+                            }`}
                         >
                             ★
                         </span>
@@ -229,7 +243,6 @@ function CommentsLikes() {
                     <button
                         type="submit"
                         className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-
                     >
                         {t("coments.submit_comment")}
                     </button>
@@ -247,24 +260,37 @@ function CommentsLikes() {
                 <h3 className="text-xl font-semibold">{t("coments.header")}</h3>
                 <ul className="space-y-2">
                     {comments.map((comment) => (
-                        <li key={comment.id} className="border p-4 rounded-lg mb-4">
+                        <li
+                            key={comment.id}
+                            className="border p-4 rounded-lg mb-4"
+                        >
                             <div className="flex justify-between items-start">
                                 <div>
-                                    <p className="font-semibold">{formatUsername(comment.username)}</p>
+                                    <p className="font-semibold">
+                                        {formatUsername(comment.username)}
+                                    </p>
                                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        {comment.createdAt?.toDate().toLocaleDateString()}
+                                        {comment.createdAt
+                                            ?.toDate()
+                                            .toLocaleDateString()}
                                     </p>
                                     {editingId === comment.id ? (
                                         <textarea
                                             value={editContent}
-                                            onChange={(e) => setEditContent(e.target.value)}
+                                            onChange={(e) =>
+                                                setEditContent(e.target.value)
+                                            }
                                             className="w-full p-2 border rounded mt-2"
                                         />
                                     ) : (
-                                        <p className="mt-2">{comment.content}</p>
+                                        <p className="mt-2">
+                                            {comment.content}
+                                        </p>
                                     )}
                                     {comment.edited && (
-                                        <p className="text-xs text-gray-500 mt-1">{t("coments.edited")}</p>
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            {t("coments.edited")}
+                                        </p>
                                     )}
                                 </div>
 
@@ -273,13 +299,20 @@ function CommentsLikes() {
                                         {editingId === comment.id ? (
                                             <>
                                                 <button
-                                                    onClick={() => handleEdit(comment.id, editContent)}
+                                                    onClick={() =>
+                                                        handleEdit(
+                                                            comment.id,
+                                                            editContent
+                                                        )
+                                                    }
                                                     className="text-green-500 hover:text-green-700"
                                                 >
                                                     {t("coments.save")}
                                                 </button>
                                                 <button
-                                                    onClick={() => setEditingId(null)}
+                                                    onClick={() =>
+                                                        setEditingId(null)
+                                                    }
                                                     className="text-gray-500 hover:text-gray-700"
                                                 >
                                                     {t("coments.cancel")}
@@ -289,15 +322,21 @@ function CommentsLikes() {
                                             <>
                                                 <button
                                                     onClick={() => {
-                                                        setEditingId(comment.id);
-                                                        setEditContent(comment.content);
+                                                        setEditingId(
+                                                            comment.id
+                                                        );
+                                                        setEditContent(
+                                                            comment.content
+                                                        );
                                                     }}
                                                     className="text-blue-500 hover:text-blue-700"
                                                 >
                                                     <FaRegEdit />
                                                 </button>
                                                 <button
-                                                    onClick={() => handleDelete(comment.id)}
+                                                    onClick={() =>
+                                                        handleDelete(comment.id)
+                                                    }
                                                     className="text-red-500 hover:text-red-700"
                                                 >
                                                     <MdOutlineDeleteOutline />
@@ -326,24 +365,37 @@ function CommentsLikes() {
             {showAllComments && (
                 <ul className="mt-4 space-y-2">
                     {comments.slice(3).map((comment) => (
-                        <li key={comment.id} className="border p-4 rounded-lg mb-4">
+                        <li
+                            key={comment.id}
+                            className="border p-4 rounded-lg mb-4"
+                        >
                             <div className="flex justify-between items-start">
                                 <div>
-                                    <p className="font-semibold">{formatUsername(comment.username)}</p>
+                                    <p className="font-semibold">
+                                        {formatUsername(comment.username)}
+                                    </p>
                                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        {comment.createdAt?.toDate().toLocaleDateString()}
+                                        {comment.createdAt
+                                            ?.toDate()
+                                            .toLocaleDateString()}
                                     </p>
                                     {editingId === comment.id ? (
                                         <textarea
                                             value={editContent}
-                                            onChange={(e) => setEditContent(e.target.value)}
+                                            onChange={(e) =>
+                                                setEditContent(e.target.value)
+                                            }
                                             className="w-full p-2 border rounded mt-2"
                                         />
                                     ) : (
-                                        <p className="mt-2">{comment.content}</p>
+                                        <p className="mt-2">
+                                            {comment.content}
+                                        </p>
                                     )}
                                     {comment.edited && (
-                                        <p className="text-xs text-gray-500 mt-1">{t("coments.edited")}</p>
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            {t("coments.edited")}
+                                        </p>
                                     )}
                                 </div>
 
@@ -352,13 +404,20 @@ function CommentsLikes() {
                                         {editingId === comment.id ? (
                                             <>
                                                 <button
-                                                    onClick={() => handleEdit(comment.id, editContent)}
+                                                    onClick={() =>
+                                                        handleEdit(
+                                                            comment.id,
+                                                            editContent
+                                                        )
+                                                    }
                                                     className="text-green-500 hover:text-green-700"
                                                 >
                                                     {t("coments.save")}
                                                 </button>
                                                 <button
-                                                    onClick={() => setEditingId(null)}
+                                                    onClick={() =>
+                                                        setEditingId(null)
+                                                    }
                                                     className="text-gray-500 hover:text-gray-700"
                                                 >
                                                     {t("coments.cancel")}
@@ -368,15 +427,21 @@ function CommentsLikes() {
                                             <>
                                                 <button
                                                     onClick={() => {
-                                                        setEditingId(comment.id);
-                                                        setEditContent(comment.content);
+                                                        setEditingId(
+                                                            comment.id
+                                                        );
+                                                        setEditContent(
+                                                            comment.content
+                                                        );
                                                     }}
                                                     className="text-blue-500 hover:text-blue-700"
                                                 >
                                                     <FaRegEdit />
                                                 </button>
                                                 <button
-                                                    onClick={() => handleDelete(comment.id)}
+                                                    onClick={() =>
+                                                        handleDelete(comment.id)
+                                                    }
                                                     className="text-red-500 hover:text-red-700"
                                                 >
                                                     <MdOutlineDeleteOutline />
