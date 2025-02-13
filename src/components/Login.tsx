@@ -15,19 +15,22 @@ function Login() {
                 <h2 className="text-2xl font-bold text-gray-800">
                     {isLogin ? `${t("header.login")}` : `${t("header.register")}`}
                 </h2>
-                <div className="flex justify-center space-x-4 mt-4">
-                    <button
-                        onClick={() => setIsLogin(true)}
-                        className={`py-2 px-4 rounded ${isLogin ? "bg-blue-800 text-white" : " text-black"}`}
-                    >
-                        {t("title.login")}
-                    </button>
-                    <button
-                        onClick={() => setIsLogin(false)}
-                        className={`py-2 px-4 rounded ${!isLogin ? "bg-blue-800 text-white" : " text-black"}`}
-                    >
-                        {t("title.register")}
-                    </button>
+                <div className="flex justify-center  mt-4">
+                    <div className="border m-2 text-lg  rounded">
+
+                        <button
+                            onClick={() => setIsLogin(true)}
+                            className={`py-2 px-5 rounded ${isLogin ? "bg-blue-800 text-white" : " text-black"} transition-opacity`}
+                        >
+                            {t("title.login")}
+                        </button>
+                        <button
+                            onClick={() => setIsLogin(false)}
+                            className={`py-2 px-5 rounded ${!isLogin ? "bg-blue-800 text-white" : " text-black"} transition-opacity`}
+                        >
+                            {t("title.register")}
+                        </button>
+                    </div>
                 </div>
             </div>
 
