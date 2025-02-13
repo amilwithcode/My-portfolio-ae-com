@@ -3,7 +3,7 @@
         "nav": {
             "home": "ev",
             "about": "haqqımda",
-            "projects": "proyektlər",
+            "projects": "layihələr",
             "contact": "əlaqə",
             "login": "daxil ol",
             "signout": "çıxın"
@@ -13,7 +13,7 @@
             "autotext": ""
         },
         "skills": {
-            "title": "Bacar;qlar",
+            "title": "Bacarıqlar",
             "All": "hamısı",
             "Languages": "dillər",
             "Frameworks": "frameworks",
@@ -30,7 +30,7 @@
             "title": "Rəylər",
             "header": "Son rəylər",
             "username": "İstifadəçi adı",
-            "comment": "Sizin yorumunuz",
+            "comment": "Sizin rəyiniz",
             "submit_comment": "Rəy göndər",
             "mesaj_commet": "Şərh bildirmək üçün daxil olun",
             "form_mesaj": "Zəhmət olmasa bütün sahələri doldurun!",

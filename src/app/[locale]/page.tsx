@@ -16,9 +16,8 @@ export default function Home() {
       id="home"
       className="flex flex-col  justify-center items-center   sm:px-10  bg-white text-black dark:bg-black dark:text-white"
     >
-      <section id="header" >
-        <Header />
-      </section>
+
+      <Header />
       <section id="skils">
         <h2 className="flex justify-center items-center my-2  text-black dark:bg-black dark:text-white font-permanent text-2xl ">
           {c("skills.title")}
