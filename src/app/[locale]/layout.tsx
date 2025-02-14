@@ -1,14 +1,14 @@
 import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages,getLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import "@/src/style/globals.css";
-import AuthContextProvider from "@/src/context/AuthContext";
-import Navbar from "@/src/components/Navbar";
-import FooterSec from "@/src/components/FooterSec";
-import ChangeTheme from "@/src/ui/ChangeTheme";
-import LocaleSwitcher from "@/src/components/LocaleSwitcher";
+import "@/style/globals.css";
+import AuthContextProvider from "@/context/AuthContext";
+import Navbar from "@/components/Navbar";
+import FooterSec from "@/components/FooterSec";
+import ChangeTheme from "@/ui/ChangeTheme";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 type Props = {
     children: ReactNode;
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     ],
 };
 
-export default async function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout({ children }: Props) {
     const messages = await getMessages();
-    // const locale = await getLocale();
+    const locale = await getLocale();
 
     return (
         <html lang={locale} suppressHydrationWarning>

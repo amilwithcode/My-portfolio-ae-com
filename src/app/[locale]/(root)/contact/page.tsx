@@ -1,7 +1,7 @@
 "use client";
 
 
-import ContactComponent from '@/src/ui/contact';
+import ContactComponent from '@/ui/contact';
 
 function Contact() {
   return (

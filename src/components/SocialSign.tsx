@@ -1,7 +1,7 @@
 'use client'
 
 
-import { useAuth } from '@/src/context/AuthContext'
+import { useAuth } from '@/context/AuthContext'
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import { useTranslations } from 'next-intl';

@@ -2,7 +2,7 @@
 
 import React, { useState, useContext, createContext, useEffect, ReactNode } from "react";
 import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider, FacebookAuthProvider, User } from "firebase/auth";
-import { auth } from "@/src/firebase/config";
+import { auth } from "@/firebase/config";
 
 
 interface AuthContextProps {

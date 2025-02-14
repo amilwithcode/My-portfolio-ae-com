@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useParams } from "next/navigation";
-import MyImage from '@/src/assets/images/myImage.png'
+import MyImage from '@/assets/images/myImage.png'
 import { useTranslations } from "next-intl";
+import { Link } from "../navigation";
 
 interface AboutProps {
   name: string;

@@ -3,11 +3,11 @@
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import SocialSign from "@/src/components/SocialSign";
+import SocialSign from "@/components/SocialSign";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { app, db } from "@/src/firebase/config";
-import ToggleEye from "@/src/ui/toggleEye";
+import { app, db } from "@/firebase/config";
+import ToggleEye from "@/ui/toggleEye";
 import { ToastContainer, toast } from 'react-toastify';
 import { useTranslations } from "next-intl";
 

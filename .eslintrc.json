@@ -20,7 +20,8 @@
                     "usePathname"
                 ]
             }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "off"
     },
     "editor.formatOnSave": true,
     "ditor.codeActionsOnSave": {

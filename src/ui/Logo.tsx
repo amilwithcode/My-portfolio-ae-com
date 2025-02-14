@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import LogoImage from "@/src/assets/logo/Logoİmage.png";
+import LogoImage from "@/assets/logo/Logoİmage.png";
 
 function Logo() {
   return (

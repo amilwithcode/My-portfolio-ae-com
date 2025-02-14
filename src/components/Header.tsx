@@ -1,7 +1,7 @@
 'use client'
 
-import AutoText from '@/src/ui/AutoTxt';
-import MyImage from '@/src/ui/MyImage';
+import AutoText from '@/ui/AutoTxt';
+import MyImage from '@/ui/MyImage';
 import { useTranslations } from 'next-intl';
 
 

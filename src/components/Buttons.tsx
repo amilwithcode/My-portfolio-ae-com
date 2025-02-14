@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import Login from "@/src/components/Login";
-import Register from "@/src/components/Register";
+import Login from "@/components/Login";
+import Register from "@/components/Register";
 // import { useTranslations } from "next-intl";
 
 function Buttons(){

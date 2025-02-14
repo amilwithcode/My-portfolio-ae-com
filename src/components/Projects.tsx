@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import projects from "@/src/lib/projects";
+import projects from "@/lib/projects";
 import { useTranslations } from "next-intl";
 
 function Projects() {

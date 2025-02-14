@@ -1,11 +1,11 @@
 "use client";
 
 import { JSX } from "react";
-import AppImage from "@/src/assets/images/project-images/app-image.png";
-import GraphicImage from "@/src/assets/images/project-images/gpimage1.png";
-import DataImage1 from "@/src/assets/images/project-images/coviddata-image.png";
-import DataImage2 from "@/src/assets/images/project-images/pdimage-1.png";
-import PipelineImage from "@/src/assets/images/project-images/pipeline-image1.png";
+import AppImage from "@/assets/images/project-images/app-image.png";
+import GraphicImage from "@/assets/images/project-images/gpimage1.png";
+import DataImage1 from "@/assets/images/project-images/coviddata-image.png";
+import DataImage2 from "@/assets/images/project-images/pdimage-1.png";
+import PipelineImage from "@/assets/images/project-images/pipeline-image1.png";
 import { FaBorderAll, FaDatabase, FaPython } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 import { useTranslations } from "next-intl";

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import useTestimonials from "@/src/lib/data";
+import useTestimonials from "@/lib/data";
 
 function Testimonial() {
   const testimonials = useTestimonials();

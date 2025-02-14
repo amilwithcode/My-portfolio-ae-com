@@ -21,6 +21,10 @@
         },
         "testimonials": {
             "header": "Meinungen",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
             "opinion": {
                 "men1": "Die Zusammenarbeit mit Amil war eine inspirierende Erfahrung. Amil geht jede Aufgabe mit Hingabe und Kreativität an und strebt stets nach Verbesserung. Sein Fokus, seine Entschlossenheit und seine Liebe zum Detail machen seine Arbeit wirklich zu etwas Besonderem.",
                 "men2": ""

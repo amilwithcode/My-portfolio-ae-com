@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import myImage from '@/src/assets/images/myImage.png'
+import myImage from '@/assets/images/myImage.png'
 
 function MyImage()  {
     return (

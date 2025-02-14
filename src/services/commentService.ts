@@ -1,5 +1,5 @@
-import { db } from "@/src/firebase/config";
-import { Comment } from "@/src/types";
+import { db } from "@/firebase/config";
+import { Comment } from "@/types";
 import { 
   collection,
   addDoc,

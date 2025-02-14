@@ -4,13 +4,13 @@
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import Toggle from "@/src/ui/toggleEye";
-import SocialSign from "@/src/components/SocialSign";
+import Toggle from "@/ui/toggleEye";
+import SocialSign from "@/components/SocialSign";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "@/src/firebase/config";
+import { app } from "@/firebase/config";
 import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from 'react-toastify';
-import { useAuth } from "@/src/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 
 function LoginComponent() {
   const [isLogin, setIsLogin] = useState<boolean>(true);

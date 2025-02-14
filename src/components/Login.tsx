@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import RegisterForm from "@/src/components/Register";
-import LoginForm from "@/src/components/LoginComponent";
+import RegisterForm from "@/components/Register";
+import LoginForm from "@/components/LoginComponent";
 import { useTranslations } from "next-intl";
 
 function Login() {

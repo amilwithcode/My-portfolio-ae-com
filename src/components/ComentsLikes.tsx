@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
-import { useAuth } from "@/src/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import {
     setDoc,
     doc,
@@ -18,7 +18,7 @@ import {
     Timestamp,
 } from "firebase/firestore";
 
-import { db } from "@/src/firebase/config";
+import { db } from "@/firebase/config";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 

@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Enflag from "@/src/assets/images/flags/en.jpg";
-import Azflag from "@/src/assets/images/flags/az.jpg";
-import Trflag from "@/src/assets/images/flags/tr.jpg";
-import Geflag from "@/src/assets/images/flags/de.jpg";
+import Enflag from "@/assets/images/flags/en.jpg";
+import Azflag from "@/assets/images/flags/az.jpg";
+import Trflag from "@/assets/images/flags/tr.jpg";
+import Geflag from "@/assets/images/flags/de.jpg";
 
 import { useTransition } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { useRouter, usePathname } from "@/src/navigation";
+import { useRouter, usePathname } from "@/navigation";
 // import { useTranslations } from "next-intl";
 
 

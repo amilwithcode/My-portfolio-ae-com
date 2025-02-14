@@ -1,5 +1,5 @@
 
-import { ResetInput } from "@/src/components/ResertInput"
+import { ResetInput } from "@/components/ResertInput"
 
 
 

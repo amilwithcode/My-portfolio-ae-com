@@ -21,6 +21,10 @@
         },
         "testimonials": {
             "header": "Görüşler",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
             "opinion": {
                 "men1": "Amil'le çalışmak ilham verici bir deneyimdi. Amil her göreve özveri ve yaratıcılıkla yaklaşıyor ve sürekli olarak gelişmeye çabalıyor. Odaklanması, kararlılığı ve detaylara gösterdiği özen, çalışmasının gerçekten öne çıkmasını sağlıyor.",
                 "men2": ""

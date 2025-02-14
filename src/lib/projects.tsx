@@ -1,30 +1,30 @@
 'use client'
 
-import wheatherapp1 from "@/src/assets/images/project-images/app-image.png";
-import wheatherapp2 from "@/src/assets/images/project-images/appimage.png";
-import wheatherapp3 from "@/src/assets/images/project-images/app-image4.png";
-import gpwebsite from "@/src/assets/images/project-images/gpwebsite.png";
-import gpwebsite1 from "@/src/assets/images/project-images/gpimage1.png";
-import gpwebsite2 from "@/src/assets/images/project-images/gpimage2.png";
-import gpwebsite3 from "@/src/assets/images/project-images/gpimage3.png";
-import gpwebsite4 from "@/src/assets/images/project-images/gpimage4.png";
-import gpwebsite5 from "@/src/assets/images/project-images/gpimage5.png";
-import gpwebsite6 from "@/src/assets/images/project-images/gpimage6_.png"
-import covidDataAnalisis from "@/src/assets/images/project-images/coviddata-image.png";
-import covidDataAnalisis1 from "@/src/assets/images/project-images/covidimage1.png";
-import covidDataAnalisis2 from "@/src/assets/images/project-images/covidimage4.png";
-import sbDataAnalisis from "@/src/assets/images/project-images/pdimage-1.png";
-import sbDataAnalisis1 from "@/src/assets/images/project-images/pdimage-2.png";
-import sbDataAnalisis2 from "@/src/assets/images/project-images/pdimage-3.png";
-import pipelineAnalisis from "@/src/assets/images/project-images/pipelineimage.png";
-import pipelineAnalisis1 from "@/src/assets/images/project-images/pipeline-image1.png";
-import pipelineAnalisis2 from "@/src/assets/images/project-images/pipelineimage2.png";
-import pipelineAnalisis3 from "@/src/assets/images/project-images/pipeline-image.png";
-import pipelineAnalisis4 from "@/src/assets/images/project-images/pipeline-image1.png";
-import pipelineAnalisis5 from "@/src/assets/images/project-images/pipeline-imag2.png";
-// import pipelineAnalisis6 from "@/src/assets/images/project-images/";
-import devImage from "@/src/assets/images/project-images/ae-image.png";
-import devImage1 from "@/src/assets/images/project-images/fz-image.png";
+import wheatherapp1 from "@/assets/images/project-images/app-image.png";
+import wheatherapp2 from "@/assets/images/project-images/appimage.png";
+import wheatherapp3 from "@/assets/images/project-images/app-image4.png";
+import gpwebsite from "@/assets/images/project-images/gpwebsite.png";
+import gpwebsite1 from "@/assets/images/project-images/gpimage1.png";
+import gpwebsite2 from "@/assets/images/project-images/gpimage2.png";
+import gpwebsite3 from "@/assets/images/project-images/gpimage3.png";
+import gpwebsite4 from "@/assets/images/project-images/gpimage4.png";
+import gpwebsite5 from "@/assets/images/project-images/gpimage5.png";
+import gpwebsite6 from "@/assets/images/project-images/gpimage6_.png"
+import covidDataAnalisis from "@/assets/images/project-images/coviddata-image.png";
+import covidDataAnalisis1 from "@/assets/images/project-images/covidimage1.png";
+import covidDataAnalisis2 from "@/assets/images/project-images/covidimage4.png";
+import sbDataAnalisis from "@/assets/images/project-images/pdimage-1.png";
+import sbDataAnalisis1 from "@/assets/images/project-images/pdimage-2.png";
+import sbDataAnalisis2 from "@/assets/images/project-images/pdimage-3.png";
+import pipelineAnalisis from "@/assets/images/project-images/pipelineimage.png";
+import pipelineAnalisis1 from "@/assets/images/project-images/pipeline-image1.png";
+import pipelineAnalisis2 from "@/assets/images/project-images/pipelineimage2.png";
+import pipelineAnalisis3 from "@/assets/images/project-images/pipeline-image.png";
+import pipelineAnalisis4 from "@/assets/images/project-images/pipeline-image1.png";
+import pipelineAnalisis5 from "@/assets/images/project-images/pipeline-imag2.png";
+// import pipelineAnalisis6 from "@/assets/images/project-images/";
+import devImage from "@/assets/images/project-images/ae-image.png";
+import devImage1 from "@/assets/images/project-images/fz-image.png";
 import { useTranslations } from "next-intl";
 
 interface Project  {

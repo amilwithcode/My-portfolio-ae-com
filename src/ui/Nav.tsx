@@ -2,12 +2,12 @@
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
-import { ButtonsCard } from "@/src/ui/ButtonsCard";
+import { ButtonsCard } from "@/ui/ButtonsCard";
 import { useParams } from "next/navigation";
-import { useAuth } from "@/src/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/src/firebase/config";
+import { db } from "@/firebase/config";
 import { useTranslations } from "next-intl";
 import { Link } from "../navigation";
 

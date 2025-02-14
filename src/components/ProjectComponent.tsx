@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import projectsData from "@/src/lib/projectsdata";
+import projectsData from "@/lib/projectsdata";
 import { useTranslations } from "next-intl";
 
 function ProjectComponent() {

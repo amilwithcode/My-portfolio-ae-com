@@ -1,6 +1,6 @@
 'use client'
 
-import AboutComponent from '@/src/components/AboutComponents'
+import AboutComponent from '@/components/AboutComponents'
 
 
 

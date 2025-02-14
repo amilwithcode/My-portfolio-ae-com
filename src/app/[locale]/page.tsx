@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import Header from "@/src/components/Header";
-import Skils from "@/src/components/Skils";
-import Projects from "@/src/components/ProjectComponent";
-import Testimional from "@/src/components/Testemional";
-import ComentsLikes from "@/src/components/ComentsLikes";
+import Header from "@/components/Header";
+import Skils from "@/components/Skils";
+import Projects from "@/components/ProjectComponent";
+import Testimional from "@/components/Testemional";
+import ComentsLikes from "@/components/ComentsLikes";
 import { useTranslations } from "next-intl";
 
 export default function Home() {

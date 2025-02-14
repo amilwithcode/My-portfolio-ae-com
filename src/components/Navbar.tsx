@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import Logo from '@/src/ui/Logo';
+import Logo from '@/ui/Logo';
 import Hamburger from 'hamburger-react';
-import Nav from '@/src/ui/Nav';
-// import { useTranslations } from "next-intl";
+import Nav from '@/ui/Nav';
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);

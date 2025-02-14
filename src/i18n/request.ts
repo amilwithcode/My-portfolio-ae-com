@@ -22,11 +22,15 @@ export const localePrefix = "always";
 
 
 export default getRequestConfig(async ({ locale }) => {
-    if (!locales.includes(locale )) notFound();
-
+    if (!locales.includes(locale)) notFound();
 
     return {
         messages: (await import(`@/messages/${locale}.json`)).default,
     };
 })
 
+// import { getRequestConfig } from 'next-intl/server';
+
+// export default getRequestConfig(async ({ locale }) => ({
+//     messages: (await import(`@/src/i18n/${locale}.json`)).default
+// }));

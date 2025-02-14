@@ -1,6 +1,6 @@
 'use client';
 
-import  GlobalError  from "@/src/error/GlobalError";
+import  GlobalError  from "@/error/GlobalError";
 
 
 

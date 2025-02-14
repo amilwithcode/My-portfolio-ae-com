@@ -21,6 +21,10 @@
         },
         "testimonials": {
             "header": "opinions",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
             "opinion": {
                 "men1": "Working with Amil has been an inspiring experience. Amil approaches every task with dedication and creativity, consistently striving to improve. His focus, determination, and attention to detail make his work truly stand out.",
                 "men2": ""
