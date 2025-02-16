@@ -1,4 +1,3 @@
-/* eslint-disable */
 "use client";
 
 import { createContext, useState, useContext, useEffect } from "react";
