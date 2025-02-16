@@ -9,11 +9,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 import { useTranslations } from "next-intl";
-<<<<<<< HEAD
-import { Link } from "../navigation";
-=======
+
 import { Link } from "@/i18n/routing";
->>>>>>> 11c5ddc (project configured)
+
 
 type NavProps = {
   locale: string;
@@ -75,7 +73,7 @@ export default function Nav(): ReactElement<NavProps> {
       <ul className="flex items-center gap-8 m-auto  lg:text-md  lg:text-[24px]  tracking-wider  text-black dark:bg-black dark:text-white   flex-col md:flex-row md:font-medium md:text-[14px] md:item-center  sm:text-[10px]  sn:item-center ">
         <li>
           <Link
-            href={`/${locale}/`}
+            href="/"
             className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px] "
           >
             {t("nav.home")}
@@ -84,7 +82,7 @@ export default function Nav(): ReactElement<NavProps> {
 
         <li>
           <Link
-            href={`/${locale}/about`}
+            href="/about"
             className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px]  "
           >
             {t("nav.about")}
@@ -92,7 +90,7 @@ export default function Nav(): ReactElement<NavProps> {
         </li>
         <li>
           <Link
-            href={`/${locale}/projects`}
+            href="/projects"
             className="block mb-[3px] lg:text-xl  border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px]  "
           >
             {t("nav.projects")}
@@ -100,11 +98,9 @@ export default function Nav(): ReactElement<NavProps> {
         </li>
         <li>
           <Link
-<<<<<<< HEAD
-            href={`/${locale}/contact`}
-=======
+
             href="/contact"
->>>>>>> 11c5ddc (project configured)
+
             className="block mb-[3px] lg:text-xl border-b-black dark:border-b-white md:text-[14px] md:hover:border-b-[1px] ] sm:text-[10px]  "
           >
             {t("nav.contact")}
@@ -114,11 +110,9 @@ export default function Nav(): ReactElement<NavProps> {
       {loading ? null : !user ? (
         <ButtonsCard className=" p-3 m-auto hover:outline-2 hover:cursor-pointer dark:hover:border-gray-500 border-black dark:border-white rounded-full md:m-0   ">
           <Link
-<<<<<<< HEAD
-            href={`/${locale}/loginregister`}
-=======
+
             href="/loginregister"
->>>>>>> 11c5ddc (project configured)
+
             className="block text-center lg:text-xl   hover:border-b-[1px] border-b-black dark:border-b-white uppercase md:text-[14px] md:hover:border-b-[1px]  sm:text-[10px] "
           >
             {t("nav.login")}
