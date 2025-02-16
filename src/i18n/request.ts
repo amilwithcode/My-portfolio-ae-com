@@ -1,36 +1,19 @@
-import { getRequestConfig } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { Pathnames } from "next-intl/routing"
 
+import { getRequestConfig } from 'next-intl/server';
+import { routing } from './routing';
 
+export default getRequestConfig(async ({ requestLocale }) => {
+  // This typically corresponds to the `[locale]` segment
+  let locale = await requestLocale;
 
-export const locales = ["az", "en", "tr", "de"];
+  // Ensure that a valid locale is used
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale;
+  }
 
-export type Locales = typeof locales;
+  return {
+    locale,
+    messages: (await import(`../../messages/${locale}.json`)).default
+  };
+});
 
-export const pathnames: Pathnames<Locales> = {
-    "/": "/",
-    "/about": "/about",
-    "/projects": "/projects",
-    "/contact": "/contact",
-    "/login": "/login",
-    "/register": "/register"
-}
-
-export const localePrefix = "always";
-
-
-
-export default getRequestConfig(async ({ locale }) => {
-    if (!locales.includes(locale)) notFound();
-
-    return {
-        messages: (await import(`@/messages/${locale}.json`)).default,
-    };
-})
-
-// import { getRequestConfig } from 'next-intl/server';
-
-// export default getRequestConfig(async ({ locale }) => ({
-//     messages: (await import(`@/src/i18n/${locale}.json`)).default
-// }));

@@ -1,0 +1,135 @@
+{
+    "HomePage": {
+        "nav": {
+            "home": "home",
+            "about": "about",
+            "projects": "projects",
+            "contact": "contact",
+            "login": "login",
+            "signout": "sign out"
+        },
+        "header": {
+            "title": "Hello Welcome my portfolio!",
+            "autotext": ""
+        },
+        "skills": {
+            "title": "Skills",
+            "All": "all",
+            "Languages": "languages",
+            "Frameworks": "frameworks",
+            "Tools": "tools"
+        },
+        "testimonials": {
+            "header": "opinions",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
+            "opinion": {
+                "men1": "Working with Amil has been an inspiring experience. Amil approaches every task with dedication and creativity, consistently striving to improve. His focus, determination, and attention to detail make his work truly stand out.",
+                "men2": ""
+            }
+        },
+        "coments": {
+            "title": "Comments",
+            "header": "Recent Comments",
+            "username": "Username",
+            "comment": "Your comment",
+            "submit_comment": "Submit comment",
+            "mesaj_commet": "Sign in to leave a comment",
+            "form_mesaj": "Please fill all fields!",
+            "save": "Save",
+            "cancel": "Cancel",
+            "more_commet": "Show More Comments",
+            "edited": "Edited"
+        }
+    },
+    "AboutPage": {
+        "title": "About Me",
+        "description": "Hello! I am studying Supply Chain Management and have a strong interest in technology and data analysis. I have worked on analyzing data related to COVID-19 and smartphone brands, utilizing Python and its libraries. These experiences have helped me develop a deeper understanding of data and apply it to practical solutions.In the field of technology, I am enhancing my skills by building web applications using React.js, Next.js, and TypeScript. I am currently learning Firebase to create more dynamic projects. Additionally, I am working on robotics projects using C# and expanding my knowledge in cybersecurity.My goal is to leverage my skills in data analysis and technology to develop more efficient solutions in the field of Supply Chain Management. I am always eager to learn, share, and collaborate on new opportunities.",
+        "button": "Feel free to reach out – I’d be happy to connect!"
+    },
+    "ContactPage": {
+        "title": "Contact",
+        "name": "Your name",
+        "email": "Email",
+        "mesagge": "Message",
+        "button": "Send"
+    },
+    "LoginPage": {
+        "email": "email",
+        "password": "password",
+        "resertpassword": "Forgot password?",
+        "button": "Login",
+        "andor": "and or"
+    },
+    "ProjectsPage": {
+        "title": "Projects",
+        "projects": {
+            "title": {
+                "project1": "COVID-19 Data Analysis",
+                "project2": "Smartphone Brands Data Analysis",
+                "project3": "Pipeline data calculation program",
+                "project4": "Weather Forecast Website",
+                "project5": "Graphic real website"
+            },
+            "description": {
+                "project1": "COVID-19 cases data analysis with python and libraries",
+                "project2": "Data analysis of smartphone brands using python and libraries",
+                "project3": "Pipeline data calculation program using python and libraries",
+                "project4": "Azerbaijan cities weather forecast website",
+                "project5": "Graphic design website with React+Vite and Javascript"
+            },
+            "fulldescription": {
+                "project1": "This project is a data analysis of COVID-19 cases. It analyzes the number of cases, deaths, and recoveries in different countries. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+                "project2": "This project is a data analysis of smartphone brands. It analyzes the popularity of different smartphone brands based on sales and market share. The data is visualized using charts and graphs. The project is open source and available on GitHub.",
+                "project3": "This project is a pipeline data calculation program. It calculates the flow rate, pressure, and other parameters of a pipeline. The project is open source and available on GitHub.",
+                "project4": "This project is a weather forecast website for Azerbaijan cities. It shows the current weather and the forecast for the next 5 days. The website is built using React and Tailwind CSS. The weather data is fetched from the OpenWeatherMap API. The website is responsive and works on all devices. The project is open source and available on GitHub.",
+                "project5": "This project is a graphic design website. It showcases the work of a graphic designer. The website is built using React+Vite and Javascript. The website is responsive and works on all devices. The project is open source and available on GitHub."
+            }
+        },
+        "button": "Learn more",
+        "githubButton": "View GitHub"
+    },
+    "RegisterPage": {
+        "header": {
+            "login": "SIGN IN",
+            "register": "JOIN"
+        },
+        "title": {
+            "login": "Log in to your account",
+            "register": "Register"
+        },
+        "name": "Username",
+        "email": "email",
+        "password": "password",
+        "resertpassword": "Confirm password",
+        "button": "Register"
+    },
+    "NotfoundPage": {
+        "title": "Sorry, the page you are looking for does not exist",
+        "button": "Back to Home"
+    },
+    "ResertPassworPage": {
+        "title": "Forgot password?",
+        "email": "Reset password",
+        "button": "Reset",
+        "emptyEmailError": "Enter email",
+        "successMessage": "Email successfully sent",
+        "errorMessage": "Invalid email"
+    },
+    "LoadingPage": {
+        "title": "Loading, please wait"
+    },
+    "Footer": {
+        "foot": "My website"
+    },
+    "Languages": {
+        "name": {
+            "az": "Azerbaijan",
+            "de": "German",
+            "en": "English",
+            "tr": "Turkish"
+        }
+    }
+}

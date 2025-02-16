@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         permanent: ['"Permanent Marker"', 'cursive'],
+
       },
       colors: {
         aqua: '#0000',

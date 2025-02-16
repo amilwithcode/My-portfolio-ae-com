@@ -3,6 +3,7 @@
 import Image1 from '@/assets/images/testimional-image/kamran-image.jpg';
 import Image2 from '@/assets/images/testimional-image/kamran-image.jpg';
 import { useTranslations } from 'next-intl';
+import { StaticImageData } from 'next/image';
 
 
 
@@ -11,7 +12,9 @@ interface Testimional {
     name: string,
     feedback: string,
     role: string,
-    avatar: string
+
+    avatar: StaticImageData
+
 };
 
 
@@ -24,7 +27,9 @@ const useTestimonials = (): Testimional[] => {
             name: "Kamran Xəlilov",
             feedback:t("testimonials.opinion.men1"),
             role: t("testimonials.role.men1"),
-            avatar: `${Image1}`,
+
+            avatar: Image1,
+
 
         },
         {
@@ -32,7 +37,8 @@ const useTestimonials = (): Testimional[] => {
             name: "Nicat Əhmədov",
             feedback:t("testimonials.opinion.men2"),
             role:t("testimonials.role.men2"),
-            avatar: `${Image2}`,
+
+            avatar: Image2,
 
         }
     ]

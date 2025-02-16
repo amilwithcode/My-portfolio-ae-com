@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Toggle from "@/ui/toggleEye";
 import SocialSign from "@/components/SocialSign";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -38,7 +38,7 @@ function LoginComponent() {
       setPassword("");
       if (userCredential.user) router.push(`/${locale}`);
     } catch (error) {
-      
+
       toast.error('Email və şifrəni doğru daxil edin', {
         position: 'top-center',
       });
@@ -52,7 +52,9 @@ function LoginComponent() {
           htmlFor="email"
           className="block text-sm font-medium text-gray-700 lowercase"
         >
-          {t("email")} 
+
+          {t("email")}
+
         </label>
         <input
           type="email"
@@ -100,7 +102,9 @@ function LoginComponent() {
         // onClick={handleInputChange}
         >
           {t("button")}
-          <ToastContainer/>
+
+          <ToastContainer />
+
         </button>
       </div>
 

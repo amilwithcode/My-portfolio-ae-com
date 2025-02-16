@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import MyImage from '@/assets/images/myImage.png'
 import { useTranslations } from "next-intl";
-import { Link } from "../navigation";
+
+import { Link } from "@/i18n/routing";
+
 
 interface AboutProps {
   name: string;

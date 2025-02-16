@@ -1,0 +1,135 @@
+{
+    "HomePage": {
+        "nav": {
+            "home": "Home",
+            "about": "Über uns",
+            "projects": "Projekte",
+            "contact": "Kontakt",
+            "login": "Login",
+            "signout": "Abmelden"
+        },
+        "header": {
+            "title": "Hallo, willkommen in meinem Portfolio!",
+            "autotext": ""
+        },
+        "skills": {
+            "title": "Fähigkeiten",
+            "All": "alle",
+            "Languages": "Sprachen",
+            "Frameworks": "Rahmenbedingungen",
+            "Tools": "Werkzeuge"
+        },
+        "testimonials": {
+            "header": "Meinungen",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
+            "opinion": {
+                "men1": "Die Zusammenarbeit mit Amil war eine inspirierende Erfahrung. Amil geht jede Aufgabe mit Hingabe und Kreativität an und strebt stets nach Verbesserung. Sein Fokus, seine Entschlossenheit und seine Liebe zum Detail machen seine Arbeit wirklich zu etwas Besonderem.",
+                "men2": ""
+            }
+        },
+        "coments": {
+            "title": "Kommentare",
+            "header": "Aktuelle Kommentare",
+            "username": "Benutzername",
+            "comment": "Ihr Kommentar",
+            "submit_comment": "Kommentar senden",
+            "mesaj_commet": "Melden Sie sich an, um einen Kommentar zu hinterlassen",
+            "form_mesaj": "Bitte füllen Sie alle Felder aus!",
+            "save": "Speichern",
+            "cancel": "Stornieren",
+            "more_commet": "Weitere Kommentare anzeigen",
+            "edited": "Bearbeitet"
+        }
+    },
+    "AboutPage": {
+        "title": "Über mich",
+        "description": "Hallo! Ich studiere Supply Chain Management und interessiere mich sehr für Technologie und Datenanalyse. Ich habe an der Analyse von Daten im Zusammenhang mit COVID-19 und Smartphone-Marken gearbeitet und dabei Python und seine Bibliotheken verwendet. Diese Erfahrungen haben mir geholfen, ein tieferes Verständnis von Daten zu entwickeln und sie auf praktische Lösungen anzuwenden. Im Bereich Technologie verbessere ich meine Fähigkeiten, indem ich Webanwendungen mit React.js, Next.js und TypeScript erstelle. Derzeit lerne ich Firebase, um dynamischere Projekte zu erstellen. Darüber hinaus arbeite ich an Robotikprojekten mit C# und erweitere mein Wissen im Bereich Cybersicherheit. Mein Ziel ist es, meine Fähigkeiten in Datenanalyse und Technologie zu nutzen, um effizientere Lösungen im Bereich Supply Chain Management zu entwickeln. Ich bin immer bestrebt, zu lernen, zu teilen und an neuen Möglichkeiten mitzuarbeiten.",
+        "button": "Nehmen Sie einfach Kontakt mit mir auf – ich freue mich auf die Kontaktaufnahme!"
+    },
+    "ContactPage": {
+        "title": "Kontakt",
+        "name": "Ihr Name",
+        "email": "E-Mail",
+        "mesagge": "Nachricht",
+        "button": "Schicken"
+    },
+    "ProjectsPage": {
+        "title": "Projekte",
+        "projects": {
+            "title": {
+                "project1": "COVID-19-Datenanalyse",
+                "project2": "Datenanalyse zu Smartphone-Marken",
+                "project3": "Pipeline-Datenberechnungsprogramm",
+                "project4": "Wettervorhersage-Website",
+                "project5": "Grafische Real-Website"
+            },
+            "description": {
+                "project1": "COVID-19-Falldatenanalyse mit Python und Bibliotheken",
+                "project2": "Datenanalyse von Smartphone-Marken mit Python und Bibliotheken",
+                "project3": "Programm zur Berechnung von Pipeline-Daten mit Python und Bibliotheken",
+                "project4": "Website zur Wettervorhersage für aserbaidschanische Städte",
+                "project5": "Grafikdesign-Website mit React+Vite und Javascript"
+            },
+            "fulldescription": {
+                "project1": "Bei diesem Projekt handelt es sich um eine Datenanalyse von COVID-19-Fällen. Es analysiert die Anzahl der Fälle, Todesfälle und Genesungen in verschiedenen Ländern. Die Daten werden mithilfe von Diagrammen und Grafiken visualisiert. Das Projekt ist Open Source und auf GitHub verfügbar.",
+                "project2": "Bei diesem Projekt handelt es sich um eine Datenanalyse von Smartphone-Marken. Es analysiert die Popularität verschiedener Smartphone-Marken anhand von Umsatz und Marktanteil. Die Daten werden mithilfe von Diagrammen und Grafiken visualisiert. Das Projekt ist Open Source und auf GitHub verfügbar.",
+                "project3": "Bei diesem Projekt handelt es sich um ein Programm zur Berechnung von Pipeline-Daten. Es berechnet die Durchflussrate, den Druck und andere Parameter einer Pipeline. Das Projekt ist Open Source und auf GitHub verfügbar.",
+                "project4": "Dieses Projekt ist eine Wettervorhersage-Website für Städte in Aserbaidschan. Sie zeigt das aktuelle Wetter und die Vorhersage für die nächsten 5 Tage. Die Website wurde mit React und Tailwind CSS erstellt. Die Wetterdaten werden von der OpenWeatherMap-API abgerufen. Die Website ist responsive und funktioniert auf allen Geräten. Das Projekt ist Open Source und auf GitHub verfügbar.",
+                "project5": "Bei diesem Projekt handelt es sich um eine Website für Grafikdesign. Sie präsentiert die Arbeit eines Grafikdesigners. Die Website wurde mit React+Vite und Javascript erstellt. Die Website ist responsive und funktioniert auf allen Geräten. Das Projekt ist Open Source und auf GitHub verfügbar."
+            }
+        },
+        "button": "Mehr erfahren",
+        "githubButton": "GitHub anzeigen"
+    },
+    "LoginPage": {
+        "email": "E-Mail",
+        "password": "Passwort",
+        "resertpassword": "Passwort vergessen?",
+        "button": "Login",
+        "andor": "und/oder"
+    },
+    "RegisterPage": {
+        "header": {
+            "login": "Einloggen",
+            "register": "BEITRETEN"
+        },
+        "title": {
+            "login": "Melden Sie sich bei Ihrem Konto an",
+            "register": "Registrieren"
+        },
+        "name": "Benutzername",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "resertpassword": "Passwort bestätigen",
+        "button": "Registrieren"
+    },
+    "NotfoundPage": {
+        "title": "Es tut uns leid, die von Ihnen gesuchte Seite existiert nicht",
+        "button": "Zurück zur Startseite"
+    },
+    "ResertPassworPage": {
+        "title": "Passwort vergessen?",
+        "email": "Passwort zurücksetzen",
+        "button": "Zurücksetzen",
+        "emptyEmailError": "Email eingeben",
+        "successMessage": "Email wurde gesendet",
+        "errorMessage": "Email nicht gültig"
+    },
+    "LoadingPage": {
+        "title": "Wird geladen, bitte warten"
+    },
+    "Footer": {
+        "foot": "Meine Website"
+    },
+    "Languages": {
+        "name": {
+            "az": "Aserbaidschanisch",
+            "de": "Deutsch",
+            "en:": "Englisch",
+            "tr": "Türkisch"
+        }
+    }
+}

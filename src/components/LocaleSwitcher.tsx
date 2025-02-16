@@ -9,14 +9,14 @@ import Geflag from "@/assets/images/flags/de.jpg";
 
 import { useTransition } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { useRouter, usePathname } from "@/navigation";
-// import { useTranslations } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 
 
-type LocaleSwitcherProps = {
-  locale: string;
-  setLocale?: (locale: string) => void;
-};
+// type LocaleSwitcherProps = {
+
+//   setLocale?: (locale: string) => void;
+// };
 
 export const locales = [
   { code: "en", name: "English", icon: Enflag.src },
@@ -25,15 +25,22 @@ export const locales = [
   { code: "de", name: "Germany", icon: Geflag.src },
 ];
 
-function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
+
+
+function LocaleSwitcher() {
+
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
   const searchParams = useSearchParams();
   const query = Object.fromEntries(searchParams?.entries());
-  // const t = useTranslations("Languages")
+
+  const t = useTranslations("Languages");
+  const locale = useLocale();
   const [isPending, startTransition] = useTransition();
+  console.log(locale)
+
 
   function onSelectChange(lang: string) {
     startTransition(() => {
@@ -60,7 +67,9 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
           width={20}
           height={20}
         />
-        <span className="font-permanent">{locales.find((l) => l.code === locale)?.name}</span>
+
+        <span className="font-permanent">{t(`name.${locale}`)}</span>
+
       </button>
 
       {/* Açılan siyahı */}
@@ -77,7 +86,9 @@ function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
                 width={20}
                 height={20}
               />
-              <span className="font-permanent">{l.name}</span>
+
+              <span className="font-permanent">{t(`name.${l.code}`)}</span>
+
             </button>
           ))}
         </div>

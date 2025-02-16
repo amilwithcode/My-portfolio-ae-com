@@ -1,0 +1,135 @@
+{
+    "HomePage": {
+        "nav": {
+            "home": "ev",
+            "about": "haqqımda",
+            "projects": "layihələr",
+            "contact": "əlaqə",
+            "login": "daxil ol",
+            "signout": "çıxın"
+        },
+        "header": {
+            "title": "Salam Mənim portfolioma xoş gəldiniz!",
+            "autotext": ""
+        },
+        "skills": {
+            "title": "Bacarıqlar",
+            "All": "hamısı",
+            "Languages": "dillər",
+            "Frameworks": "frameworks",
+            "Tools": "əlavə alətlər"
+        },
+        "testimonials": {
+            "header": "Rəylər",
+            "role":{
+                "men1":"",
+                "men2":""
+            },
+            "opinion": {
+                "men1": "Amillə işləmək ruhlandırıcı təcrübə oldu. Amil hər bir işə fədakarlıq və yaradıcılıqla yanaşır, ardıcıl olaraq təkmilləşməyə çalışır. Onun diqqəti, qətiyyəti və təfərrüatlara diqqəti onun işini həqiqətən də fərqləndirir.",
+                "men2": "MAD"
+            }
+        },
+        "coments": {
+            "title": "Rəylər",
+            "header": "Son rəylər",
+            "username": "İstifadəçi adı",
+            "comment": "Sizin rəyiniz",
+            "submit_comment": "Rəy göndər",
+            "mesaj_commet": "Şərh bildirmək üçün daxil olun",
+            "form_mesaj": "Zəhmət olmasa bütün sahələri doldurun!",
+            "save": "Saxla",
+            "cancel": "Ləğv et",
+            "more_commet": "Daha çox Şərh göstər",
+            "edited": "Redaktə edilib"
+        }
+    },
+    "AboutPage": {
+        "title": "Haqqımda",
+        "description": "Salam! Mən Təchizat Zəncirinin İdarəedilməsi üzrə təhsil alıram və texnologiya və məlumatların təhlilinə böyük marağım var. Python və onun kitabxanalarından istifadə edərək, COVID-19 və smartfon markaları ilə bağlı məlumatların təhlili üzərində işləmişəm. Bu təcrübələr mənə verilənləri daha dərindən dərk etməyə və onları praktik həllərdə tətbiq etməyə kömək etdi. Texnologiya sahəsində mən React.js, Next.js və TypeScript istifadə edərək veb proqramlar yaratmaqla bacarıqlarımı artırıram. Hazırda daha dinamik layihələr yaratmaq üçün Firebase-i öyrənirəm. Bundan əlavə, mən C# istifadə edərək robototexnika layihələri üzərində işləyirəm və kibertəhlükəsizlik sahəsində biliklərimi genişləndirirəm. Məqsədim Təchizat Zəncirinin İdarəedilməsi sahəsində daha səmərəli həllər hazırlamaq üçün məlumatların təhlili və texnologiyası üzrə bacarıqlarımdan istifadə etməkdir. Mən həmişə öyrənməyə, paylaşmağa və yeni imkanlar üzərində əməkdaşlıq etməyə can atıram.",
+        "button": "Əlaqə saxlamaqdan çekinmeyin - qoşulmaqdan məmnun olaram!"
+    },
+    "ContactPage": {
+        "title": "  Əlaqə",
+        "name": " Adınız",
+        "email": "Email",
+        "mesagge": "Mesaj",
+        "button": "Göndər"
+    },
+    "LoginPage": {
+        "email": "E-mail",
+        "password": "Şifrə",
+        "resertpassword": "Şifrənizi unutmusanız?",
+        "button": "DAXİL OLUN",
+        "andor": "və ya"
+    },
+    "RegisterPage": {
+        "header": {
+            "login": "DAXİL OLUN",
+            "register": "QOŞULUN"
+        },
+        "title": {
+            "login": "Hesabınıza daxil olun",
+            "register": "Qeydiyatdan keçin"
+        },
+        "name": "İstifadəçi adı",
+        "email": "E-mail",
+        "password": " Şifrə",
+        "resertpassword": "Şifrəni təsdiq edin",
+        "button": "Qeydiyyatdan Keçin"
+    },
+    "ProjectsPage": {
+        "title": "Layihələr",
+        "projects": {
+            "title": {
+                "project1": "COVID-19 Məlumat Təhlili",
+                "project2": "Smartfon Markaları Məlumat Təhlili",
+                "project3": "Boru kəməri məlumatlarının hesablanması proqramı",
+                "project4": "Hava proqnozu saytı",
+                "project5": "Qrafik real sayt"
+            },
+            "description": {
+                "project1": "Python və kitabxanalarla COVID-19 halları məlumatlarının təhlili",
+                "project2": "Python və kitabxanalardan istifadə edərək smartfon markalarının məlumat təhlili",
+                "project3": "Python və kitabxanalardan istifadə edərək boru kəməri məlumatlarının hesablanması proqramı",
+                "project4": "Azərbaycan şəhərlərinin hava proqnozu saytı",
+                "project5": "React+Vite və Javascript ilə qrafik dizayn veb saytı"
+            },
+            "fulldescription": {
+                "project1": "Bu layihə COVID-19 hallarının məlumat təhlilidir. O, müxtəlif ölkələrdə halların, ölümlərin və sağalmaların sayını təhlil edir. Məlumatlar diaqram və qrafiklərdən istifadə etməklə vizuallaşdırılır. Layihə açıq mənbədir və GitHub-da mövcuddur.",
+                "project2": "Bu layihə smartfon markalarının məlumat təhlilidir. O, satış və bazar payı əsasında müxtəlif smartfon markalarının populyarlığını təhlil edir. Məlumatlar diaqram və qrafiklərdən istifadə etməklə vizuallaşdırılır. Layihə açıq mənbədir və GitHub-da mövcuddur.",
+                "project3": "Bu layihə boru kəməri məlumatlarının hesablanması proqramıdır. Boru kəmərinin axın sürətini, təzyiqini və digər parametrlərini hesablayır. Layihə açıq mənbədir və GitHub-da mövcuddur.",
+                "project4": "Bu layihə Azərbaycan şəhərləri üçün hava proqnozu saytıdır. O, cari hava vəziyyətini və növbəti 5 gün üçün proqnozu göstərir. Veb sayt React və Tailwind CSS-dən istifadə etməklə qurulub. Hava məlumatları OpenWeatherMap API-dən alınır. Veb sayt cavab verir və bütün cihazlarda işləyir. Layihə açıq mənbədir və GitHub-da mövcuddur.",
+                "project5": "Bu layihə qrafik dizayn saytıdır. Qrafik dizaynerin işini nümayiş etdirir. Veb sayt React+Vite və Javascript istifadə edərək qurulub. Veb sayt cavab verir və bütün cihazlarda işləyir. Layihə açıq mənbədir və GitHub-da mövcuddur."
+            }
+        },
+        "button": "Ətraflı məlumat əldə edin",
+        "githubButton": "GitHub-a baxın"
+    },
+    "NotfoundPage": {
+        "title": "Üzr istəyirik, axtardığınız səhifə mövcud deyil",
+        "button": "Geri qayıt"
+    },
+    "ResertPassworPage": {
+        "title": "Şifrəni unutmusunuz?",
+        "email": "Parolu sıfırlayın",
+        "button": "Sıfırlayın",
+        "emptyEmailError": "Email daxil edin",
+        "successMessage": "Email uğurla göndərildi",
+        "errorMessage": "Email yalnışdır"
+    },
+    "LoadingPage": {
+        "title": "Yüklənir, zəhmət olmasa gözləyin"
+    },
+    "Footer": {
+        "foot": "Mənim veb saytım"
+    },
+    "Languages": {
+        "name": {
+            "az": "Azərbaycan",
+            "de": "Alman",
+            "en:": "İngilis",
+            "tr": "Türk"
+        }
+    }
+}

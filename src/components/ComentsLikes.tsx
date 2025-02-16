@@ -77,7 +77,20 @@ function CommentsLikes() {
 
     const getCommentsData = async () => {
         const docRef = await getDocs(collection(db, "comments"));
-        setComments(docRef.docs.map((doc) => doc.data() as Comment));
+
+        setComments(
+            docRef.docs.map((doc) => {
+                return {
+                    id: doc.id,
+                    uid: doc.data().uid,
+                    username: doc.data().username,
+                    rating: doc.data().rating,
+                    content: doc.data().content,
+                    createdAt: doc.data().createdAt,
+                    edited: doc.data().edited
+                };
+            })
+        );
     };
 
     useEffect(() => {
@@ -163,9 +176,12 @@ function CommentsLikes() {
     };
 
     const handleEdit = async (commentId: string, newContent: string) => {
+
+        // console.log(commentId)
         try {
-            const db = getFirestore();
-            const commentRef = doc(db, "coments", commentId);
+            // const db = getFirestore();
+            const commentRef = doc(db, "comments", commentId);
+
             await updateDoc(commentRef, {
                 content: newContent,
                 edited: true,
@@ -185,9 +201,12 @@ function CommentsLikes() {
 
     const handleDelete = async (commentId: string) => {
         try {
-            const db = getFirestore();
-            const commentRef = doc(db, "coments", commentId);
+
+            // const db = getFirestore();
+            const commentRef = doc(db, "comments", commentId);
             await deleteDoc(commentRef);
+            comments.filter((comment) => comment.id !== commentId);
+
             toast.success("Şərh uğurla silindi!", { position: "top-center" });
             // Şərhlər siyahısını yenilə
         } catch (error) {
@@ -219,11 +238,12 @@ function CommentsLikes() {
                         <span
                             key={star}
                             onClick={() => setRating(star)}
-                            className={`cursor-pointer ${
-                                star <= rating
-                                    ? "text-yellow-500"
-                                    : "text-gray-300"
-                            }`}
+
+                            className={`cursor-pointer ${star <= rating
+                                ? "text-yellow-500"
+                                : "text-gray-300"
+                                }`}
+
                         >
                             ★
                         </span>
