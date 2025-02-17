@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import projectsData from "@/lib/projectsdata";
@@ -10,7 +9,6 @@ import { useTranslations } from "next-intl";
 function ProjectComponent() {
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const t = useTranslations("ProjectsPage");
-  const locale = useParams().locale;
   const data = projectsData();
   return (
     <div className=" w-full space-x-6 p-2 m-3 lg:flex md:flex-row ">
@@ -54,7 +52,7 @@ function ProjectComponent() {
                 </h2>
                 <p className="text-gray-600 dark:text-white md:text-md sm:text-sm">{project.description}</p>
                 <Link
-                  href={`${locale}/projects`}
+                  href="/projects"
                   className="flex justify-center items-center w-full p-2 bg-blue-500 text-white  rounded-lg hover:bg-blue-700 transition md:text-md sm:text-sm"
                 >
                   {t("button")}

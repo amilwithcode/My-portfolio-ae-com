@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import MyImage from '@/assets/images/myImage.png'
 import { useTranslations } from "next-intl";
-
 import { Link } from "@/i18n/routing";
 
 
@@ -52,7 +51,7 @@ function AboutComponent({ name, skills }: AboutProps) {
           <div className="flex justify-end text-black dark:bg-black dark:text-white my-5 ">
             <Link
               className="border rounded-lg py-3 px-5 cursor-pointer hover:outline text-xs shadow-md dark:hover:shadow-white transition "
-              href={`/${locale}/contact`}
+              href="/contact"
             >
               {t("button")}
             </Link>

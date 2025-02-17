@@ -18,7 +18,6 @@ function LoginComponent() {
   const [error, setError] = useState<string>("");
   const [isShow, setIsShow] = useState<boolean>(false);
   const router = useRouter();
-  const { locale } = useParams();
   const t = useTranslations("LoginPage")
   const { user, loading } = useAuth();
 
@@ -35,7 +34,7 @@ function LoginComponent() {
 
       setEmail("");
       setPassword("");
-      if (userCredential.user) router.push(`/${locale}`);
+      if (userCredential.user) router.push("/");
     } catch (error) {
 
       toast.error('Email və şifrəni doğru daxil edin', {
@@ -87,7 +86,7 @@ function LoginComponent() {
 
       <div className="text-sm text-blue-600 text-right cursor-pointer">
         <Link
-          href={`/${locale}/resertpasword`}
+          href="/resertpasword"
           onClick={() => setIsLogin(false)}
         >
           {t("resertpassword")}
