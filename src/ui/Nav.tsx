@@ -2,7 +2,6 @@
 
 import { ReactElement, useEffect, useState } from "react";
 import { ButtonsCard } from "@/ui/ButtonsCard";
-import { useParams } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
 import { doc, getDoc } from "firebase/firestore";
@@ -57,7 +56,7 @@ export default function Nav(): ReactElement<NavProps> {
     getUserData();
   }, [user]);
 
-  const locale = useParams().locale;
+
 
   const handleSignOut = () => {
     try {

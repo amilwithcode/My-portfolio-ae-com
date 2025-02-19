@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import FooterSec from "@/components/FooterSec";
 import ChangeTheme from "@/ui/ChangeTheme";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-// import { locales } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import { notFound } from "next/navigation";
 // import {setRequestLocale} from 'next-intl/server'
 import { routing } from "@/i18n/routing";

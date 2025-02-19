@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useParams } from "next/navigation";
 import MyImage from '@/assets/images/myImage.png'
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -13,7 +12,6 @@ interface AboutProps {
 }
 
 function AboutComponent({ name, skills }: AboutProps) {
-  const locale = useParams().locale;
   const t = useTranslations('AboutPage')
 
   return (

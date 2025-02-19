@@ -9,17 +9,15 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "@/firebase/config";
 import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from 'react-toastify';
-import { useAuth } from "@/context/AuthContext";
 
 function LoginComponent() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [error] = useState<string>("");
   const [isShow, setIsShow] = useState<boolean>(false);
   const router = useRouter();
   const t = useTranslations("LoginPage")
-  const { user, loading } = useAuth();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
