@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from "next-intl";
 
-export const careers = ["Supply Chain Student", "Data Analysis", "Web developer", "Frontend developer"];
+export const careers = ["Supply Chain Student", "Web developer", "Frontend developer"];
 
 function AutoText() {
   const [careerIndex, setCareerIndex] = useState(0);
@@ -32,7 +32,7 @@ function AutoText() {
   return (
 
     <h1 className="lg:text-4xl md:text-md sm:text-sm ">
-      {t("autotxt")} {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
+      {t("header.autotxt")} {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
     </h1>
 
   );
