@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export const careers = ["Supply Chain Student", "Data Analysis", "Web developer", "Frontend developer"];
 
 function AutoText() {
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const t = useTranslations("HomePage")
 
   useEffect(() => {
     const updateText = () => {
@@ -31,7 +32,7 @@ function AutoText() {
   return (
 
     <h1 className="lg:text-4xl md:text-md sm:text-sm ">
-      I am {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
+      {t("autotxt")} {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
     </h1>
 
   );
