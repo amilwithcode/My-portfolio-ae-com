@@ -32,7 +32,7 @@ function AutoText() {
   return (
 
     <h1 className="lg:text-4xl md:text-md sm:text-sm ">
-      {t("header.autotxt")} {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
+      {t("header.autotext")} {isAn ? 'an' : 'a'} {currentCareer.slice(0, charIndex)}!
     </h1>
 
   );
