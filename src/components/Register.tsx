@@ -23,7 +23,7 @@ export default function Register() {
     password: 0,
   });
   const t = useTranslations('RegisterPage')
-
+  console.log(users)
 
   const handleRegister = async (e: React.ChangeEvent<EventTarget>) => {
 
@@ -47,6 +47,7 @@ export default function Register() {
       toast.error('You register to again!', {
         position: 'top-center',
       });
+      console.log(error)
     }
   };
 

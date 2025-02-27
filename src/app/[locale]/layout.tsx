@@ -10,9 +10,7 @@ import Navbar from "@/components/Navbar";
 import FooterSec from "@/components/FooterSec";
 import ChangeTheme from "@/ui/ChangeTheme";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-import { notFound } from "next/navigation";
-// import {setRequestLocale} from 'next-intl/server'
-import { routing } from "@/i18n/routing";
+
 
 export const metadata: Metadata = {
     title: "Amil's portfolio",
@@ -35,10 +33,7 @@ export default async function LocaleLayout({
     children: React.ReactNode;
     params: { locale: string };
 }) {
-    // Ensure that the incoming `locale` is valid
-    if (!routing.locales.includes(locale as any)) {
-        notFound();
-    }
+   
     // setRequestLocale(locale)
     // const locale = await getLocale();
     const messages = await getMessages();

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useCallback, useState } from "react";
 import { ButtonsCard } from "@/ui/ButtonsCard";
 import { useAuth } from "@/context/AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -20,7 +20,7 @@ type NavProps = {
 
 export default function Nav(): ReactElement<NavProps> {
   const { user, logOut } = useAuth() ?? {};
-  const [loading, setLoading] = useState<boolean | any>();
+  const [loading, setLoading] = useState<boolean>(false);
   const [displayName, setDisplayName] = useState("");
   const t = useTranslations("HomePage");
 
@@ -32,7 +32,7 @@ export default function Nav(): ReactElement<NavProps> {
   //   const uid: currentuser.uid;
   // }
 
-  const getUserData = async (uid: string) => {
+  const getUserData = useCallback(async (uid: string) => {
     const docRef = doc(db, "users", uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -44,7 +44,7 @@ export default function Nav(): ReactElement<NavProps> {
     } else {
       console.log("notfound");
     }
-  };
+  }, [displayName]);
 
   useEffect(() => {
     const checkUser = async () => {
@@ -53,7 +53,7 @@ export default function Nav(): ReactElement<NavProps> {
     };
     checkUser();
     if (user?.uid) getUserData(user.uid);
-  }, [user]);
+  }, [user, getUserData]);
 
 
 

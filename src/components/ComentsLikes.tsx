@@ -11,8 +11,6 @@ import {
     getDoc,
     collection,
     getDocs,
-    DocumentData,
-    getFirestore,
     deleteDoc,
     updateDoc,
     Timestamp,
@@ -165,7 +163,7 @@ function CommentsLikes() {
             setComments(newComments);
             // updateLocalStorage(newComments); // Yeni şərhləri localStorage-ə saxlamaq
 
-            // setUsername("");
+            setUsername("");
             setRating(0);
             setText("");
             setIsFormValid(true);

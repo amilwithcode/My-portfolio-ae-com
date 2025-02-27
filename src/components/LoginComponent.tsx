@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from 'react-toastify';
 
 function LoginComponent() {
-  const [_, setIsLogin] = useState<boolean>(true);
+  const [login, setIsLogin] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error] = useState<string>("");
@@ -19,6 +19,7 @@ function LoginComponent() {
   const router = useRouter();
   const t = useTranslations("LoginPage")
 
+  console.log(login)
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -86,7 +87,7 @@ function LoginComponent() {
       <div className="text-sm text-blue-600 text-right cursor-pointer">
         <Link
           href="/resertpasword"
-          onClick={() => setIsLogin(false)}
+          onClick={(login) => setIsLogin(login && false)}
         >
           {t("resertpassword")}
         </Link>
