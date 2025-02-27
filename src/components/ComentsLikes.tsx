@@ -282,23 +282,25 @@ function CommentsLikes() {
                             key={comment.id}
                             className="border p-4 rounded-lg mb-4"
                         >
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <p className="font-semibold">
-                                        {formatUsername(comment.username)}
-                                    </p>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        {comment.createdAt
-                                            ?.toDate()
-                                            .toLocaleDateString()}
-                                    </p>
+                            <div className="flex justify-between items-start p-2">
+                                <div className="flex-col w-full space-y-5">
+                                    <div className="flex w-full justify-between border-black  dark:border-white ">
+                                        <p className="font-semibold">
+                                            {formatUsername(comment.username)}
+                                        </p>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                            {comment.createdAt
+                                                ?.toDate()
+                                                .toLocaleDateString()}
+                                        </p>
+                                    </div>
                                     {editingId === comment.id ? (
                                         <textarea
                                             value={editContent}
                                             onChange={(e) =>
                                                 setEditContent(e.target.value)
                                             }
-                                            className="w-full p-2 border rounded mt-2"
+                                            className="w-full p-5 border-2 rounded mt-2 flex justify-center items-center "
                                         />
                                     ) : (
                                         <p className="mt-2">
@@ -306,7 +308,7 @@ function CommentsLikes() {
                                         </p>
                                     )}
                                     {comment.edited && (
-                                        <p className="text-xs text-gray-500 mt-1">
+                                        <p className="text-xs text-gray-500 mt-1 justify-end items-end">
                                             {t("coments.edited")}
                                         </p>
                                     )}
@@ -323,7 +325,7 @@ function CommentsLikes() {
                                                             editContent
                                                         )
                                                     }
-                                                    className="text-green-500 hover:text-green-700"
+                                                    className="text-green-500 hover:text-green-700 cursor-pointer"
                                                 >
                                                     {t("coments.save")}
                                                 </button>
@@ -331,7 +333,7 @@ function CommentsLikes() {
                                                     onClick={() =>
                                                         setEditingId(null)
                                                     }
-                                                    className="text-gray-500 hover:text-gray-700"
+                                                    className="text-gray-500 hover:text-gray-700 cursor-pointer"
                                                 >
                                                     {t("coments.cancel")}
                                                 </button>
@@ -347,7 +349,7 @@ function CommentsLikes() {
                                                             comment.content
                                                         );
                                                     }}
-                                                    className="text-blue-500 hover:text-blue-700"
+                                                    className="text-blue-500 hover:text-blue-700 cursor-pointer"
                                                 >
                                                     <FaRegEdit />
                                                 </button>
@@ -355,7 +357,7 @@ function CommentsLikes() {
                                                     onClick={() =>
                                                         handleDelete(comment.id)
                                                     }
-                                                    className="text-red-500 hover:text-red-700"
+                                                    className="text-red-500 hover:text-red-700 cursor-pointer"
                                                 >
                                                     <MdOutlineDeleteOutline />
                                                 </button>
@@ -373,7 +375,7 @@ function CommentsLikes() {
             {comments.length > 3 && !showAllComments && (
                 <button
                     onClick={() => setShowAllComments(true)}
-                    className="w-full mt-4 bg-green-500 text-black dark:bg-black dark:text-white p-2 rounded-md hover:bg-green-600"
+                    className="w-full mt-4 bg-green-500 text-black dark:bg-black dark:text-white p-2 rounded-md hover:bg-green-600 cursor-pointer"
                 >
                     {t("coments.more_commet")}
                 </button>
@@ -388,15 +390,18 @@ function CommentsLikes() {
                             className="border p-4 rounded-lg mb-4"
                         >
                             <div className="flex justify-between items-start">
-                                <div>
-                                    <p className="font-semibold">
-                                        {formatUsername(comment.username)}
-                                    </p>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        {comment.createdAt
-                                            ?.toDate()
-                                            .toLocaleDateString()}
-                                    </p>
+                                <div className="flex-col">
+                                    <div className="flex w-full">
+
+                                        <p className="font-semibold">
+                                            {formatUsername(comment.username)}
+                                        </p>
+                                        <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                            {comment.createdAt
+                                                ?.toDate()
+                                                .toLocaleDateString()}
+                                        </p>
+                                    </div>
                                     {editingId === comment.id ? (
                                         <textarea
                                             value={editContent}
@@ -428,7 +433,7 @@ function CommentsLikes() {
                                                             editContent
                                                         )
                                                     }
-                                                    className="text-green-500 hover:text-green-700"
+                                                    className="text-green-500 hover:text-green-700 cursor-pointer"
                                                 >
                                                     {t("coments.save")}
                                                 </button>
@@ -436,7 +441,7 @@ function CommentsLikes() {
                                                     onClick={() =>
                                                         setEditingId(null)
                                                     }
-                                                    className="text-gray-500 hover:text-gray-700"
+                                                    className="text-gray-500 hover:text-gray-700 cursor-pointer"
                                                 >
                                                     {t("coments.cancel")}
                                                 </button>
@@ -452,7 +457,7 @@ function CommentsLikes() {
                                                             comment.content
                                                         );
                                                     }}
-                                                    className="text-blue-500 hover:text-blue-700"
+                                                    className="text-blue-500 hover:text-blue-700 cursor-pointer"
                                                 >
                                                     <FaRegEdit />
                                                 </button>
@@ -460,7 +465,7 @@ function CommentsLikes() {
                                                     onClick={() =>
                                                         handleDelete(comment.id)
                                                     }
-                                                    className="text-red-500 hover:text-red-700"
+                                                    className="text-red-500 hover:text-red-700 cursor-pointer"
                                                 >
                                                     <MdOutlineDeleteOutline />
                                                 </button>
