@@ -19,17 +19,17 @@
             "Frameworks": "frameworks",
             "Tools": "əlavə alətlər"
         },
-        "testimonials": {
-            "header": "Rəylər",
-            "role":{
-                "men1":"",
-                "men2":""
-            },
-            "opinion": {
-                "men1": "Amillə işləmək ruhlandırıcı təcrübə oldu. Amil hər bir işə fədakarlıq və yaradıcılıqla yanaşır, ardıcıl olaraq təkmilləşməyə çalışır. Onun diqqəti, qətiyyəti və təfərrüatlara diqqəti onun işini həqiqətən də fərqləndirir.",
-                "men2": "MAD"
-            }
-        },
+        // "testimonials": {
+        //     "header": "Rəylər",
+        //     "role":{
+        //         "men1":"",
+        //         "men2":""
+        //     },
+        //     "opinion": {
+        //         "men1": "Amillə işləmək ruhlandırıcı təcrübə oldu. Amil hər bir işə fədakarlıq və yaradıcılıqla yanaşır, ardıcıl olaraq təkmilləşməyə çalışır. Onun diqqəti, qətiyyəti və təfərrüatlara diqqəti onun işini həqiqətən də fərqləndirir.",
+        //         "men2": "MAD"
+        //     }
+        // },
         "coments": {
             "title": "Rəylər",
             "header": "Son rəylər",

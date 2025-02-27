@@ -7,7 +7,6 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 import { useTranslations } from "next-intl";
-
 import { Link } from "@/i18n/routing";
 
 
@@ -33,8 +32,8 @@ export default function Nav(): ReactElement<NavProps> {
   //   const uid: currentuser.uid;
   // }
 
-  const getUserData = async () => {
-    const docRef = doc(db, "users", user?.uid as string);
+  const getUserData = async (uid: string) => {
+    const docRef = doc(db, "users", uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       if (!displayName) {
@@ -53,7 +52,7 @@ export default function Nav(): ReactElement<NavProps> {
       setLoading(false);
     };
     checkUser();
-    getUserData();
+    if (user?.uid) getUserData(user.uid);
   }, [user]);
 
 

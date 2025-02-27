@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import SocialSign from "@/components/SocialSign";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -16,9 +16,7 @@ export default function Register() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const router = useRouter();
-  const [error, setError] = useState<string>("");
   const [isShow, setIsShow] = useState<boolean>(false);
-  const { locale } = useParams();
   const [users, setUserData] = useState({
     userName: "",
     email: "",
@@ -37,7 +35,7 @@ export default function Register() {
 
       await addUserToFirestore(user.user.uid);
       setUserData((prev) => ({ ...prev, [name]: value }));
-      router.push(`/${locale}`);
+      router.push(`/`);
 
 
       toast.success('Register Success!', {
@@ -52,7 +50,7 @@ export default function Register() {
     }
   };
 
-  const addUserToFirestore = async (uid: any) => {
+  const addUserToFirestore = async (uid: string) => {
 
     try {
       await setDoc(doc(db, "users", uid), {
@@ -160,7 +158,6 @@ export default function Register() {
           </button>
         </div>
         <SocialSign />
-        {error && <p className="text-red-500 text-center mt-4">{error}</p>}
       </form>
     </div>
   );

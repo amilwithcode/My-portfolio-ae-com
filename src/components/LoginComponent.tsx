@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import Toggle from "@/ui/toggleEye";
 import SocialSign from "@/components/SocialSign";
@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from 'react-toastify';
 
 function LoginComponent() {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [_, setIsLogin] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error] = useState<string>("");
@@ -34,6 +34,7 @@ function LoginComponent() {
       setPassword("");
       if (userCredential.user) router.push("/");
     } catch (error) {
+      console.log(error);
 
       toast.error('Email və şifrəni doğru daxil edin', {
         position: 'top-center',

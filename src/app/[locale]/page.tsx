@@ -4,7 +4,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Skils from "@/components/Skils";
 import Projects from "@/components/ProjectComponent";
-import Testimional from "@/components/Testemional";
+// import Testimional from "@/components/Testemional";
 import ComentsLikes from "@/components/ComentsLikes";
 import { useTranslations } from "next-intl";
 
@@ -32,12 +32,12 @@ export default function Home() {
       </section>
       <Projects />
 
-      <section id="testimional">
+      {/* <section id="testimional">
         <h2 className="text-2xl my-10   text-center font-permanent text-black dark:bg-black dark:text-white mb-8 uppercase">
           {c("testimonials.header")}
         </h2>
       </section>
-      <Testimional />
+      <Testimional /> */}
 
       <section id="coment-likes">
         <h2 className="text-2xl my-10 text-center font-permanent text-black dark:bg-black dark:text-white mb-8 uppercase">
