@@ -46,7 +46,7 @@ function Skills() {
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded  ${selectedCategory === category
               ? "bg-blue-600 text-white"
-              : "bg-white text-blue-600 hover:bg-gray-200 border"
+              : "bg-white text-black dark:bg-black dark:text-white hover:bg-gray-200 border"
               } cursor-pointer text-xl md:text-md sm:text-sm `}
           >
             {t(`skills.${category}`)}
@@ -57,7 +57,7 @@ function Skills() {
         {skills[selectedCategory].map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col items-center border text-blue-400 bg-white p-5 rounded shadow-md hover:bg-blue-600 hover:text-white cursor-pointer"
+            className="flex flex-col items-center border text-blue-400 bg-white  dark:bg-black dark:text-white p-5 rounded shadow-md hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white cursor-pointer"
           >
             <div className="text-3xl mb-2">{skill.icon}</div>
             <span className="text-sm font-medium">{skill.name}</span>

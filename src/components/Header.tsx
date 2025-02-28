@@ -17,7 +17,7 @@ export default function Header() {
 
         <MyImage />
 
-        <div className="text flex flex-col  justify-center items-center text-center w-full h-full max-h-screen font-permanent text-black dark:bg-black dark:text-white m-5   gap-14">
+        <div className="text max-w-screen w-full h-full max-h-screen flex flex-col  justify-center items-center text-center  font-permanent text-black dark:bg-black dark:text-white m-5   gap-14">
           <h2 className=' lg:text-2xl md:text-md sm:text-sm'>{t("header.title")}</h2>
           <AutoText />
         </div>

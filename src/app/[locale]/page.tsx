@@ -16,21 +16,22 @@ export default function Home() {
       id="home"
       className="flex flex-col  justify-center items-center   sm:px-10  bg-white text-black dark:bg-black dark:text-white"
     >
-
-      <Header />
-      <section id="skils">
+      <section id="header" className="my-5 mx-2 max-w-screen  w-full dark:bg-black dark:text-white font-permanent ">
+        <Header />
+      </section>
+      <section id="skils" className="my-5 max-w-screen  w-full dark:bg-black dark:text-white font-permanent ">
         <h2 className="flex justify-center items-center my-2  text-black dark:bg-black dark:text-white font-permanent text-2xl ">
           {c("skills.title")}
         </h2>
+        <Skils />
       </section>
-      <Skils />
 
-      <section id="project">
+      <section id="project" className="my-5 max-w-screen  w-full dark:bg-black dark:text-white font-permanent">
         <h2 className="text-2xl my-10  text-center mb-4 text-black dark:bg-black dark:text-white font-permanent">
           {t("title")}
         </h2>
+        <Projects />
       </section>
-      <Projects />
 
       {/* <section id="testimional">
         <h2 className="text-2xl my-10   text-center font-permanent text-black dark:bg-black dark:text-white mb-8 uppercase">
@@ -39,12 +40,12 @@ export default function Home() {
       </section>
       <Testimional /> */}
 
-      <section id="coment-likes">
+      <section id="coment-likes" className="my-5 max-w-screen  w-full dark:bg-black dark:text-white font-permanent">
         <h2 className="text-2xl my-10 text-center font-permanent text-black dark:bg-black dark:text-white mb-8 uppercase">
           {c("coments.title")}
         </h2>
+        <ComentsLikes />
       </section>
-      <ComentsLikes />
     </main>
   );
 }

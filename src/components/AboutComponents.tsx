@@ -15,8 +15,8 @@ function AboutComponent({ name, skills }: AboutProps) {
   const t = useTranslations('AboutPage')
 
   return (
-    <section className="border py-10 px-3">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+    <section className="border py-10 px-3 max-w-screen w-full">
+      <div className="max-w-screen w-full mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
         <div className="flex justify-start max-w-screen h-screen overflow-hidden rounded-full shadow-md">
           <Image
             src={MyImage}

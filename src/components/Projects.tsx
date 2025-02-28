@@ -29,11 +29,11 @@ function Projects() {
   };
 
   return (
-    <section id="projects" >
+    <section id="projects" className="max-w-screen w-full" >
       <h2 className="text-3xl font-bold text-center mb-8 font-permanent">
         {t("title")}
       </h2>
-      <div className="container mx-auto flex flex-col  gap-8 font-permanent">
+      <div className="max-w-screen w-full flex flex-col  gap-8 font-permanent">
         {data.map((project, index) => (
           <div
             key={index}
