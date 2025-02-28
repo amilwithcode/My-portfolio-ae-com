@@ -33,7 +33,7 @@ export default async function LocaleLayout({
     children: React.ReactNode;
     params: { locale: string };
 }) {
-   
+
     // setRequestLocale(locale)
     // const locale = await getLocale();
     const messages = await getMessages();
@@ -52,7 +52,7 @@ export default async function LocaleLayout({
                                 <div className=" w-full  text-black dark:bg-black px-10 dark:text-white ">
                                     <ChangeTheme />{" "}
 
-                                    <LocaleSwitcher  />
+                                    <LocaleSwitcher />
                                     <Navbar />
                                 </div>
                             </header>
