@@ -21,9 +21,9 @@
         },
         "testimonials": {
             "header": "Rəylər",
-            "role":{
-                "men1":"",
-                "men2":""
+            "role": {
+                "men1": "",
+                "men2": ""
             },
             "opinion": {
                 "men1": "Amillə işləmək ruhlandırıcı təcrübə oldu. Amil hər bir işə fədakarlıq və yaradıcılıqla yanaşır, ardıcıl olaraq təkmilləşməyə çalışır. Onun diqqəti, qətiyyəti və təfərrüatlara diqqəti onun işini həqiqətən də fərqləndirir.",
@@ -80,6 +80,12 @@
     },
     "ProjectsPage": {
         "title": "Layihələr",
+        "category": {
+            "all": "Bütün layihələr",
+            "web": "Veb tərtibatçı",
+            "data": "Məlumat təhlili",
+            "python": "Python proqramlaşdırma"
+        },
         "projects": {
             "title": {
                 "project1": "COVID-19 Məlumat Təhlili",

@@ -21,9 +21,9 @@
         },
         "testimonials": {
             "header": "opinions",
-            "role":{
-                "men1":"",
-                "men2":""
+            "role": {
+                "men1": "",
+                "men2": ""
             },
             "opinion": {
                 "men1": "Working with Amil has been an inspiring experience. Amil approaches every task with dedication and creativity, consistently striving to improve. His focus, determination, and attention to detail make his work truly stand out.",
@@ -65,6 +65,12 @@
     },
     "ProjectsPage": {
         "title": "Projects",
+        "category": {
+            "all": "All projects",
+            "web": "Web Development",
+            "data": "Data Analysis",
+            "python": "Python programming"
+        },
         "projects": {
             "title": {
                 "project1": "COVID-19 Data Analysis",

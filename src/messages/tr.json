@@ -21,9 +21,9 @@
         },
         "testimonials": {
             "header": "Görüşler",
-            "role":{
-                "men1":"",
-                "men2":""
+            "role": {
+                "men1": "",
+                "men2": ""
             },
             "opinion": {
                 "men1": "Amil'le çalışmak ilham verici bir deneyimdi. Amil her göreve özveri ve yaratıcılıkla yaklaşıyor ve sürekli olarak gelişmeye çabalıyor. Odaklanması, kararlılığı ve detaylara gösterdiği özen, çalışmasının gerçekten öne çıkmasını sağlıyor.",
@@ -32,16 +32,16 @@
         },
         "coments": {
             "title": "Yorumlar",
-            "header":"Son Yorumlar",
-            "username":"Kullanıcı adı",
-            "comment":"Yorumunuz",
+            "header": "Son Yorumlar",
+            "username": "Kullanıcı adı",
+            "comment": "Yorumunuz",
             "submit_comment": "Yorum gönder",
             "mesaj_commet": "Yorum bırakmak için oturum açın",
             "form_mesaj": "Lütfen tüm alanları doldurunuz!",
             "save": "Kaydetmek",
             "cancel": "İptal etmek",
             "more_commet": "Daha Fazla Yorum Göster",
-            "edited":"Düzenlendi"
+            "edited": "Düzenlendi"
         }
     },
     "AboutPage": {
@@ -65,6 +65,12 @@
     },
     "ProjectsPage": {
         "title": "Projeler",
+        "category": {
+            "all": "Tüm projeler",
+            "web": "Web Geliştirme",
+            "data": "Veri Analizi",
+            "python": "Python programlama"
+        },
         "projects": {
             "title": {
                 "project1": "COVID-19 Veri Analizi",

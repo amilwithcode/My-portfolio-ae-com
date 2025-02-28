@@ -65,6 +65,12 @@
     },
     "ProjectsPage": {
         "title": "Projeler",
+        "category": {
+            "all": "Tüm projeler",
+            "web": "Web Geliştirme",
+            "data": "Veri Analizi",
+            "python": "Python programlama"
+        },
         "projects": {
             "title": {
                 "project1": "COVID-19 Veri Analizi",

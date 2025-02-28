@@ -58,6 +58,12 @@
     },
     "ProjectsPage": {
         "title": "Projekte",
+        "category": {
+            "all": "Alle Projekte",
+            "web": "Webentwicklung",
+            "data": "Datenanalyse",
+            "python": "Python-Programmierung"
+        },
         "projects": {
             "title": {
                 "project1": "COVID-19-Datenanalyse",

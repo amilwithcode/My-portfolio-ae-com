@@ -16,12 +16,12 @@ interface Project {
   description: string;
 }
 
-const  ProjectsData =():{ category: string; icon: JSX.Element; projects: Project[] }[] =>{
+const ProjectsData = (): { category: string; icon: JSX.Element; projects: Project[] }[] => {
   const t = useTranslations("ProjectsPage");
 
   return [
     {
-      category: "All projects",
+      category: t("category.all"),
       icon: <FaBorderAll />,
       projects: [
         {
@@ -52,7 +52,7 @@ const  ProjectsData =():{ category: string; icon: JSX.Element; projects: Project
       ],
     },
     {
-      category: "Web Development",
+      category: t("category.web"),
       icon: <MdWeb />,
       projects: [
         {
@@ -68,7 +68,7 @@ const  ProjectsData =():{ category: string; icon: JSX.Element; projects: Project
       ],
     },
     {
-      category: "Data Analysis",
+      category: t("category.data"),
       icon: <FaDatabase />,
       projects: [
         {
@@ -84,7 +84,7 @@ const  ProjectsData =():{ category: string; icon: JSX.Element; projects: Project
       ],
     },
     {
-      category: "Python programming",
+      category: t("category.python"),
       icon: <FaPython />,
       projects: [
         {
