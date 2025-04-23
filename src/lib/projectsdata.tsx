@@ -36,18 +36,18 @@ const ProjectsData = (): { category: string; icon: JSX.Element; projects: Projec
         },
         {
           title: t("projects.title.project5"),
-          image: AppImage.src,
+          image: GraphicImage.src,
           description: t("projects.description.project5"),
         },
         {
           title: t("projects.title.project4"),
-          image: GraphicImage.src,
+          image: AppImage.src,
           description: t("projects.description.project4"),
         },
         {
           title: t("projects.title.project3"),
           image: PipelineImage.src,
-          description: t("projects.description.project5"),
+          description: t("projects.description.project3"),
         },
       ],
     },
