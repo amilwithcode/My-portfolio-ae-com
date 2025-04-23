@@ -35,9 +35,9 @@ const ProjectsData = (): { category: string; icon: JSX.Element; projects: Projec
           description: t("projects.description.project2"),
         },
         {
-          title: t("projects.title.project3"),
+          title: t("projects.title.project5"),
           image: AppImage.src,
-          description: t("projects.description.project3"),
+          description: t("projects.description.project5"),
         },
         {
           title: t("projects.title.project4"),
@@ -45,7 +45,7 @@ const ProjectsData = (): { category: string; icon: JSX.Element; projects: Projec
           description: t("projects.description.project4"),
         },
         {
-          title: t("projects.title.project5"),
+          title: t("projects.title.project3"),
           image: PipelineImage.src,
           description: t("projects.description.project5"),
         },
